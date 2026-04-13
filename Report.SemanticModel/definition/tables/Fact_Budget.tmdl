@@ -1,0 +1,108 @@
+table Fact_Budget
+	lineageTag: 005e6673-2c0c-4f27-8b4b-6be19bcc899c
+
+	column BudgetID
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d593d24-1513-446d-9e44-3b4a6ff84323
+		summarizeBy: none
+		sourceColumn: BudgetID
+
+	column DateID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0fb888e0-b455-4b9f-b7ad-60ed1c56dcd1
+		summarizeBy: none
+		sourceColumn: DateID
+
+	column PropertyID
+		dataType: int64
+		formatString: 0
+		lineageTag: ba3c7787-4bd8-4798-9563-5b9f6ec17864
+		summarizeBy: none
+		sourceColumn: PropertyID
+
+	column BudgetRevenue
+		dataType: double
+		formatString: $#,##0.00
+		lineageTag: 926518e8-2c7e-4e54-bca4-2b38a840782b
+		summarizeBy: sum
+		sourceColumn: BudgetRevenue
+
+	column BudgetExpense
+		dataType: double
+		formatString: $#,##0.00
+		lineageTag: 1f878821-6d7c-4875-9c86-35030c1f26ae
+		summarizeBy: sum
+		sourceColumn: BudgetExpense
+
+	column BudgetOccupancy
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 2fbb39f2-a5fc-4932-89d1-28f3719198be
+		summarizeBy: none
+		sourceColumn: BudgetOccupancy
+
+	column BudgetADR
+		dataType: double
+		formatString: $#,##0.00
+		lineageTag: 71bd935a-822d-46fb-9845-31b92644b4cf
+		summarizeBy: none
+		sourceColumn: BudgetADR
+
+	column BudgetHeadcount
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: a0673b37-82c8-40a2-82bc-7d02db9056b3
+		summarizeBy: none
+		sourceColumn: BudgetHeadcount
+
+	column FiscalYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 579f0c93-523d-45ca-a236-fe469688cc78
+		summarizeBy: none
+		sourceColumn: FiscalYear
+
+	column BudgetVersion
+		dataType: string
+		lineageTag: 942374a2-19a4-4bab-84e3-948506434cdf
+		summarizeBy: none
+		sourceColumn: BudgetVersion
+
+	partition Fact_Budget = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        type table [BudgetID = Int64.Type, DateID = Int64.Type, PropertyID = Int64.Type, BudgetRevenue = number, BudgetExpense = number, BudgetOccupancy = number, BudgetADR = number, BudgetHeadcount = number, FiscalYear = Int64.Type, BudgetVersion = text],
+				        {
+				            {1, 20250101, 1, 420000.0, 263019.59, 0.7504, 93.28, 158.03, 2025, "Original"},
+				            {2, 20250201, 1, 400000.0, 250351.22, 0.8274, 80.57, 146.49, 2025, "Original"},
+				            {3, 20250301, 1, 470000.0, 286370.81, 0.7548, 103.78, 140.88, 2025, "Original"},
+				            {4, 20250401, 1, 520000.0, 327373.71, 0.8045, 107.73, 144.75, 2025, "Original"},
+				            {5, 20250501, 1, 550000.0, 346972.17, 0.71, 129.11, 153.37, 2025, "Original"},
+				            {6, 20250601, 1, 620000.0, 393664.53, 0.98, 105.44, 156.8, 2025, "Original"},
+				            {7, 20250701, 1, 650000.0, 400082.83, 0.98, 110.54, 161.02, 2025, "Original"},
+				            {8, 20250801, 1, 640000.0, 410466.97, 0.8037, 132.72, 142.44, 2025, "Original"},
+				            {9, 20250901, 1, 560000.0, 329815.41, 0.7198, 129.67, 160.21, 2025, "Original"},
+				            {10, 20251001, 1, 530000.0, 335704.27, 0.6994, 126.3, 156.99, 2025, "Original"},
+				            {11, 20251101, 1, 460000.0, 277607.37, 0.6741, 113.73, 148.88, 2025, "Original"},
+				            {12, 20251201, 1, 440000.0, 278121.67, 0.6596, 111.18, 159.7, 2025, "Original"},
+				            {13, 20260101, 1, 453600.0, 273607.98, 0.6483, 116.61, 147.35, 2026, "Original"},
+				            {14, 20260201, 1, 432000.0, 276300.71, 0.6993, 102.96, 161.66, 2026, "Original"},
+				            {15, 20260301, 1, 507600.0, 315143.57, 0.905, 93.48, 141.78, 2026, "Original"},
+				            {16, 20260401, 1, 561600.0, 360693.12, 0.7851, 119.22, 161.69, 2026, "Original"},
+				            {17, 20260501, 1, 594000.0, 360389.81, 0.7306, 135.51, 141.35, 2026, "Original"},
+				            {18, 20260601, 1, 669600.0, 428407.93, 0.7902, 141.23, 145.01, 2026, "Original"},
+				            {19, 20260701, 1, 702000.0, 427267.69, 0.9243, 126.58, 162.67, 2026, "Original"},
+				            {20, 20260801, 1, 691200.0, 423035.14, 0.8457, 136.22, 157.89, 2026, "Original"},
+				            {21, 20260901, 1, 604800.0, 383761.25, 0.7816, 128.97, 155.78, 2026, "Original"},
+				            {22, 20261001, 1, 572400.0, 339076.99, 0.8213, 116.16, 140.12, 2026, "Original"},
+				            {23, 20261101, 1, 496800.0, 297656.2, 0.8555, 96.79, 144.22, 2026, "Original"},
+				            {24, 20261201, 1, 475200.0, 301045.79, 0.704, 112.5, 159.09, 2026, "Original"}
+				        }
+				    )
+				in
+				    Source
+

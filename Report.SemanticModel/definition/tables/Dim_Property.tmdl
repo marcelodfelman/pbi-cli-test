@@ -1,0 +1,73 @@
+table Dim_Property
+	lineageTag: 220d2650-e14f-419b-bd0c-9eb18cb19bc8
+
+	column PropertyID
+		dataType: int64
+		formatString: 0
+		lineageTag: a2481898-cfb4-4757-9abb-97d827707c74
+		summarizeBy: none
+		sourceColumn: PropertyID
+
+	column PropertyName
+		dataType: string
+		lineageTag: acea7325-34bf-43c3-be52-9467dc126da1
+		summarizeBy: none
+		sourceColumn: PropertyName
+
+	column PropertyType
+		dataType: string
+		lineageTag: 374110b6-1fca-424e-9f27-683205967765
+		summarizeBy: none
+		sourceColumn: PropertyType
+
+	column StarRating
+		dataType: int64
+		formatString: 0
+		lineageTag: c51a5b86-8065-4b65-acb4-6c257cd90714
+		summarizeBy: none
+		sourceColumn: StarRating
+
+	column City
+		dataType: string
+		lineageTag: cbfd9cd8-fbe8-4429-8c52-c2daaf0384af
+		summarizeBy: none
+		sourceColumn: City
+
+	column Country
+		dataType: string
+		lineageTag: 20f6ffc6-870c-4749-a770-8f31c6b5054c
+		summarizeBy: none
+		sourceColumn: Country
+
+	column TotalRooms
+		dataType: int64
+		formatString: 0
+		lineageTag: df3e3d43-545e-4626-b037-3a84daaed4e0
+		summarizeBy: none
+		sourceColumn: TotalRooms
+
+	column CurrencyCode
+		dataType: string
+		lineageTag: 853cf397-bd68-4763-b6ae-7de230ca40ab
+		summarizeBy: none
+		sourceColumn: CurrencyCode
+
+	column IsActive
+		dataType: boolean
+		lineageTag: 5903b831-a601-4aea-a867-831fe043bd2a
+		summarizeBy: none
+		sourceColumn: IsActive
+
+	partition Dim_Property = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        type table [PropertyID = Int64.Type, PropertyName = text, PropertyType = text, StarRating = Int64.Type, City = text, Country = text, TotalRooms = Int64.Type, CurrencyCode = text, IsActive = logical],
+				        {
+				            {1, "The Grand Azure", "Mid-Scale Hotel", 4, "Tel Aviv", "IL", 200, "USD", true}
+				        }
+				    )
+				in
+				    Source
+

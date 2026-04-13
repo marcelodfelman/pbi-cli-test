@@ -1,0 +1,50 @@
+table Dim_Department
+	lineageTag: 0af462d9-9bab-4545-9258-5869da709974
+
+	column DepartmentID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1332d0e1-d71c-472b-bf61-790afe5bf49a
+		summarizeBy: none
+		sourceColumn: DepartmentID
+
+	column DepartmentName
+		dataType: string
+		lineageTag: 19838930-f40d-458c-bf13-d34777b93e30
+		summarizeBy: none
+		sourceColumn: DepartmentName
+
+	column USALICategory
+		dataType: string
+		lineageTag: ebd76dee-6107-430b-b0a5-288a3249525e
+		summarizeBy: none
+		sourceColumn: USALICategory
+
+	column IsRevenueDept
+		dataType: boolean
+		lineageTag: e3d44844-c94b-4864-a83b-323c6fa09a5b
+		summarizeBy: none
+		sourceColumn: IsRevenueDept
+
+	partition Dim_Department = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        type table [DepartmentID = Int64.Type, DepartmentName = text, USALICategory = text, IsRevenueDept = logical],
+				        {
+				            {1, "Rooms", "Revenue", true},
+				            {2, "Food & Beverage", "Revenue", true},
+				            {3, "Spa & Wellness", "Revenue", true},
+				            {4, "Other Revenue", "Revenue", true},
+				            {5, "Housekeeping", "Departmental", false},
+				            {6, "Maintenance", "Departmental", false},
+				            {7, "Admin & General", "Undistributed", false},
+				            {8, "Sales & Marketing", "Undistributed", false},
+				            {9, "Human Resources", "Undistributed", false},
+				            {10, "Finance", "Undistributed", false}
+				        }
+				    )
+				in
+				    Source
+

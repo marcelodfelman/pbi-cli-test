@@ -1,0 +1,60 @@
+relationship 814f5f82-05c6-4bb0-9763-e731ce9d1781
+	fromColumn: Fact_Reservations.ArrivalDateID
+	toColumn: Dim_Date.DateID
+
+relationship 4100308f-9691-4a46-a39c-9c6823cc81bf
+	fromColumn: Fact_Reservations.PropertyID
+	toColumn: Dim_Property.PropertyID
+
+relationship 780453c3-a6be-411a-a6ac-f93a2ab0108f
+	fromColumn: Fact_Reservations.ChannelID
+	toColumn: Dim_Channel.ChannelID
+
+relationship 09a78a72-3468-472a-9bb1-e030d6fa4915
+	fromColumn: Fact_Reservations.SegmentID
+	toColumn: Dim_Segment.SegmentID
+
+relationship 94cc467f-c408-4e06-ac4c-356c23d3fbc4
+	fromColumn: Fact_Reservations.GuestID
+	toColumn: Dim_Guest.GuestID
+
+relationship 5e8b990e-85ef-4e81-a153-312d10c4c324
+	fromColumn: Fact_Revenue.DateID
+	toColumn: Dim_Date.DateID
+
+relationship 1d186bf7-9ba5-4934-8e26-75ff7c93c610
+	fromColumn: Fact_Revenue.PropertyID
+	toColumn: Dim_Property.PropertyID
+
+relationship fabb114f-37cc-47e5-b1c4-2d2e8e6ad194
+	fromColumn: Fact_Revenue.OutletID
+	toColumn: Dim_Outlet.OutletID
+
+relationship 76507522-64f1-4ccf-9bf6-26e0652730ef
+	fromColumn: Fact_Revenue.DepartmentID
+	toColumn: Dim_Department.DepartmentID
+
+relationship f95370cf-4275-46f6-8fe6-efb566ba566f
+	fromColumn: Fact_Expenses.DateID
+	toColumn: Dim_Date.DateID
+
+relationship f661acb7-ae7a-4c9c-90ad-325e2694ee1c
+	fromColumn: Fact_Expenses.PropertyID
+	toColumn: Dim_Property.PropertyID
+
+relationship 34bef015-9c7f-4f6a-80ae-cbfa72d3cc16
+	fromColumn: Fact_Expenses.DepartmentID
+	toColumn: Dim_Department.DepartmentID
+
+relationship 419d8763-c825-430f-b31e-45ea0e63bb93
+	fromColumn: Fact_Expenses.AccountID
+	toColumn: Dim_Account.AccountID
+
+relationship 0006b475-6319-468b-8249-28500fdbdb75
+	fromColumn: Fact_Budget.DateID
+	toColumn: Dim_Date.DateID
+
+relationship b2806326-a1e2-4cba-a729-8eba9c39bff0
+	fromColumn: Fact_Budget.PropertyID
+	toColumn: Dim_Property.PropertyID
+

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "exp_by_gl",
+  "position": {
+    "x": 650,
+    "y": 195,
+    "z": 7,
+    "height": 280,
+    "width": 610,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Account"
+                    }
+                  },
+                  "Property": "AccountName"
+                }
+              },
+              "queryRef": "Dim_Account.AccountName",
+              "nativeQueryRef": "AccountName",
+              "active": true
+            }
+          ]
+        },
+        "Legend": {
+          "projections": []
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Expenses"
+                }
+              },
+              "queryRef": "_Measures.Total Expenses",
+              "nativeQueryRef": "Total Expenses"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

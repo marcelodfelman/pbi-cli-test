@@ -1,0 +1,116 @@
+table Dim_Date
+	lineageTag: 98b589af-5b46-45a6-8fa6-33720bad3d04
+
+	column DateID
+		dataType: int64
+		formatString: 0
+		lineageTag: cb72fba4-6dc5-469f-a593-d645133ac8b2
+		summarizeBy: none
+		sourceColumn: DateID
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: d246a5c1-466d-4361-b263-4c30e8f6c5dc
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 12afb18f-5d4f-42a9-865a-6a6b6e167329
+		summarizeBy: none
+		sourceColumn: Year
+
+	column Quarter
+		dataType: string
+		lineageTag: f99df16f-d33e-4a42-8486-e99f43f67496
+		summarizeBy: none
+		sourceColumn: Quarter
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 7923daf4-2ad6-4391-a636-4d87e2a43661
+		summarizeBy: none
+		sourceColumn: Month
+
+	column MonthName
+		dataType: string
+		lineageTag: 792ea329-e669-4ccb-8b16-f0250a7b82e6
+		summarizeBy: none
+		sourceColumn: MonthName
+
+	column DayOfWeek
+		dataType: int64
+		formatString: 0
+		lineageTag: e6f9666a-39d6-4efb-bd1d-eb40a198a4a8
+		summarizeBy: none
+		sourceColumn: DayOfWeek
+
+	column DayName
+		dataType: string
+		lineageTag: 4c7e7e9c-62ac-43f3-9002-0dfcc067bbe1
+		summarizeBy: none
+		sourceColumn: DayName
+
+	column IsWeekend
+		dataType: boolean
+		lineageTag: f46cce07-eb05-40d2-bbd8-3bf5f814b706
+		summarizeBy: none
+		sourceColumn: IsWeekend
+
+	column Season
+		dataType: string
+		lineageTag: 26324463-4b7f-456f-81ca-192c3680c638
+		summarizeBy: none
+		sourceColumn: Season
+
+	column FiscalYear
+		dataType: int64
+		formatString: 0
+		lineageTag: a563aabb-9e99-4ecd-b8bc-f200525c80f8
+		summarizeBy: none
+		sourceColumn: FiscalYear
+
+	column FiscalQuarter
+		dataType: int64
+		formatString: 0
+		lineageTag: f4fb3848-53ac-4ac3-9bc4-29249716977b
+		summarizeBy: none
+		sourceColumn: FiscalQuarter
+
+	column WeekOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: c6e96f06-91be-48d6-b69d-aa44f0389d66
+		summarizeBy: none
+		sourceColumn: WeekOfYear
+
+	partition Dim_Date = m
+		mode: import
+		source =
+				let
+				    StartDate = #date(2025, 1, 1),
+				    EndDate = #date(2026, 12, 31),
+				    Duration = Duration.Days(EndDate - StartDate) + 1,
+				    DateList = List.Dates(StartDate, Duration, #duration(1, 0, 0, 0)),
+				    ToTable = Table.FromList(DateList, Splitter.SplitByNothing(), {"Date"}),
+				    ChangedType = Table.TransformColumnTypes(ToTable, {{"Date", type date}}),
+				    AddDateID = Table.AddColumn(ChangedType, "DateID", each Number.From(Date.Year([Date])) * 10000 + Number.From(Date.Month([Date])) * 100 + Number.From(Date.Day([Date])), Int64.Type),
+				    AddYear = Table.AddColumn(AddDateID, "Year", each Date.Year([Date]), Int64.Type),
+				    AddQuarter = Table.AddColumn(AddYear, "Quarter", each "Q" & Text.From(Date.QuarterOfYear([Date])), type text),
+				    AddMonth = Table.AddColumn(AddQuarter, "Month", each Date.Month([Date]), Int64.Type),
+				    AddMonthName = Table.AddColumn(AddMonth, "MonthName", each Date.MonthName([Date]), type text),
+				    AddDOW = Table.AddColumn(AddMonthName, "DayOfWeek", each Date.DayOfWeek([Date], Day.Sunday) + 1, Int64.Type),
+				    AddDayName = Table.AddColumn(AddDOW, "DayName", each Date.DayOfWeekName([Date]), type text),
+				    AddIsWeekend = Table.AddColumn(AddDayName, "IsWeekend", each Date.DayOfWeek([Date], Day.Sunday) = 0 or Date.DayOfWeek([Date], Day.Sunday) = 6, type logical),
+				    AddSeason = Table.AddColumn(AddIsWeekend, "Season", each if List.Contains({6,7,8}, Date.Month([Date])) then "High" else if List.Contains({4,5,9,10}, Date.Month([Date])) then "Shoulder" else "Low", type text),
+				    AddFY = Table.AddColumn(AddSeason, "FiscalYear", each Date.Year([Date]), Int64.Type),
+				    AddFQ = Table.AddColumn(AddFY, "FiscalQuarter", each Date.QuarterOfYear([Date]), Int64.Type),
+				    AddWOY = Table.AddColumn(AddFQ, "WeekOfYear", each Date.WeekOfYear([Date]), Int64.Type)
+				in
+				    AddWOY
+

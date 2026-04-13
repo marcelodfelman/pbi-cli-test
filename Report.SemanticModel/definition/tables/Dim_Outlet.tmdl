@@ -1,0 +1,39 @@
+table Dim_Outlet
+	lineageTag: 96798c7f-36f6-49bd-8917-439b4db6b4ba
+
+	column OutletID
+		dataType: int64
+		formatString: 0
+		lineageTag: d607f955-4811-4a22-8f94-c4782c97d0d9
+		summarizeBy: none
+		sourceColumn: OutletID
+
+	column OutletName
+		dataType: string
+		lineageTag: e51495e9-b828-479a-942f-804abeba5e99
+		summarizeBy: none
+		sourceColumn: OutletName
+
+	column OutletType
+		dataType: string
+		lineageTag: d1c5c31a-285f-45f3-8f11-2c4820f2043d
+		summarizeBy: none
+		sourceColumn: OutletType
+
+	partition Dim_Outlet = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        type table [OutletID = Int64.Type, OutletName = text, OutletType = text],
+				        {
+				            {1, "Room Revenue", "Rooms"},
+				            {2, "Azure Restaurant", "F&B"},
+				            {3, "Lobby Bar", "F&B"},
+				            {4, "Serenity Spa", "Spa"},
+				            {5, "Parking & Other", "Other"}
+				        }
+				    )
+				in
+				    Source
+

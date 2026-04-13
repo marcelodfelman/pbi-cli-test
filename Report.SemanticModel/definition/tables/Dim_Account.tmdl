@@ -1,0 +1,78 @@
+table Dim_Account
+	lineageTag: 0af1eaa7-ee87-4c71-b25d-125f63ddd8b6
+
+	column AccountID
+		dataType: int64
+		formatString: 0
+		lineageTag: 42e394df-e439-48a5-b7d1-d535e61a14bd
+		summarizeBy: none
+		sourceColumn: AccountID
+
+	column GLCode
+		dataType: string
+		lineageTag: 52b965a0-64a6-4a01-a1df-354431757a3e
+		summarizeBy: none
+		sourceColumn: GLCode
+
+	column AccountName
+		dataType: string
+		lineageTag: 378171ad-4f1c-4ef0-a3a8-88fc1af2c149
+		summarizeBy: none
+		sourceColumn: AccountName
+
+	column AccountType
+		dataType: string
+		lineageTag: c3fe6287-b8ca-4a13-adb7-ee944f1a116b
+		summarizeBy: none
+		sourceColumn: AccountType
+
+	column USALILine
+		dataType: string
+		lineageTag: 6fc9dac0-da35-4fc6-821b-6019621b65eb
+		summarizeBy: none
+		sourceColumn: USALILine
+
+	column ExpenseCategory
+		dataType: string
+		lineageTag: 3495f308-148e-4daf-8b66-c2add3725415
+		summarizeBy: none
+		sourceColumn: ExpenseCategory
+
+	column IsPayroll
+		dataType: boolean
+		lineageTag: 5ac5da9a-8c52-473f-bb33-17c7b1e6456f
+		summarizeBy: none
+		sourceColumn: IsPayroll
+
+	partition Dim_Account = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        type table [AccountID = Int64.Type, GLCode = text, AccountName = text, AccountType = text, USALILine = text, ExpenseCategory = text, IsPayroll = logical],
+				        {
+				            {1, "4010", "Room Revenue", "Revenue", "Rooms Revenue", null, false},
+				            {2, "4020", "F&B Revenue", "Revenue", "F&B Revenue", null, false},
+				            {3, "4030", "Spa Revenue", "Revenue", "Other Revenue", null, false},
+				            {4, "4040", "Other Operating Revenue", "Revenue", "Other Revenue", null, false},
+				            {5, "5010", "Rooms Payroll", "Expense", "Rooms Expense", "Payroll", true},
+				            {6, "5020", "F&B Payroll", "Expense", "F&B Expense", "Payroll", true},
+				            {7, "5030", "F&B Cost of Sales", "Expense", "F&B Expense", "COGS", false},
+				            {8, "5040", "Housekeeping Expense", "Expense", "Rooms Expense", "Operations", false},
+				            {9, "5050", "Maintenance & Repairs", "Expense", "Property Operations", "Maintenance", false},
+				            {10, "5060", "Utilities - Energy", "Expense", "Property Operations", "Energy", false},
+				            {11, "5070", "Utilities - Water", "Expense", "Property Operations", "Energy", false},
+				            {12, "6010", "Admin & General Payroll", "Expense", "Undistributed - A&G", "Payroll", true},
+				            {13, "6020", "Sales & Marketing", "Expense", "Undistributed - S&M", "Marketing", false},
+				            {14, "6030", "IT & Technology", "Expense", "Undistributed - A&G", "Admin", false},
+				            {15, "6040", "Insurance", "Expense", "Fixed Charges", "Admin", false},
+				            {16, "6050", "Property Tax", "Expense", "Fixed Charges", "Admin", false},
+				            {17, "6060", "Management Fees", "Expense", "Management Fees", "Admin", false},
+				            {18, "6070", "HR & Training", "Expense", "Undistributed - HR", "Payroll", true},
+				            {19, "7010", "Depreciation", "Expense", "Depreciation", "Depreciation", false},
+				            {20, "7020", "Interest Expense", "Expense", "Interest", "Finance", false}
+				        }
+				    )
+				in
+				    Source
+

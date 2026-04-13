@@ -1,0 +1,84 @@
+table Dim_Guest
+	lineageTag: 118ddc1d-9572-4589-8a82-83e9c710831d
+
+	column GuestID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b4d95ca-0d9c-44f2-b355-7a27c428e4d8
+		summarizeBy: none
+		sourceColumn: GuestID
+
+	column NationalityCode
+		dataType: string
+		lineageTag: 8e11c2e9-fad7-444f-b670-cc1eeefc755c
+		summarizeBy: none
+		sourceColumn: NationalityCode
+
+	column Segment
+		dataType: string
+		lineageTag: 184f50ac-b3f0-4279-bc48-ad353e0e5a53
+		summarizeBy: none
+		sourceColumn: Segment
+
+	column LoyaltyTier
+		dataType: string
+		lineageTag: 5640054b-19c6-4fc1-8db9-2d3e5c19a1e7
+		summarizeBy: none
+		sourceColumn: LoyaltyTier
+
+	column VisitCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 1bc543eb-23f5-40e3-b482-92a54e8b1c64
+		summarizeBy: sum
+		sourceColumn: VisitCount
+
+	column TotalLifetimeRevenue
+		dataType: double
+		formatString: $#,##0.00
+		lineageTag: dc51e4e4-573e-4b8b-9e8c-916c61b6f802
+		summarizeBy: sum
+		sourceColumn: TotalLifetimeRevenue
+
+	partition Dim_Guest = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        type table [GuestID = Int64.Type, NationalityCode = text, Segment = text, LoyaltyTier = text, VisitCount = Int64.Type, TotalLifetimeRevenue = number],
+				        {
+				            {1, "US", "Leisure", null, 2, 840.02},
+				            {2, "GB", "Corporate", "Gold", 5, 2979.57},
+				            {3, "DE", "Leisure", null, 3, 2967.53},
+				            {4, "FR", "Group", null, 2, 1744.79},
+				            {5, "IL", "Leisure", "Silver", 1, 423.84},
+				            {6, "IL", "Corporate", "Platinum", 4, 2344.51},
+				            {7, "IL", "Loyalty", "Gold", 1, 849.0},
+				            {8, "IT", "Leisure", null, 7, 4034.47},
+				            {9, "ES", "Corporate", "Silver", 5, 5237.72},
+				            {10, "NL", "Leisure", null, 1, 1007.05},
+				            {11, "JP", "Leisure", null, 3, 2875.53},
+				            {12, "AU", "Loyalty", "Gold", 6, 3733.78},
+				            {13, "CA", "Corporate", null, 4, 4663.08},
+				            {14, "BR", "Leisure", null, 6, 2890.61},
+				            {15, "IL", "Leisure", "Bronze", 7, 3341.61},
+				            {16, "US", "Leisure", null, 6, 5297.88},
+				            {17, "GB", "Corporate", "Gold", 1, 983.79},
+				            {18, "DE", "Leisure", null, 2, 2356.99},
+				            {19, "FR", "Group", null, 7, 3241.28},
+				            {20, "IL", "Leisure", "Silver", 5, 5317.62},
+				            {21, "IL", "Corporate", "Platinum", 6, 5171.29},
+				            {22, "IL", "Loyalty", "Gold", 2, 873.32},
+				            {23, "IT", "Leisure", null, 4, 4073.82},
+				            {24, "ES", "Corporate", "Silver", 2, 2168.51},
+				            {25, "NL", "Leisure", null, 2, 1408.2},
+				            {26, "JP", "Leisure", null, 8, 7268.38},
+				            {27, "AU", "Loyalty", "Gold", 6, 3180.74},
+				            {28, "CA", "Corporate", null, 6, 3405.63},
+				            {29, "BR", "Leisure", null, 5, 4807.28},
+				            {30, "IL", "Leisure", "Bronze", 2, 1774.61}
+				        }
+				    )
+				in
+				    Source
+

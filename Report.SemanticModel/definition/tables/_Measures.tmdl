@@ -1,0 +1,269 @@
+table _Measures
+	lineageTag: a5fcdc05-3be2-43ca-b0b8-a6aafd295ccd
+
+	measure 'Total Revenue' = SUM(Fact_Revenue[GrossRevenue])
+		formatString: $#,##0
+		displayFolder: Revenue
+		lineageTag: 848c3e0e-d3dc-4703-9c56-89e02e0800e6
+
+	measure 'Net Revenue' = SUM(Fact_Revenue[NetRevenue])
+		formatString: $#,##0
+		displayFolder: Revenue
+		lineageTag: 22f78bec-7031-4781-b337-8a06bc9e823c
+
+	measure 'Rooms Revenue' = SUM(Fact_Occupancy[RoomsRevenue])
+		formatString: $#,##0
+		displayFolder: Revenue
+		lineageTag: 4df9ef8b-ba28-4a07-87b9-a0b386df9566
+
+	measure 'F&B Revenue' = CALCULATE(SUM(Fact_Revenue[GrossRevenue]), Dim_Outlet[OutletType] = "F&B")
+		formatString: $#,##0
+		displayFolder: Revenue
+		lineageTag: 82a49441-2765-4dc4-b077-3cd096570552
+
+	measure 'Occupied Room Nights' = SUM(Fact_Occupancy[OccupiedRoomNights])
+		formatString: #,##0
+		displayFolder: Occupancy
+		lineageTag: 4ffd8136-d7fe-4f45-8204-83a650e131a8
+
+	measure 'Available Room Nights' = SUM(Fact_Occupancy[AvailableRoomNights])
+		formatString: #,##0
+		displayFolder: Occupancy
+		lineageTag: 98bad321-915f-4e14-a2fd-376fa8306f5d
+
+	measure 'Occupancy %' = DIVIDE([Occupied Room Nights], [Available Room Nights])
+		formatString: 0.0%
+		displayFolder: Occupancy
+		lineageTag: 67390c71-2674-4aff-8acb-806ce2e9e9b4
+
+	measure ADR = DIVIDE(SUM(Fact_Occupancy[RoomsRevenue]), [Occupied Room Nights])
+		formatString: $#,##0.00
+		displayFolder: Revenue
+		lineageTag: 2a5b2920-1ad5-4cfb-a1c3-7830c0107958
+
+	measure RevPAR = DIVIDE(SUM(Fact_Occupancy[RoomsRevenue]), [Available Room Nights])
+		formatString: $#,##0.00
+		displayFolder: Revenue
+		lineageTag: fbe4a04f-b213-40f9-923f-c971750647bf
+
+	measure TRevPAR = DIVIDE([Total Revenue], [Available Room Nights])
+		formatString: $#,##0.00
+		displayFolder: Revenue
+		lineageTag: e3bc8053-4f3a-4f65-8c38-68b5c18eb0aa
+
+	measure 'Net ADR' =
+			VAR NetRoomsRev = CALCULATE(SUM(Fact_Revenue[NetRevenue]), Dim_Outlet[OutletType] = "Rooms")
+			RETURN DIVIDE(NetRoomsRev, [Occupied Room Nights])
+		formatString: $#,##0.00
+		displayFolder: Revenue
+		lineageTag: cbf5adec-dec0-4dea-81d7-4982362bb8fb
+
+	measure 'Total Expenses' = SUM(Fact_Expenses[Amount])
+		formatString: $#,##0
+		displayFolder: Profitability
+		lineageTag: feda262d-0ea0-4ae8-a9eb-b5c5d5989377
+
+	measure 'Gross Profit' = [Total Revenue] - [Total Expenses]
+		formatString: $#,##0
+		displayFolder: Profitability
+		lineageTag: 64633b7a-e400-4d79-abd5-3798cf17b84f
+
+	measure GOP =
+			VAR DeptExpenses = CALCULATE(SUM(Fact_Expenses[Amount]), Dim_Department[USALICategory] IN {"Revenue", "Departmental"})
+			RETURN [Total Revenue] - DeptExpenses
+		formatString: $#,##0
+		displayFolder: Profitability
+		lineageTag: 03dd5eb9-a53e-441f-bb72-1b3a04925cbb
+
+	measure 'GOP Margin %' = DIVIDE([GOP], [Total Revenue])
+		formatString: 0.0%
+		displayFolder: Profitability
+		lineageTag: d4beedec-0de5-4fa3-8f47-beb67c3a37b7
+
+	measure EBITDA =
+			VAR AllExpExDepr = CALCULATE(SUM(Fact_Expenses[Amount]), Dim_Account[ExpenseCategory] <> "Depreciation", Dim_Account[ExpenseCategory] <> "Finance")
+			RETURN [Total Revenue] - AllExpExDepr
+		formatString: $#,##0
+		displayFolder: Profitability
+		lineageTag: 9ee0ed3d-36fa-40bf-a65b-6709d3f7ab9e
+
+	measure 'EBITDA Margin %' = DIVIDE([EBITDA], [Total Revenue])
+		formatString: 0.0%
+		displayFolder: Profitability
+		lineageTag: b62421f5-3fa8-4b6c-b766-cc9679d9e57a
+
+	measure GOPPAR = DIVIDE([GOP], [Available Room Nights])
+		formatString: $#,##0.00
+		displayFolder: Profitability
+		lineageTag: 77b40fb3-4f7a-4b2f-89fa-caa957e88b10
+
+	measure 'Payroll Cost' = CALCULATE(SUM(Fact_Expenses[Amount]), Dim_Account[IsPayroll] = TRUE())
+		formatString: $#,##0
+		displayFolder: Profitability
+		lineageTag: 81fbe4fe-c8fc-4711-be16-11cdf712abeb
+
+	measure 'Payroll %' = DIVIDE([Payroll Cost], [Total Revenue])
+		formatString: 0.0%
+		displayFolder: Profitability
+		lineageTag: 4b68e56a-be9c-4934-9e4c-62578b979bf7
+
+	measure 'Net Profit' = [Total Revenue] - [Total Expenses]
+		formatString: $#,##0
+		displayFolder: Profitability
+		lineageTag: 7f1cd03a-d042-4313-882a-9c191b08b117
+
+	measure 'Net Profit Margin %' = DIVIDE([Net Profit], [Total Revenue])
+		formatString: 0.0%
+		displayFolder: Profitability
+		lineageTag: a900c843-06ed-4a2d-aab0-c1f631a7ad56
+
+	measure 'Budget Revenue' = SUM(Fact_Budget[BudgetRevenue])
+		formatString: $#,##0
+		displayFolder: Budget
+		lineageTag: bab98253-f66d-4720-a34e-2b17b46f619d
+
+	measure 'Budget Expense' = SUM(Fact_Budget[BudgetExpense])
+		formatString: $#,##0
+		displayFolder: Budget
+		lineageTag: 66acdc0a-1f5c-407f-b716-c6500af99162
+
+	measure 'Budget Variance $' = [Total Revenue] - [Budget Revenue]
+		formatString: $#,##0
+		displayFolder: Budget
+		lineageTag: 053131c1-517a-4017-8872-77c254db4936
+
+	measure 'Budget Variance %' = DIVIDE([Budget Variance $], [Budget Revenue])
+		formatString: 0.0%
+		displayFolder: Budget
+		lineageTag: b3b5d3f6-b71f-457f-b5e6-ec00f490af07
+
+	measure 'Budget Occupancy' = AVERAGE(Fact_Budget[BudgetOccupancy])
+		formatString: 0.0%
+		displayFolder: Budget
+		lineageTag: cb6b7ac0-5c4e-43b4-a1d7-b0adc39ef1cd
+
+	measure 'Budget ADR' = AVERAGE(Fact_Budget[BudgetADR])
+		formatString: $#,##0.00
+		displayFolder: Budget
+		lineageTag: f6686419-4bab-49f4-b430-8c8314c886b6
+
+	measure 'Revenue LY' = CALCULATE([Total Revenue], SAMEPERIODLASTYEAR(Dim_Date[Date]))
+		formatString: $#,##0
+		displayFolder: Time Intelligence
+		lineageTag: ef46205e-63a9-44b7-bba1-193e14f5ea51
+
+	measure 'Revenue vs LY %' = DIVIDE([Total Revenue] - [Revenue LY], [Revenue LY])
+		formatString: 0.0%
+		displayFolder: Time Intelligence
+		lineageTag: 194fb1e6-7320-49c5-962f-7ac701adf407
+
+	measure 'RevPAR LY' = CALCULATE([RevPAR], SAMEPERIODLASTYEAR(Dim_Date[Date]))
+		formatString: $#,##0.00
+		displayFolder: Time Intelligence
+		lineageTag: 5bc21dbe-f313-4ec1-9a07-7ad451e6ba3c
+
+	measure 'Occupancy LY' = CALCULATE([Occupancy %], SAMEPERIODLASTYEAR(Dim_Date[Date]))
+		formatString: 0.0%
+		displayFolder: Time Intelligence
+		lineageTag: 06762b40-5c17-4e31-b3be-c2f561a5ebbc
+
+	measure 'ADR LY' = CALCULATE([ADR], SAMEPERIODLASTYEAR(Dim_Date[Date]))
+		formatString: $#,##0.00
+		displayFolder: Time Intelligence
+		lineageTag: 2cddacc3-85e2-4b49-9976-5bde5cd5ca63
+
+	measure 'Total Reservations' = COUNTROWS(Fact_Reservations)
+		formatString: #,##0
+		displayFolder: Bookings
+		lineageTag: 40088b3c-cc72-4758-8a72-2700805b391e
+
+	measure 'Cancellation Rate' =
+			VAR Cancelled = CALCULATE(COUNTROWS(Fact_Reservations), Fact_Reservations[Status] = "Cancelled")
+			RETURN DIVIDE(Cancelled, [Total Reservations])
+		formatString: 0.0%
+		displayFolder: Bookings
+		lineageTag: 805e7b97-935b-4597-96d5-6cdeafe4549e
+
+	measure 'No-Show Rate' =
+			VAR NoShows = CALCULATE(COUNTROWS(Fact_Reservations), Fact_Reservations[Status] = "No-Show")
+			RETURN DIVIDE(NoShows, [Total Reservations])
+		formatString: 0.0%
+		displayFolder: Bookings
+		lineageTag: 530d120e-da86-4a69-8963-0328db487b9e
+
+	measure 'Avg Lead Time' = AVERAGE(Fact_Reservations[LeadTimeDays])
+		formatString: #,##0
+		displayFolder: Bookings
+		lineageTag: 0b77b997-280a-4dfd-af16-c0df4729020f
+
+	measure 'Avg Length of Stay' = AVERAGE(Fact_Reservations[RoomNights])
+		formatString: #,##0.0
+		displayFolder: Bookings
+		lineageTag: e60e00e8-cded-4378-b7b8-b5389ed7e0c0
+
+	measure 'Direct Booking %' =
+			VAR DirectBookings = CALCULATE(COUNTROWS(Fact_Reservations), Dim_Channel[IsDirect] = TRUE())
+			RETURN DIVIDE(DirectBookings, [Total Reservations])
+		formatString: 0.0%
+		displayFolder: Channels
+		lineageTag: a33ede46-a168-458c-ab30-050c23619a19
+
+	measure 'OTA Commission Total' = SUM(Fact_Reservations[Commission])
+		formatString: $#,##0
+		displayFolder: Channels
+		lineageTag: 28bd3f23-7ff1-437b-bc58-f2887c17001e
+
+	measure 'Upsell Revenue' = SUM(Fact_Reservations[UpsellRevenue])
+		formatString: $#,##0
+		displayFolder: Revenue
+		lineageTag: 5f112832-dd5a-4d42-ae09-fef1e6761e64
+
+	measure 'Revenue per Channel' = DIVIDE(SUM(Fact_Reservations[NetRevenue]), DISTINCTCOUNT(Fact_Reservations[ChannelID]))
+		formatString: $#,##0
+		displayFolder: Channels
+		lineageTag: d14236b7-036f-44c1-8cf2-249a7056fef8
+
+	measure 'Expense Variance $' = SUM(Fact_Expenses[Amount]) - SUM(Fact_Expenses[BudgetAmount])
+		formatString: $#,##0
+		displayFolder: Budget
+		lineageTag: 5b2ad251-9684-4a4a-9d01-214d53de97bc
+
+	measure 'Expense Variance %' = DIVIDE([Expense Variance $], SUM(Fact_Expenses[BudgetAmount]))
+		formatString: 0.0%
+		displayFolder: Budget
+		lineageTag: 8fb606e7-6a26-4ec6-9bb8-bcf68aefe637
+
+	measure 'Energy Cost' = CALCULATE(SUM(Fact_Expenses[Amount]), Dim_Account[ExpenseCategory] = "Energy")
+		formatString: $#,##0
+		displayFolder: Profitability
+		lineageTag: ad3a9281-8326-4dc0-89ec-ff15cab158da
+
+	measure 'Energy Cost %' = DIVIDE([Energy Cost], [Total Revenue])
+		formatString: 0.0%
+		displayFolder: Profitability
+		lineageTag: bfc07588-a9af-4745-b877-082ee37d8830
+
+	measure 'Repeat Guest Rate' =
+			VAR RepeatGuests = CALCULATE(DISTINCTCOUNT(Fact_Reservations[GuestID]), FILTER(VALUES(Dim_Guest[GuestID]), CALCULATE(COUNTROWS(Fact_Reservations)) > 1))
+			VAR TotalGuests = DISTINCTCOUNT(Fact_Reservations[GuestID])
+			RETURN DIVIDE(RepeatGuests, TotalGuests)
+		formatString: 0.0%
+		displayFolder: Guest
+		lineageTag: ab3eeec4-a67a-4a88-96b8-c05f8f133a0e
+
+	column _dummy
+		dataType: string
+		lineageTag: 155d3928-631a-45eb-9447-91b11e34f209
+		summarizeBy: none
+		sourceColumn: _dummy
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = #table({"_dummy"}, {})
+				in
+				    Source
+

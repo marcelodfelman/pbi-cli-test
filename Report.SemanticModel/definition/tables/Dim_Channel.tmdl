@@ -1,0 +1,53 @@
+table Dim_Channel
+	lineageTag: 57de66e6-2df3-4f68-a016-445aac3262bb
+
+	column ChannelID
+		dataType: int64
+		formatString: 0
+		lineageTag: 48c6b801-46ec-4e66-a999-7cbe1c4ee87d
+		summarizeBy: none
+		sourceColumn: ChannelID
+
+	column ChannelName
+		dataType: string
+		lineageTag: 8f16a098-edd0-4565-a5b8-e8d90763fbed
+		summarizeBy: none
+		sourceColumn: ChannelName
+
+	column ChannelType
+		dataType: string
+		lineageTag: 75407738-5860-447d-904d-c5765fa07454
+		summarizeBy: none
+		sourceColumn: ChannelType
+
+	column CommissionRate
+		dataType: double
+		formatString: 0.00%
+		lineageTag: ecd5a5e9-30b9-4681-8526-4ccabf61e786
+		summarizeBy: none
+		sourceColumn: CommissionRate
+
+	column IsDirect
+		dataType: boolean
+		lineageTag: 237638b1-32e9-4561-a8a5-7093dc31b639
+		summarizeBy: none
+		sourceColumn: IsDirect
+
+	partition Dim_Channel = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        type table [ChannelID = Int64.Type, ChannelName = text, ChannelType = text, CommissionRate = number, IsDirect = logical],
+				        {
+				            {1, "Direct Website", "Direct", 0.0, true},
+				            {2, "Booking.com", "OTA", 0.15, false},
+				            {3, "Expedia", "OTA", 0.18, false},
+				            {4, "Corporate Direct", "Corporate", 0.05, true},
+				            {5, "GDS (Amadeus/Sabre)", "GDS", 0.10, false},
+				            {6, "Walk-in / Phone", "Direct", 0.0, true}
+				        }
+				    )
+				in
+				    Source
+

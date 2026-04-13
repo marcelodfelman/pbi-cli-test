@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pipx --version)",
+      "Bash(pip install:*)",
+      "Bash(python -m pipx ensurepath)",
+      "Bash(python -m pipx install pbi-cli-tool)",
+      "Bash(export PATH=\"$PATH:/c/Users/marce/.local/bin\")",
+      "Bash(pbi-cli skills:*)",
+      "Bash(pbi --version)",
+      "Bash(python -c \":*)",
+      "Bash(python generate_model.py)",
+      "Bash(pbi report:*)",
+      "Bash(pbi visual:*)",
+      "Bash(python -c ':*)"
+    ]
+  }
+}

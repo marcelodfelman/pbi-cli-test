@@ -1,0 +1,33 @@
+table Dim_Segment
+	lineageTag: c8b6a0a2-3579-434b-a1c1-a5814ce71c0a
+
+	column SegmentID
+		dataType: int64
+		formatString: 0
+		lineageTag: d9e63c1e-3b50-457e-af7a-0cdfcd7b0b57
+		summarizeBy: none
+		sourceColumn: SegmentID
+
+	column SegmentName
+		dataType: string
+		lineageTag: 3e86933c-4c01-41b2-9e96-aba11acea5af
+		summarizeBy: none
+		sourceColumn: SegmentName
+
+	partition Dim_Segment = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        type table [SegmentID = Int64.Type, SegmentName = text],
+				        {
+				            {1, "Leisure"},
+				            {2, "Corporate"},
+				            {3, "Group"},
+				            {4, "Government"},
+				            {5, "Loyalty"}
+				        }
+				    )
+				in
+				    Source
+
