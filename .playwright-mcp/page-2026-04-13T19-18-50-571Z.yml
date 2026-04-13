@@ -1,0 +1,334 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic:
+      - generic [ref=e12]:
+        - generic "Profitability & P&L" [ref=e1506]:
+          - application [ref=e19]:
+            - list [ref=e21]:
+              - listitem [ref=e22]:
+                - button "Show keyboard shortcuts" [ref=e23] [cursor=pointer]
+              - listitem [ref=e24]:
+                - link "Show screen reader tips (opens in new tab)" [ref=e25] [cursor=pointer]:
+                  - /url: https://go.microsoft.com/fwlink/?linkid=852575
+                  - text: Show screen reader tips
+                - img [ref=e27]
+              - listitem [ref=e29]:
+                - button "Skip to main content" [ref=e30] [cursor=pointer]
+            - region "Power BI Report" [ref=e86]:
+              - heading "Power BI Report" [level=2]
+              - generic:
+                - group [ref=e1508]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e1513]:
+                    - generic [ref=e1516]:
+                      - text: 
+                      - heading "Year" [level=3] [ref=e1517]
+                    - combobox "Year" [ref=e1520]:
+                      - generic [ref=e1521]: All
+                      - generic [ref=e1522]: 
+                - group [ref=e1524]:
+                  - generic "Visuals are loading..."
+                  - img "GOP $10M." [ref=e1529]:
+                    - generic [ref=e1531]: $10M
+                    - generic [ref=e1533]: GOP
+                - group [ref=e1535]:
+                  - generic "Visuals are loading..."
+                  - img "GOP Margin % 77.3%." [ref=e1540]:
+                    - generic [ref=e1542]: 77.3%
+                    - generic [ref=e1544]: GOP Margin %
+                - group [ref=e1546]:
+                  - generic "Visuals are loading..."
+                  - img "EBITDA $8M." [ref=e1551]:
+                    - generic [ref=e1553]: $8M
+                    - generic [ref=e1555]: EBITDA
+                - group [ref=e1557]:
+                  - generic "Visuals are loading..."
+                  - img "EBITDA Margin % 64.9%." [ref=e1562]:
+                    - generic [ref=e1564]: 64.9%
+                    - generic [ref=e1566]: EBITDA Margin %
+                - group [ref=e1568]:
+                  - generic "Visuals are loading..."
+                  - img "Payroll % 16.9%." [ref=e1573]:
+                    - generic [ref=e1575]: 16.9%
+                    - generic [ref=e1577]: Payroll %
+                - group [ref=e1579]:
+                  - generic "Visuals are loading..."
+                  - img "Energy Cost % 3.7%." [ref=e1584]:
+                    - generic [ref=e1586]: 3.7%
+                    - generic [ref=e1588]: Energy Cost %
+                - group [ref=e1590]:
+                  - generic "Visuals are loading..."
+                  - img "GOPPAR $68.92." [ref=e1595]:
+                    - generic [ref=e1597]: $68.92
+                    - generic [ref=e1599]: GOPPAR
+                - group [ref=e1601]:
+                  - generic "Visuals are loading..."
+                  - img "Net Profit Margin % 62.0%." [ref=e1606]:
+                    - generic [ref=e1608]: 62.0%
+                    - generic [ref=e1610]: Net Profit Mar…
+                - group "Total Expenses by ExpenseCategory" [ref=e1612]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e1614]:
+                    - generic "Total Expenses by ExpenseCategory" [ref=e1616]:
+                      - heading "Total Expenses by ExpenseCategory" [level=3] [ref=e1619]
+                    - generic [ref=e1621]:
+                      - img [ref=e1622]:
+                        - generic [ref=e1624]:
+                          - list [ref=e1625]:
+                            - listitem "$0M" [ref=e1627]
+                            - listitem "$5M" [ref=e1629]
+                          - generic "ExpenseCategory" [ref=e1630]
+                          - generic "Total Expenses" [ref=e1631]
+                        - img [ref=e1632]:
+                          - generic [ref=e1633]:
+                            - listbox "ExpenseCategory" [ref=e1634]:
+                              - option "Admin" [ref=e1636]
+                              - option "COGS" [ref=e1638]
+                              - option "Depreciation" [ref=e1640]: Depreciat…
+                              - option "Energy" [ref=e1642]
+                              - option "Finance" [ref=e1644]
+                              - option "Maintenance" [ref=e1646]: Maintena…
+                              - option "Marketing" [ref=e1648]
+                              - option "Operations" [ref=e1650]
+                              - option "Payroll" [ref=e1652]
+                              - option "Total" [ref=e1654]
+                            - img [ref=e1655]:
+                              - listbox "Plot area" [ref=e1656]:
+                                - option "ExpenseCategory Admin. Total Expenses $539,768." [ref=e1657]
+                                - option "ExpenseCategory COGS. Total Expenses $466,412." [ref=e1658]
+                                - option "ExpenseCategory Depreciation. Total Expenses $196,107." [ref=e1659]
+                                - option "ExpenseCategory Energy. Total Expenses $476,078." [ref=e1660]
+                                - option "ExpenseCategory Finance. Total Expenses $185,210." [ref=e1661]
+                                - option "ExpenseCategory Maintenance. Total Expenses $204,717." [ref=e1662]
+                                - option "ExpenseCategory Marketing. Total Expenses $357,827." [ref=e1663]
+                                - option "ExpenseCategory Operations. Total Expenses $318,285." [ref=e1664]
+                                - option "ExpenseCategory Payroll. Total Expenses $2,201,155." [ref=e1665]
+                                - option "ExpenseCategory Total. Total Expenses $4,945,559." [ref=e1666]
+                            - img
+                          - listbox "Series labels"
+                      - listbox "Legend" [ref=e1669]:
+                        - option "Increase" [ref=e1670]:
+                          - img [ref=e1671]:
+                            - generic "Increase" [ref=e1672]
+                          - generic "Increase" [ref=e1673]
+                        - option "Decrease" [ref=e1674]:
+                          - img [ref=e1675]:
+                            - generic "Decrease" [ref=e1676]
+                          - generic "Decrease" [ref=e1677]
+                        - option "Total" [ref=e1678]:
+                          - img [ref=e1679]:
+                            - generic "Total" [ref=e1680]
+                          - generic "Total" [ref=e1681]
+                - group "GOP Margin % and EBITDA Margin % by MonthName" [ref=e1683]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e1685]:
+                    - generic "GOP Margin % and EBITDA Margin % by MonthName" [ref=e1687]:
+                      - heading "GOP Margin % and EBITDA Margin % by MonthName" [level=3] [ref=e1690]
+                    - generic [ref=e1692]:
+                      - img [ref=e1693]:
+                        - generic [ref=e1695]:
+                          - list [ref=e1696]:
+                            - listitem "60%" [ref=e1698]
+                            - listitem "80%" [ref=e1700]
+                          - generic "MonthName" [ref=e1701]
+                          - generic "GOP Margin % and EBITDA Margin %" [ref=e1702]: GOP Margin % and EBIT…
+                        - img [ref=e1703]:
+                          - generic [ref=e1704]:
+                            - listbox "MonthName" [ref=e1705]:
+                              - option "April" [ref=e1707]
+                              - option "August" [ref=e1709]
+                              - option "December" [ref=e1711]
+                              - option "February" [ref=e1713]
+                              - option "January" [ref=e1715]
+                              - option "July" [ref=e1717]
+                              - option "June" [ref=e1719]
+                              - option "March" [ref=e1721]
+                              - option "May" [ref=e1723]
+                              - option "November" [ref=e1725]
+                              - option "October" [ref=e1727]
+                              - option "September" [ref=e1729]
+                            - img [ref=e1730]:
+                              - listbox "Forecast area"
+                              - listbox "Plot area" [ref=e1732]:
+                                - option "MonthName April. GOP Margin % 83.2%." [ref=e1737]
+                            - img
+                          - listbox "Series labels"
+                      - region "Legend" [ref=e1738]:
+                        - listbox "Legend" [ref=e1740]:
+                          - option "GOP Margin %" [ref=e1741]:
+                            - img [ref=e1742]:
+                              - generic "GOP Margin %" [ref=e1743]
+                            - generic "GOP Margin %" [ref=e1744]
+                          - option "EBITDA Margin %" [ref=e1745]:
+                            - img [ref=e1746]:
+                              - generic "EBITDA Margin %" [ref=e1747]
+                            - generic "EBITDA Margin %" [ref=e1748]
+                - group [ref=e1750]:
+                  - generic "Visuals are loading..."
+                  - document [ref=e1756]:
+                    - button "Scroll up" [ref=e1757] [cursor=pointer]
+                    - button "Scroll down" [ref=e1758] [cursor=pointer]
+                    - button "Scroll left" [ref=e1759] [cursor=pointer]
+                    - button "Scroll right" [ref=e1760] [cursor=pointer]
+                    - grid [ref=e1761]:
+                      - row "USALILine Total Revenue Total Expenses Budget Revenue Budget Variance %":
+                        - columnheader "USALILine" [ref=e1762]
+                        - columnheader "Total Revenue" [ref=e1763]:
+                          - generic [ref=e1764]: Total Revenue
+                        - columnheader "Total Expenses" [ref=e1765]:
+                          - generic [ref=e1766]: Total Expenses
+                        - columnheader "Budget Revenue" [ref=e1767]:
+                          - generic [ref=e1768]: Budget Revenue
+                        - columnheader "Budget Variance %" [ref=e1769]:
+                          - generic [ref=e1770]: Budget Variance %
+                      - row "Depreciation $13,008,713 $196,107 $13,020,800 -0.1%":
+                        - rowheader "Depreciation" [ref=e1771]
+                        - gridcell "$13,008,713" [ref=e1772]
+                        - gridcell "$196,107" [ref=e1773]
+                        - gridcell "$13,020,800" [ref=e1774]
+                        - gridcell "-0.1%" [ref=e1775]
+                      - row "F&B Expense $13,008,713 $942,569 $13,020,800 -0.1%":
+                        - rowheader "F&B Expense" [ref=e1776]
+                        - gridcell "$13,008,713" [ref=e1777]
+                        - gridcell "$942,569" [ref=e1778]
+                        - gridcell "$13,020,800" [ref=e1779]
+                        - gridcell "-0.1%" [ref=e1780]
+                      - row "F&B Revenue $13,008,713 $13,020,800 -0.1%":
+                        - rowheader "F&B Revenue" [ref=e1781]
+                        - gridcell "$13,008,713" [ref=e1782]
+                        - gridcell [ref=e1783]
+                        - gridcell "$13,020,800" [ref=e1784]
+                        - gridcell "-0.1%" [ref=e1785]
+                      - row "Fixed Charges $13,008,713 $176,710 $13,020,800 -0.1%":
+                        - rowheader "Fixed Charges" [ref=e1786]
+                        - gridcell "$13,008,713" [ref=e1787]
+                        - gridcell "$176,710" [ref=e1788]
+                        - gridcell "$13,020,800" [ref=e1789]
+                        - gridcell "-0.1%" [ref=e1790]
+                      - row "Interest $13,008,713 $185,210 $13,020,800 -0.1%":
+                        - rowheader "Interest" [ref=e1791]
+                        - gridcell "$13,008,713" [ref=e1792]
+                        - gridcell "$185,210" [ref=e1793]
+                        - gridcell "$13,020,800" [ref=e1794]
+                        - gridcell "-0.1%" [ref=e1795]
+                      - row "Management Fees $13,008,713 $219,002 $13,020,800 -0.1%":
+                        - rowheader "Management Fees" [ref=e1796]
+                        - gridcell "$13,008,713" [ref=e1797]
+                        - gridcell "$219,002" [ref=e1798]
+                        - gridcell "$13,020,800" [ref=e1799]
+                        - gridcell "-0.1%" [ref=e1800]
+                      - row "Other Revenue $13,008,713 $13,020,800 -0.1%":
+                        - rowheader "Other Revenue" [ref=e1801]
+                        - gridcell "$13,008,713" [ref=e1802]
+                        - gridcell [ref=e1803]
+                        - gridcell "$13,020,800" [ref=e1804]
+                        - gridcell "-0.1%" [ref=e1805]
+                      - row "Property Operations $13,008,713 $680,795 $13,020,800 -0.1%":
+                        - rowheader "Property Operations" [ref=e1806]
+                        - gridcell "$13,008,713" [ref=e1807]
+                        - gridcell "$680,795" [ref=e1808]
+                        - gridcell "$13,020,800" [ref=e1809]
+                        - gridcell "-0.1%" [ref=e1810]
+                      - row "Rooms Expense $13,008,713 $1,323,736 $13,020,800 -0.1%":
+                        - rowheader "Rooms Expense" [ref=e1811]
+                        - gridcell "$13,008,713" [ref=e1812]
+                        - gridcell "$1,323,736" [ref=e1813]
+                        - gridcell "$13,020,800" [ref=e1814]
+                        - gridcell "-0.1%" [ref=e1815]
+                      - row "Rooms Revenue $13,008,713 $13,020,800 -0.1%":
+                        - rowheader "Rooms Revenue" [ref=e1816]
+                        - gridcell "$13,008,713" [ref=e1817]
+                        - gridcell [ref=e1818]
+                        - gridcell "$13,020,800" [ref=e1819]
+                        - gridcell "-0.1%" [ref=e1820]
+                      - row "Undistributed - A&G $13,008,713 $619,182 $13,020,800 -0.1%":
+                        - rowheader "Undistributed - A&G" [ref=e1821]
+                        - gridcell "$13,008,713" [ref=e1822]
+                        - gridcell "$619,182" [ref=e1823]
+                        - gridcell "$13,020,800" [ref=e1824]
+                        - gridcell "-0.1%" [ref=e1825]
+                      - row "Undistributed - HR $13,008,713 $244,421 $13,020,800 -0.1%":
+                        - rowheader "Undistributed - HR" [ref=e1826]
+                        - gridcell "$13,008,713" [ref=e1827]
+                        - gridcell "$244,421" [ref=e1828]
+                        - gridcell "$13,020,800" [ref=e1829]
+                        - gridcell "-0.1%" [ref=e1830]
+                      - row "Undistributed - S&M $13,008,713 $357,827 $13,020,800 -0.1%":
+                        - rowheader "Undistributed - S&M" [ref=e1831]
+                        - gridcell "$13,008,713" [ref=e1832]
+                        - gridcell "$357,827" [ref=e1833]
+                        - gridcell "$13,020,800" [ref=e1834]
+                        - gridcell "-0.1%" [ref=e1835]
+                      - row "Total $13,008,713 $4,945,559 $13,020,800 -0.1%":
+                        - rowheader "Total" [ref=e1836]
+                        - gridcell "$13,008,713" [ref=e1837]
+                        - gridcell "$4,945,559" [ref=e1838]
+                        - gridcell "$13,020,800" [ref=e1839]
+                        - gridcell "-0.1%" [ref=e1840]
+                - group "GOP by DepartmentName" [ref=e1844]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e1846]:
+                    - generic "GOP by DepartmentName" [ref=e1848]:
+                      - heading "GOP by DepartmentName" [level=3] [ref=e1851]
+                    - img [ref=e1854]:
+                      - generic [ref=e1856]:
+                        - list [ref=e1857]:
+                          - listitem "$0M" [ref=e1859]
+                          - listitem "$10M" [ref=e1861]
+                        - generic "GOP" [ref=e1862]
+                        - generic "DepartmentName" [ref=e1863]
+                      - img [ref=e1864]:
+                        - generic [ref=e1865]:
+                          - listbox "DepartmentName" [ref=e1866]:
+                            - option "Food & Beverage" [ref=e1868]
+                            - option "Housekeeping" [ref=e1870]
+                            - option "Maintenance" [ref=e1872]
+                            - option "Other Revenue" [ref=e1874]
+                            - option "Rooms" [ref=e1876]
+                            - option "Spa & Wellness" [ref=e1878]
+                          - group "Plot area" [ref=e1880]:
+                            - listbox "GOP" [ref=e1881]:
+                              - option "1513895.83" [ref=e1882]
+                              - option "-318285.03" [ref=e1883]
+                              - option "-680795.47" [ref=e1884]
+                              - option "596199.45" [ref=e1885]
+                              - option "8055022.55" [ref=e1886]
+                              - option "895575.81" [ref=e1887]
+                          - img
+                        - listbox "Series labels"
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - button "Zoom Out" [ref=e44] [cursor=pointer]: "-"
+            - button "Zoom In" [ref=e48] [cursor=pointer]: +
+          - button "Zoom level. Click to open the Zoom dialog box" [ref=e49] [cursor=pointer]: 125%
+          - button "Fit to page" [ref=e51] [cursor=pointer]:
+            - generic [ref=e52]: 
+      - generic [ref=e54]:
+        - link "Microsoft Power BI (Opens in new tab)" [ref=e55] [cursor=pointer]:
+          - /url: https://go.microsoft.com/fwlink/?LinkID=722383&clcid=0x409
+          - text: Microsoft Power BI
+        - generic [ref=e57]:
+          - button "Previous Page" [ref=e58] [cursor=pointer]:
+            - generic [ref=e59]: 
+          - generic [ref=e61] [cursor=pointer]:
+            - generic [ref=e62]: "4"
+            - generic [ref=e63]: of
+            - generic [ref=e64]: "4"
+          - button "Next Page" [disabled] [ref=e65]:
+            - generic [ref=e66]: 
+        - generic [ref=e67]:
+          - generic [ref=e70]:
+            - link "Share via Facebook" [ref=e71] [cursor=pointer]:
+              - /url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9%26pageName%3Dprofitability
+            - link "Share via Twitter" [ref=e73] [cursor=pointer]:
+              - /url: https://twitter.com/intent/tweet?text=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9%26pageName%3Dprofitability
+            - link "Share via LinkedIn" [ref=e75] [cursor=pointer]:
+              - /url: https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9%26pageName%3Dprofitability
+            - button "Share" [ref=e77] [cursor=pointer]:
+              - generic [ref=e78]: 
+          - button "Open in full-screen mode" [ref=e79] [cursor=pointer]:
+            - generic [ref=e80]: 
+  - img
+  - alert [ref=e435]: Report Zoomed To 125%
+  - generic [ref=e748]: Page 4 of 4 Next Page Button Pressed Enter or Space
+  - text: 

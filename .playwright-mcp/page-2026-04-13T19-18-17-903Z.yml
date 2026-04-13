@@ -1,0 +1,272 @@
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - generic:
+      - generic [ref=e12]:
+        - generic "Commercial & Revenue" [ref=e749]:
+          - application [ref=e19]:
+            - list [ref=e21]:
+              - listitem [ref=e22]:
+                - button "Show keyboard shortcuts" [ref=e23] [cursor=pointer]
+              - listitem [ref=e24]:
+                - link "Show screen reader tips (opens in new tab)" [ref=e25] [cursor=pointer]:
+                  - /url: https://go.microsoft.com/fwlink/?linkid=852575
+                  - text: Show screen reader tips
+                - img [ref=e27]
+              - listitem [ref=e29]:
+                - button "Skip to main content" [ref=e30] [cursor=pointer]
+            - region "Power BI Report" [ref=e86]:
+              - heading "Power BI Report" [level=2]
+              - generic:
+                - group [ref=e751]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e756]:
+                    - generic [ref=e759]:
+                      - text: 
+                      - heading "Year" [level=3] [ref=e760]
+                    - combobox "Year" [ref=e763]:
+                      - generic [ref=e764]: All
+                      - generic [ref=e765]: 
+                - group [ref=e767]:
+                  - generic "Visuals are loading..."
+                  - img "Occupancy % 80.8%." [ref=e772]:
+                    - generic [ref=e774]: 80.8%
+                    - generic [ref=e776]: Occupancy %
+                - group [ref=e778]:
+                  - generic "Visuals are loading..."
+                  - img "ADR $236.28." [ref=e783]:
+                    - generic [ref=e785]: $236.28
+                    - generic [ref=e787]: ADR
+                - group [ref=e789]:
+                  - generic "Visuals are loading..."
+                  - img "RevPAR $190.94." [ref=e794]:
+                    - generic [ref=e796]: $190.94
+                    - generic [ref=e798]: RevPAR
+                - group [ref=e800]:
+                  - generic "Visuals are loading..."
+                  - img "TRevPAR $89.10." [ref=e805]:
+                    - generic [ref=e807]: $89.10
+                    - generic [ref=e809]: TRevPAR
+                - group [ref=e811]:
+                  - generic "Visuals are loading..."
+                  - img "Cancellation Rate 11.5%." [ref=e816]:
+                    - generic [ref=e818]: 11.5%
+                    - generic [ref=e820]: Cancellation Rate
+                - group [ref=e822]:
+                  - generic "Visuals are loading..."
+                  - img "Direct Booking % 41.5%." [ref=e827]:
+                    - generic [ref=e829]: 41.5%
+                    - generic [ref=e831]: Direct Booking %
+                - group [ref=e833]:
+                  - generic "Visuals are loading..."
+                  - img "Avg Length of Stay 3.0." [ref=e838]:
+                    - generic [ref=e840]: "3.0"
+                    - generic [ref=e842]: Avg Length of St…
+                - group [ref=e844]:
+                  - generic "Visuals are loading..."
+                  - img "Avg Lead Time 46." [ref=e849]:
+                    - generic [ref=e851]: "46"
+                    - generic [ref=e853]: Avg Lead Time
+                - group "Rooms Revenue by MonthName" [ref=e855]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e857]:
+                    - generic "Rooms Revenue by MonthName" [ref=e859]:
+                      - heading "Rooms Revenue by MonthName" [level=3] [ref=e862]
+                    - img [ref=e865]:
+                      - generic [ref=e867]:
+                        - list [ref=e868]:
+                          - listitem "$2M" [ref=e870]
+                          - listitem "$4M" [ref=e872]
+                        - generic "MonthName" [ref=e873]
+                        - generic "Rooms Revenue" [ref=e874]
+                      - img [ref=e875]:
+                        - generic [ref=e876]:
+                          - listbox "MonthName" [ref=e877]:
+                            - option "April" [ref=e879]
+                            - option "August" [ref=e881]
+                            - option "December" [ref=e883]
+                            - option "February" [ref=e885]
+                            - option "January" [ref=e887]
+                            - option "July" [ref=e889]
+                            - option "June" [ref=e891]
+                            - option "March" [ref=e893]
+                            - option "May" [ref=e895]
+                            - option "November" [ref=e897]
+                            - option "October" [ref=e899]
+                            - option "September" [ref=e901]
+                          - img [ref=e902]:
+                            - listbox "Forecast area"
+                            - listbox "Plot area" [ref=e904]:
+                              - option "MonthName April. Rooms Revenue $2,229,043." [ref=e907]
+                          - img
+                        - listbox "Series labels"
+                - group "Total Revenue by SegmentName" [ref=e909]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e911]:
+                    - generic "Total Revenue by SegmentName" [ref=e913]:
+                      - heading "Total Revenue by SegmentName" [level=3] [ref=e916]
+                    - generic [ref=e918]:
+                      - img [ref=e919]:
+                        - listbox "Plot area" [ref=e921]:
+                          - generic [ref=e922]:
+                            - option "SegmentName Corporate. Total Revenue $13,008,713 (20%)." [ref=e923]
+                            - option "SegmentName Government. Total Revenue $13,008,713 (20%)." [ref=e924]
+                            - option "SegmentName Group. Total Revenue $13,008,713 (20%)." [ref=e925]
+                            - option "SegmentName Leisure. Total Revenue $13,008,713 (20%)." [ref=e926]
+                            - option "SegmentName Loyalty. Total Revenue $13,008,713 (20%)." [ref=e927]
+                        - generic [ref=e928]:
+                          - generic "$13M (20%)" [ref=e930]
+                          - generic "$13M (20%)" [ref=e931]: (20%)
+                          - generic "$13M (20%)" [ref=e932]
+                          - generic "$13M (20%)" [ref=e933]: (20%)
+                          - generic "$13M (20%)" [ref=e934]
+                          - generic "$13M (20%)" [ref=e935]: $13M
+                          - generic "$13M (20%)" [ref=e936]: $13M
+                      - region "Legend SegmentName" [ref=e937]:
+                        - generic "SegmentName" [ref=e938]
+                        - listbox "SegmentName" [ref=e940]:
+                          - option "Corporate" [ref=e941]:
+                            - img [ref=e942]:
+                              - generic "Corporate" [ref=e943]
+                            - generic "Corporate" [ref=e944]
+                          - option "Government" [ref=e945]:
+                            - img [ref=e946]:
+                              - generic "Government" [ref=e947]
+                            - generic "Government" [ref=e948]
+                          - option "Group" [ref=e949]:
+                            - img [ref=e950]:
+                              - generic "Group" [ref=e951]
+                            - generic "Group" [ref=e952]
+                          - option "Leisure" [ref=e953]:
+                            - img [ref=e954]:
+                              - generic "Leisure" [ref=e955]
+                            - generic "Leisure" [ref=e956]
+                          - option "Loyalty" [ref=e957]:
+                            - img [ref=e958]:
+                              - generic "Loyalty" [ref=e959]
+                            - generic "Loyalty" [ref=e960]
+                - group "Net Revenue by ChannelName" [ref=e962]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e964]:
+                    - generic "Net Revenue by ChannelName" [ref=e966]:
+                      - heading "Net Revenue by ChannelName" [level=3] [ref=e969]
+                    - img [ref=e972]:
+                      - generic [ref=e974]:
+                        - list [ref=e975]:
+                          - listitem "$0M" [ref=e977]
+                          - listitem "$10M" [ref=e979]
+                        - generic "Net Revenue" [ref=e980]
+                        - generic "ChannelName" [ref=e981]
+                      - img [ref=e982]:
+                        - generic [ref=e983]:
+                          - listbox "ChannelName" [ref=e984]:
+                            - option "Booking.com" [ref=e986]
+                            - option "Corporate Direct" [ref=e988]
+                            - option "Direct Website" [ref=e990]
+                            - option "Expedia" [ref=e992]
+                            - option "GDS (Amadeus/Sabre)" [ref=e994]: GDS (Amadeus…
+                            - option "Walk-in / Phone" [ref=e996]
+                          - group "Plot area" [ref=e998]:
+                            - listbox "Net Revenue" [ref=e999]:
+                              - option "10797232.08" [ref=e1000]
+                              - option "10797232.08" [ref=e1001]
+                              - option "10797232.08" [ref=e1002]
+                              - option "10797232.08" [ref=e1003]
+                              - option "10797232.08" [ref=e1004]
+                              - option "10797232.08" [ref=e1005]
+                          - img
+                        - listbox "Series labels"
+                - group "Cancellation Rate by MonthName" [ref=e1007]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e1009]:
+                    - generic "Cancellation Rate by MonthName" [ref=e1011]:
+                      - heading "Cancellation Rate by MonthName" [level=3] [ref=e1014]
+                    - img [ref=e1017]:
+                      - generic [ref=e1019]:
+                        - list [ref=e1020]:
+                          - listitem "10%" [ref=e1022]
+                          - listitem "20%" [ref=e1024]
+                        - generic "MonthName" [ref=e1025]
+                        - generic "Cancellation Rate" [ref=e1026]
+                      - img [ref=e1027]:
+                        - generic [ref=e1028]:
+                          - listbox "MonthName" [ref=e1029]:
+                            - option "April" [ref=e1031]
+                            - option "August" [ref=e1033]
+                            - option "December" [ref=e1035]
+                            - option "February" [ref=e1037]
+                            - option "January" [ref=e1039]
+                            - option "July" [ref=e1041]
+                            - option "June" [ref=e1043]
+                            - option "March" [ref=e1045]
+                            - option "November" [ref=e1047]
+                            - option "October" [ref=e1049]
+                            - option "September" [ref=e1051]
+                          - img [ref=e1052]:
+                            - listbox "Forecast area"
+                            - listbox "Plot area" [ref=e1054]:
+                              - option "MonthName April. Cancellation Rate 7.7%." [ref=e1057]
+                          - img
+                        - listbox "Series labels"
+                - group "Occupancy % and ADR" [ref=e1059]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e1061]:
+                    - generic "Occupancy % and ADR" [ref=e1063]:
+                      - heading "Occupancy % and ADR" [level=3] [ref=e1066]
+                    - img [ref=e1069]:
+                      - generic [ref=e1071]:
+                        - list [ref=e1072]:
+                          - listitem "$200" [ref=e1074]
+                          - listitem "$250" [ref=e1076]
+                          - listitem "$300" [ref=e1078]
+                        - generic "Occupancy %" [ref=e1079]
+                        - generic "ADR" [ref=e1080]
+                      - img [ref=e1081]:
+                        - generic [ref=e1082]:
+                          - generic [ref=e1083]:
+                            - generic "60%" [ref=e1085]
+                            - generic "70%" [ref=e1087]
+                            - generic "80%" [ref=e1089]
+                            - generic "90%" [ref=e1091]
+                            - generic "100%" [ref=e1093]
+                          - listbox "Plot area" [ref=e1095]:
+                            - group [ref=e1096]:
+                              - option "(0.8081232876712329, 236.2754106419406)" [ref=e1097]
+                          - img
+                        - listbox "Series labels"
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - button "Zoom Out" [ref=e44] [cursor=pointer]: "-"
+            - button "Zoom In" [ref=e48] [cursor=pointer]: +
+          - button "Zoom level. Click to open the Zoom dialog box" [ref=e49] [cursor=pointer]: 125%
+          - button "Fit to page" [ref=e51] [cursor=pointer]:
+            - generic [ref=e52]: 
+      - generic [ref=e54]:
+        - link "Microsoft Power BI (Opens in new tab)" [ref=e55] [cursor=pointer]:
+          - /url: https://go.microsoft.com/fwlink/?LinkID=722383&clcid=0x409
+          - text: Microsoft Power BI
+        - generic [ref=e57]:
+          - button "Previous Page" [ref=e58] [cursor=pointer]:
+            - generic [ref=e59]: 
+          - generic [ref=e61] [cursor=pointer]:
+            - generic [ref=e62]: "2"
+            - generic [ref=e63]: of
+            - generic [ref=e64]: "4"
+          - button "Next Page" [active] [ref=e65] [cursor=pointer]:
+            - generic [ref=e66]: 
+        - generic [ref=e67]:
+          - generic [ref=e70]:
+            - link "Share via Facebook" [ref=e71] [cursor=pointer]:
+              - /url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9%26pageName%3Dcommercial
+            - link "Share via Twitter" [ref=e73] [cursor=pointer]:
+              - /url: https://twitter.com/intent/tweet?text=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9%26pageName%3Dcommercial
+            - link "Share via LinkedIn" [ref=e75] [cursor=pointer]:
+              - /url: https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9%26pageName%3Dcommercial
+            - button "Share" [ref=e77] [cursor=pointer]:
+              - generic [ref=e78]: 
+          - button "Open in full-screen mode" [ref=e79] [cursor=pointer]:
+            - generic [ref=e80]: 
+  - tooltip "Next Page" [ref=e1101]
+  - img
+  - alert [ref=e435]: Report Zoomed To 125%
+  - generic [ref=e748]: Page 2 of 4 Next Page Button Pressed Enter or Space
+  - text: 

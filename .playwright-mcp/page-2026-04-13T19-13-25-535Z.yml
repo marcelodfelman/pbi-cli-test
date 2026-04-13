@@ -1,0 +1,142 @@
+- generic [ref=e1]:
+  - generic [ref=e8]:
+    - generic [ref=e26]:
+      - application [ref=e33]:
+        - list [ref=e35]:
+          - listitem [ref=e36]:
+            - button [ref=e767] [cursor=pointer]: Show keyboard shortcuts
+          - listitem [ref=e38]:
+            - link [ref=e768] [cursor=pointer]:
+              - /url: https://go.microsoft.com/fwlink/?linkid=852575
+              - text: Show screen reader tips
+            - img [ref=e41]
+          - listitem [ref=e43]:
+            - button [ref=e769] [cursor=pointer]: Skip to main content
+        - region [ref=e770]:
+          - group [ref=e626]:
+            - generic [ref=e631]:
+              - generic [ref=e634]:
+                - text: 
+                - heading [level=3] [ref=e771]: Year
+              - combobox [ref=e772]:
+                - generic [ref=e639]: All
+                - generic [ref=e640]: 
+          - group [ref=e642]:
+            - generic [ref=e647]:
+              - generic [ref=e650]:
+                - text: 
+                - heading [level=3] [ref=e773]: MonthName
+              - combobox [ref=e774]:
+                - generic [ref=e655]: All
+                - generic [ref=e656]: 
+          - group [ref=e658]:
+            - img [ref=e775]:
+              - generic [ref=e665]: (Blank)
+              - generic [ref=e667]: Total Revenue
+          - group [ref=e669]:
+            - img [ref=e776]:
+              - generic [ref=e676]: (Blank)
+              - generic [ref=e678]: Net Revenue
+          - group [ref=e680]:
+            - img [ref=e777]:
+              - generic [ref=e687]: (Blank)
+              - generic [ref=e689]: GOP
+          - group [ref=e691]:
+            - img [ref=e778]:
+              - generic [ref=e698]: (Blank)
+              - generic [ref=e700]: Occupancy %
+          - group [ref=e702]:
+            - img [ref=e779]:
+              - generic [ref=e709]: (Blank)
+              - generic [ref=e711]: ADR
+          - group [ref=e713]:
+            - img [ref=e780]:
+              - generic [ref=e720]: (Blank)
+              - generic [ref=e722]: RevPAR
+          - group [ref=e781]:
+            - toolbar [ref=e782]:
+              - text: 
+              - generic [ref=e783]:
+                - text: 
+                - button [ref=e787] [cursor=pointer]:
+                  - generic [ref=e788]: 
+                - button [ref=e792] [cursor=pointer]:
+                  - generic [ref=e793]: 
+            - generic [ref=e726]:
+              - heading [level=3] [ref=e797]: Total Expenses by MonthName
+              - generic [ref=e733]:
+                - generic [ref=e735]: 
+                - generic [ref=e736]:
+                  - alert [ref=e737]: Error fetching data for this visual
+                  - link [ref=e798] [cursor=pointer]:
+                    - /url: ""
+                    - text: See details
+          - group [ref=e799]:
+            - generic [ref=e742]:
+              - heading [level=3] [ref=e801]: Total Revenue by MonthName
+              - generic [ref=e749]:
+                - generic [ref=e751]: 
+                - generic [ref=e752]:
+                  - alert [ref=e753]: Error fetching data for this visual
+                  - link [ref=e802] [cursor=pointer]:
+                    - /url: ""
+                    - text: See details
+          - group [ref=e803]:
+            - generic [ref=e760]:
+              - generic [ref=e762]: 
+              - generic [ref=e763]:
+                - alert [ref=e764]: Error fetching data for this visual
+                - link [ref=e804] [cursor=pointer]:
+                  - /url: ""
+                  - text: See details
+      - generic [ref=e221]:
+        - generic [ref=e222]:
+          - button [ref=e805] [cursor=pointer]: "-"
+          - button [ref=e806] [cursor=pointer]: +
+        - button [ref=e807] [cursor=pointer]: 125%
+        - button [ref=e808] [cursor=pointer]:
+          - generic [ref=e231]: 
+    - generic [ref=e13]:
+      - link [ref=e809] [cursor=pointer]:
+        - /url: https://go.microsoft.com/fwlink/?LinkID=722383&clcid=0x409
+        - text: Microsoft Power BI
+      - generic [ref=e233]:
+        - button [disabled] [ref=e810]:
+          - generic [ref=e235]: 
+        - generic [ref=e237] [cursor=pointer]:
+          - generic [ref=e238]: "1"
+          - generic [ref=e239]: of
+          - generic [ref=e240]: "4"
+        - button [ref=e811] [cursor=pointer]:
+          - generic [ref=e242]: 
+      - generic [ref=e15]:
+        - generic [ref=e245]:
+          - link [ref=e812] [cursor=pointer]:
+            - /url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9
+          - link [ref=e813] [cursor=pointer]:
+            - /url: https://twitter.com/intent/tweet?text=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9
+          - link [ref=e814] [cursor=pointer]:
+            - /url: https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9
+          - button [ref=e815] [cursor=pointer]:
+            - generic [ref=e253]: 
+        - button [ref=e816] [cursor=pointer]:
+          - generic [ref=e20]: 
+  - dialog "Error fetching data for this visual" [ref=e820]:
+    - generic [ref=e823]:
+      - banner [ref=e824]:
+        - heading "Error fetching data for this visual" [level=4] [ref=e825]
+        - button "Close" [active] [ref=e826] [cursor=pointer]: 
+      - generic [ref=e827]:
+        - text: The expression referenced a relationship between '<oii>Fact_Expenses</oii>'[<oii>DateID</oii>] and '<oii>Dim_Date</oii>'[<oii>DateID</oii>], which does not hold any data because it needs to be recalculated.
+        - generic [ref=e829]:
+          - generic [ref=e830]: Please check the technical details for more information. If you contact support, please provide these details.
+          - button "See details " [ref=e831] [cursor=pointer]:
+            - text: See details
+            - generic [ref=e832]: 
+      - generic [ref=e833]:
+        - link "Contact support" [ref=e834] [cursor=pointer]:
+          - /url: https://support.powerbi.com
+        - button "Close" [ref=e836] [cursor=pointer]
+  - alert [ref=e256]: Report Zoomed To 125%
+  - generic [ref=e257]: Page 1 of 4 Previous Page Button Pressed Enter or Space
+  - text:  

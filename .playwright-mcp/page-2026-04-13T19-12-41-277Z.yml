@@ -1,0 +1,178 @@
+- generic [ref=e1]:
+  - generic [ref=e8]:
+    - generic:
+      - generic [ref=e26]:
+        - generic "Commercial & Revenue" [ref=e417]:
+          - application [ref=e33]:
+            - list [ref=e35]:
+              - listitem [ref=e36]:
+                - button "Show keyboard shortcuts" [ref=e37] [cursor=pointer]
+              - listitem [ref=e38]:
+                - link "Show screen reader tips (opens in new tab)" [ref=e39] [cursor=pointer]:
+                  - /url: https://go.microsoft.com/fwlink/?linkid=852575
+                  - text: Show screen reader tips
+                - img [ref=e41]
+              - listitem [ref=e43]:
+                - button "Skip to main content" [ref=e44] [cursor=pointer]
+            - region "Power BI Report" [ref=e52]:
+              - heading "Power BI Report" [level=2]
+              - generic:
+                - group [ref=e419]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e424]:
+                    - generic [ref=e427]:
+                      - text: 
+                      - heading "Year" [level=3] [ref=e428]
+                    - combobox "Year" [ref=e431]:
+                      - generic [ref=e432]: All
+                      - generic [ref=e433]: 
+                - group [ref=e435]:
+                  - generic "Visuals are loading..."
+                  - img "Occupancy % (Blank)." [ref=e440]:
+                    - generic [ref=e442]: (Blank)
+                    - generic [ref=e444]: Occupancy %
+                - group [ref=e446]:
+                  - generic "Visuals are loading..."
+                  - img "ADR (Blank)." [ref=e451]:
+                    - generic [ref=e453]: (Blank)
+                    - generic [ref=e455]: ADR
+                - group [ref=e457]:
+                  - generic "Visuals are loading..."
+                  - img "RevPAR (Blank)." [ref=e462]:
+                    - generic [ref=e464]: (Blank)
+                    - generic [ref=e466]: RevPAR
+                - group [ref=e468]:
+                  - generic "Visuals are loading..."
+                  - img "TRevPAR (Blank)." [ref=e473]:
+                    - generic [ref=e475]: (Blank)
+                    - generic [ref=e477]: TRevPAR
+                - group [ref=e479]:
+                  - generic "Visuals are loading..."
+                  - img "Cancellation Rate (Blank)." [ref=e484]:
+                    - generic [ref=e486]: (Blank)
+                    - generic [ref=e488]: Cancellation Rate
+                - 'group ". Visual error: Error fetching data for this visual" [ref=e490]':
+                  - generic "Visuals are loading..."
+                  - generic [ref=e494]:
+                    - generic [ref=e496]: 
+                    - link "See details" [ref=e498] [cursor=pointer]:
+                      - /url: ""
+                - group [ref=e500]:
+                  - generic "Visuals are loading..."
+                  - img "Avg Length of Stay (Blank)." [ref=e505]:
+                    - generic [ref=e507]: (Blank)
+                    - generic [ref=e509]: Avg Length of St…
+                - group [ref=e511]:
+                  - generic "Visuals are loading..."
+                  - img "Avg Lead Time (Blank)." [ref=e516]:
+                    - generic [ref=e518]: (Blank)
+                    - generic [ref=e520]: Avg Lead Time
+                - group "Rooms Revenue by MonthName" [ref=e522]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e524]:
+                    - generic "Rooms Revenue by MonthName" [ref=e526]:
+                      - heading "Rooms Revenue by MonthName" [level=3] [ref=e529]
+                    - img [ref=e532]:
+                      - generic "Rooms Revenue" [ref=e535]
+                      - img [ref=e536]:
+                        - generic [ref=e537]:
+                          - img [ref=e538]:
+                            - listbox "Forecast area"
+                            - listbox "Plot area"
+                          - img
+                        - listbox "Series labels"
+                - group "Total Revenue by SegmentName" [ref=e541]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e543]:
+                    - generic "Total Revenue by SegmentName" [ref=e545]:
+                      - heading "Total Revenue by SegmentName" [level=3] [ref=e548]
+                    - img [ref=e551]:
+                      - listbox "Plot area"
+                - group "Net Revenue by ChannelName" [ref=e554]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e556]:
+                    - generic "Net Revenue by ChannelName" [ref=e558]:
+                      - heading "Net Revenue by ChannelName" [level=3] [ref=e561]
+                    - img [ref=e564]:
+                      - generic "ChannelName" [ref=e567]
+                      - img:
+                        - generic:
+                          - generic:
+                            - group "Plot area"
+                          - img
+                        - listbox "Series labels"
+                - 'group "Cancellation Rate by MonthName . Visual error: Error fetching data for this visual" [ref=e569]':
+                  - generic "Visuals are loading..."
+                  - generic [ref=e571]:
+                    - generic "Cancellation Rate by MonthName" [ref=e573]:
+                      - heading "Cancellation Rate by MonthName" [level=3] [ref=e576]
+                    - generic [ref=e578]:
+                      - generic [ref=e580]: 
+                      - generic [ref=e581]:
+                        - alert [ref=e582]: Error fetching data for this visual
+                        - link "See details" [ref=e583] [cursor=pointer]:
+                          - /url: ""
+                - group "Occupancy % and ADR" [ref=e585]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e587]:
+                    - generic "Occupancy % and ADR" [ref=e589]:
+                      - heading "Occupancy % and ADR" [level=3] [ref=e592]
+                    - img [ref=e595]:
+                      - generic [ref=e597]:
+                        - list [ref=e598]:
+                          - listitem "-$1.0" [ref=e600]
+                          - listitem "-$0.5" [ref=e602]
+                          - listitem "$0.0" [ref=e604]
+                          - listitem "$0.5" [ref=e606]
+                          - listitem "$1.0" [ref=e608]
+                        - generic "Occupancy %" [ref=e609]
+                        - generic "ADR" [ref=e610]
+                      - img [ref=e611]:
+                        - generic [ref=e612]:
+                          - generic [ref=e613]:
+                            - generic "-100%" [ref=e615]
+                            - generic "-50%" [ref=e617]
+                            - generic "0%" [ref=e619]
+                            - generic "50%" [ref=e621]
+                            - generic "100%" [ref=e623]
+                          - generic:
+                            - listbox "Plot area":
+                              - group
+                          - img
+                        - listbox "Series labels"
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - button "Zoom Out" [ref=e223] [cursor=pointer]: "-"
+            - button "Zoom In" [ref=e227] [cursor=pointer]: +
+          - button "Zoom level. Click to open the Zoom dialog box" [ref=e228] [cursor=pointer]: 125%
+          - button "Fit to page" [ref=e230] [cursor=pointer]:
+            - generic [ref=e231]: 
+      - generic [ref=e13]:
+        - link "Microsoft Power BI (Opens in new tab)" [ref=e14] [cursor=pointer]:
+          - /url: https://go.microsoft.com/fwlink/?LinkID=722383&clcid=0x409
+          - text: Microsoft Power BI
+        - generic [ref=e233]:
+          - button "Previous Page" [active] [ref=e234] [cursor=pointer]:
+            - generic [ref=e235]: 
+          - generic [ref=e237] [cursor=pointer]:
+            - generic [ref=e238]: "2"
+            - generic [ref=e239]: of
+            - generic [ref=e240]: "4"
+          - button "Next Page" [ref=e241] [cursor=pointer]:
+            - generic [ref=e242]: 
+        - generic [ref=e15]:
+          - generic [ref=e245]:
+            - link "Share via Facebook" [ref=e246] [cursor=pointer]:
+              - /url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9%26pageName%3Dcommercial
+            - link "Share via Twitter" [ref=e248] [cursor=pointer]:
+              - /url: https://twitter.com/intent/tweet?text=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9%26pageName%3Dcommercial
+            - link "Share via LinkedIn" [ref=e250] [cursor=pointer]:
+              - /url: https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9%26pageName%3Dcommercial
+            - button "Share" [ref=e252] [cursor=pointer]:
+              - generic [ref=e253]: 
+          - button "Open in full-screen mode" [ref=e19] [cursor=pointer]:
+            - generic [ref=e20]: 
+  - img
+  - alert [ref=e256]: Report Zoomed To 125%
+  - generic [ref=e257]: Page 2 of 4 Previous Page Button Pressed Enter or Space
+  - text: 
