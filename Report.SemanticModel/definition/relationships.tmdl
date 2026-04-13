@@ -58,3 +58,11 @@ relationship b2806326-a1e2-4cba-a729-8eba9c39bff0
 	fromColumn: Fact_Budget.PropertyID
 	toColumn: Dim_Property.PropertyID
 
+relationship occ_date
+	fromColumn: Fact_Occupancy.DateID
+	toColumn: Dim_Date.DateID
+
+relationship occ_property
+	fromColumn: Fact_Occupancy.PropertyID
+	toColumn: Dim_Property.PropertyID
+
