@@ -73,51 +73,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e675ce1cfa27a8477fc1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Occupancy %"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "fca9bff275dea9b43f20",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "ADR"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f4fa082b7c1c56b17ef0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Date"
-              }
-            },
-            "Property": "MonthName"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

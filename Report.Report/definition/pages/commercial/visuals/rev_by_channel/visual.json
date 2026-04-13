@@ -42,11 +42,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Net Revenue"
+                  "Property": "Reservation Net Revenue"
                 }
               },
-              "queryRef": "_Measures.Net Revenue",
-              "nativeQueryRef": "Net Revenue"
+              "queryRef": "_Measures.Reservation Net Revenue",
+              "nativeQueryRef": "Reservation Net Revenue"
             }
           ]
         }

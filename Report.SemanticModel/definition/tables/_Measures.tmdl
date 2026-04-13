@@ -179,7 +179,8 @@ table _Measures
 
 	measure 'Cancellation Rate' =
 			VAR Cancelled = CALCULATE(COUNTROWS(Fact_Reservations), Fact_Reservations[Status] = "Cancelled")
-			RETURN DIVIDE(Cancelled, [Total Reservations])
+			VAR Total = [Total Reservations]
+			RETURN IF(Total > 0, DIVIDE(Cancelled, Total), BLANK())
 		formatString: 0.0%
 		displayFolder: Bookings
 		lineageTag: 805e7b97-935b-4597-96d5-6cdeafe4549e
@@ -250,6 +251,16 @@ table _Measures
 		formatString: 0.0%
 		displayFolder: Guest
 		lineageTag: ab3eeec4-a67a-4a88-96b8-c05f8f133a0e
+
+	measure 'Reservation Net Revenue' = SUM(Fact_Reservations[NetRevenue])
+		formatString: $#,##0
+		displayFolder: Channels
+		lineageTag: c1a40001-0001-4001-8001-000000000001
+
+	measure 'Reservation Gross Revenue' = SUM(Fact_Reservations[GrossRevenue])
+		formatString: $#,##0
+		displayFolder: Channels
+		lineageTag: c1a40001-0002-4001-8001-000000000002
 
 	column _dummy
 		dataType: string

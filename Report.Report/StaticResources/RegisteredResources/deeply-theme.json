@@ -1,0 +1,119 @@
+{
+  "name": "Deeply Hospitality",
+  "dataColors": [
+    "#0A1628",
+    "#1A4A8A",
+    "#4DB2EC",
+    "#6FB98F",
+    "#F4A261",
+    "#E76F51",
+    "#8D99AE",
+    "#2A9D8F",
+    "#264653",
+    "#E9C46A"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#0A1628",
+  "tableAccent": "#1A4A8A",
+  "good": "#2A9D8F",
+  "neutral": "#8D99AE",
+  "bad": "#E76F51",
+  "maximum": "#0A1628",
+  "center": "#4DB2EC",
+  "minimum": "#E9C46A",
+  "null": "#EEEEEE",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI",
+      "fontSize": 45,
+      "color": "#0A1628"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 14,
+      "color": "#0A1628"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#0A1628"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#0A1628"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "*": [
+          {
+            "fontFamily": "Segoe UI"
+          }
+        ],
+        "title": [
+          {
+            "fontFamily": "Segoe UI Semibold",
+            "fontSize": 14,
+            "fontColor": { "solid": { "color": "#0A1628" } },
+            "alignment": "left",
+            "show": true
+          }
+        ],
+        "background": [
+          {
+            "color": { "solid": { "color": "#FFFFFF" } },
+            "transparency": 0,
+            "show": true
+          }
+        ],
+        "border": [
+          {
+            "color": { "solid": { "color": "#E5E7EB" } },
+            "radius": 4,
+            "show": true
+          }
+        ],
+        "visualHeader": [
+          {
+            "show": false
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#F6F8FB" } },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": { "solid": { "color": "#F6F8FB" } }
+          }
+        ]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [
+          {
+            "fontFamily": "Segoe UI Bold",
+            "fontSize": 28,
+            "color": { "solid": { "color": "#0A1628" } }
+          }
+        ],
+        "categoryLabels": [
+          {
+            "fontFamily": "Segoe UI",
+            "fontSize": 10,
+            "color": { "solid": { "color": "#8D99AE" } }
+          }
+        ]
+      }
+    }
+  }
+}
