@@ -1,0 +1,357 @@
+- generic [ref=e1]:
+  - generic [ref=e8]:
+    - generic:
+      - generic [ref=e26]:
+        - generic "Finance & Cash" [ref=e1229]:
+          - application [ref=e33]:
+            - list [ref=e35]:
+              - listitem [ref=e36]:
+                - button "Show keyboard shortcuts" [ref=e37] [cursor=pointer]
+              - listitem [ref=e38]:
+                - link "Show screen reader tips (opens in new tab)" [ref=e39] [cursor=pointer]:
+                  - /url: https://go.microsoft.com/fwlink/?linkid=852575
+                  - text: Show screen reader tips
+                - img [ref=e41]
+              - listitem [ref=e43]:
+                - button "Skip to main content" [ref=e44] [cursor=pointer]
+            - region "Power BI Report" [ref=e52]:
+              - heading "Power BI Report" [level=2]
+              - generic:
+                - group [ref=e1231]:
+                  - generic "Visuals are loading..."
+                  - document [ref=e1236]:
+                    - paragraph [ref=e1238]: The Grand Azure — Finance & Cash
+                - group [ref=e1240]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e1245]:
+                    - generic [ref=e1248]:
+                      - text: 
+                      - heading "Year" [level=3] [ref=e1249]
+                    - combobox "Year" [ref=e1252]:
+                      - generic [ref=e1253]: All
+                      - generic [ref=e1254]: 
+                - group [ref=e1256]:
+                  - generic "Visuals are loading..."
+                  - img "Total Revenue $13M." [ref=e1261]:
+                    - generic [ref=e1263]: $13M
+                    - generic [ref=e1265]: Total Revenue
+                - group [ref=e1267]:
+                  - generic "Visuals are loading..."
+                  - img "Total Expenses $5M." [ref=e1272]:
+                    - generic [ref=e1274]: $5M
+                    - generic [ref=e1276]: Total Expenses
+                - group [ref=e1278]:
+                  - generic "Visuals are loading..."
+                  - img "Net Profit $8M." [ref=e1283]:
+                    - generic [ref=e1285]: $8M
+                    - generic [ref=e1287]: Net Profit
+                - group [ref=e1289]:
+                  - generic "Visuals are loading..."
+                  - img "Budget Variance $ -$12K." [ref=e1294]:
+                    - generic [ref=e1296]: "-$12K"
+                    - generic [ref=e1298]: Budget Variance $
+                - group [ref=e1300]:
+                  - generic "Visuals are loading..."
+                  - img "Budget Variance % -0.1%." [ref=e1305]:
+                    - generic [ref=e1307]: "-0.1%"
+                    - generic [ref=e1309]: Budget Variance %
+                - group [ref=e1311]:
+                  - generic "Visuals are loading..."
+                  - img "Expense Variance $ $23K." [ref=e1316]:
+                    - generic [ref=e1318]: $23K
+                    - generic [ref=e1320]: Expense Variance $
+                - group "Net Profit by MonthName" [ref=e1322]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e1324]:
+                    - generic "Net Profit by MonthName" [ref=e1326]:
+                      - heading "Net Profit by MonthName" [level=3] [ref=e1329]
+                    - generic [ref=e1331]:
+                      - img [ref=e1332]:
+                        - generic [ref=e1334]:
+                          - list [ref=e1335]:
+                            - listitem "$0M" [ref=e1337]
+                            - listitem "$5M" [ref=e1339]
+                            - listitem "$10M" [ref=e1341]
+                          - generic "MonthName" [ref=e1342]
+                          - generic "Net Profit" [ref=e1343]
+                        - img [ref=e1344]:
+                          - generic [ref=e1345]:
+                            - listbox "MonthName" [ref=e1346]:
+                              - option "April" [ref=e1348]
+                              - option "August" [ref=e1350]
+                              - option "December" [ref=e1352]
+                              - option "February" [ref=e1354]
+                              - option "January" [ref=e1356]
+                              - option "July" [ref=e1358]
+                              - option "June" [ref=e1360]
+                              - option "March" [ref=e1362]
+                              - option "May" [ref=e1364]
+                              - option "November" [ref=e1366]
+                              - option "October" [ref=e1368]
+                              - option "September" [ref=e1370]
+                              - option "Total" [ref=e1372]
+                            - img [ref=e1373]:
+                              - listbox "Plot area" [ref=e1374]:
+                                - option "MonthName April. Net Profit $713,233." [ref=e1375]
+                                - option "MonthName August. Net Profit $868,318." [ref=e1376]
+                                - option "MonthName December. Net Profit $501,859." [ref=e1377]
+                                - option "MonthName February. Net Profit $461,696." [ref=e1378]
+                                - option "MonthName January. Net Profit $455,942." [ref=e1379]
+                                - option "MonthName July. Net Profit $983,597." [ref=e1380]
+                                - option "MonthName June. Net Profit $932,467." [ref=e1381]
+                                - option "MonthName March. Net Profit $562,661." [ref=e1382]
+                                - option "MonthName May. Net Profit $703,603." [ref=e1383]
+                                - option "MonthName November. Net Profit $563,296." [ref=e1384]
+                                - option "MonthName October. Net Profit $596,966." [ref=e1385]
+                                - option "MonthName September. Net Profit $719,517." [ref=e1386]
+                                - option "MonthName Total. Net Profit $8,063,154." [ref=e1387]
+                            - img
+                          - listbox "Series labels"
+                      - listbox "Legend" [ref=e1390]:
+                        - option "Increase" [ref=e1391]:
+                          - img [ref=e1392]:
+                            - generic "Increase" [ref=e1393]
+                          - generic "Increase" [ref=e1394]
+                        - option "Decrease" [ref=e1395]:
+                          - img [ref=e1396]:
+                            - generic "Decrease" [ref=e1397]
+                          - generic "Decrease" [ref=e1398]
+                        - option "Total" [ref=e1399]:
+                          - img [ref=e1400]:
+                            - generic "Total" [ref=e1401]
+                          - generic "Total" [ref=e1402]
+                - group "Total Expenses by AccountName" [ref=e1404]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e1406]:
+                    - generic "Total Expenses by AccountName" [ref=e1408]:
+                      - heading "Total Expenses by AccountName" [level=3] [ref=e1411]
+                    - img [ref=e1414]:
+                      - generic [ref=e1416]:
+                        - list [ref=e1417]:
+                          - listitem "$0.0M" [ref=e1419]
+                          - listitem "$0.5M" [ref=e1421]
+                          - listitem "$1.0M" [ref=e1423]
+                        - generic "AccountName" [ref=e1424]
+                        - generic "Total Expenses" [ref=e1425]
+                      - img [ref=e1426]:
+                        - generic [ref=e1427]:
+                          - listbox "AccountName" [ref=e1428]:
+                            - option "Admin & General Payroll" [ref=e1430]: Admin & Gene…
+                            - option "Depreciation" [ref=e1432]
+                            - option "F&B Cost of Sales" [ref=e1434]: F&B Cost of Sa…
+                            - option "F&B Payroll" [ref=e1436]
+                            - option "Housekeeping Expense" [ref=e1438]: Housekeeping …
+                            - option "HR & Training" [ref=e1440]
+                            - option "Insurance" [ref=e1442]
+                            - option "Interest Expense" [ref=e1444]
+                            - option "IT & Technology" [ref=e1446]
+                            - option "Maintenance & Repairs" [ref=e1448]: Maintenance …
+                            - option "Management Fees" [ref=e1450]: Management F…
+                            - option "Property Tax" [ref=e1452]
+                            - option "Rooms Payroll" [ref=e1454]
+                            - option "Sales & Marketing" [ref=e1456]: Sales & Market…
+                            - option "Utilities - Energy" [ref=e1458]
+                            - option "Utilities - Water" [ref=e1460]
+                          - group "Plot area" [ref=e1462]:
+                            - listbox "Total Expenses" [ref=e1463]:
+                              - option "475126.14" [ref=e1464]
+                              - option "196106.96" [ref=e1465]
+                              - option "466411.86" [ref=e1466]
+                              - option "476156.99" [ref=e1467]
+                              - option "318285.03" [ref=e1468]
+                              - option "244421.45" [ref=e1469]
+                              - option "134018.29" [ref=e1470]
+                              - option "185209.91" [ref=e1471]
+                              - option "144056.24" [ref=e1472]
+                              - option "204717.47" [ref=e1473]
+                              - option "219001.77" [ref=e1474]
+                              - option "42691.31" [ref=e1475]
+                              - option "1005450.86" [ref=e1476]
+                              - option "357827.13" [ref=e1477]
+                              - option "396490.03" [ref=e1478]
+                              - option "79587.97" [ref=e1479]
+                          - img
+                        - listbox "Series labels"
+                - group "Total Revenue and Budget Revenue by MonthName" [ref=e1481]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e1483]:
+                    - generic "Total Revenue and Budget Revenue by MonthName" [ref=e1485]:
+                      - heading "Total Revenue and Budget Revenue by MonthName" [level=3] [ref=e1488]
+                    - generic [ref=e1490]:
+                      - img [ref=e1491]:
+                        - generic [ref=e1493]:
+                          - list [ref=e1494]:
+                            - listitem "$0.8M" [ref=e1496]
+                            - listitem "$1.0M" [ref=e1498]
+                            - listitem "$1.2M" [ref=e1500]
+                            - listitem "$1.4M" [ref=e1502]
+                          - generic "MonthName" [ref=e1503]
+                          - generic "Total Revenue and Budget Revenue" [ref=e1504]: Total Revenue…
+                        - img [ref=e1505]:
+                          - generic [ref=e1506]:
+                            - listbox "MonthName" [ref=e1507]:
+                              - option "April" [ref=e1509]
+                              - option "August" [ref=e1511]: Aug…
+                              - option "December" [ref=e1513]: Dece…
+                              - option "February" [ref=e1515]: Febr…
+                              - option "January" [ref=e1517]: Janu…
+                              - option "July" [ref=e1519]
+                              - option "June" [ref=e1521]
+                              - option "March" [ref=e1523]
+                              - option "May" [ref=e1525]
+                              - option "November" [ref=e1527]: Nov…
+                              - option "October" [ref=e1529]: Octo…
+                              - option "September" [ref=e1531]: Sept…
+                            - img [ref=e1532]:
+                              - listbox "Forecast area"
+                              - listbox "Plot area" [ref=e1534]:
+                                - option "MonthName April. Total Revenue $1,087,117." [ref=e1539]
+                            - img
+                          - listbox "Series labels"
+                      - region "Legend" [ref=e1540]:
+                        - listbox "Legend" [ref=e1542]:
+                          - option "Total Revenue" [ref=e1543]:
+                            - img [ref=e1544]:
+                              - generic "Total Revenue" [ref=e1545]
+                            - generic "Total Revenue" [ref=e1546]
+                          - option "Budget Revenue" [ref=e1547]:
+                            - img [ref=e1548]:
+                              - generic "Budget Revenue" [ref=e1549]
+                            - generic "Budget Revenue" [ref=e1550]
+                - group [ref=e1552]:
+                  - generic "Visuals are loading..."
+                  - document [ref=e1558]:
+                    - button "Scroll up" [ref=e1559] [cursor=pointer]
+                    - button "Scroll down" [ref=e1560] [cursor=pointer]
+                    - button "Scroll left" [ref=e1561] [cursor=pointer]
+                    - button "Scroll right" [ref=e1562] [cursor=pointer]
+                    - grid [ref=e1563]:
+                      - row "AccountName Total Expenses Expense Variance $ Expense Variance %":
+                        - columnheader "AccountName" [ref=e1564]
+                        - columnheader "Total Expenses" [ref=e1565]:
+                          - generic [ref=e1566]: Total Expenses
+                        - columnheader "Expense Variance $" [ref=e1567]:
+                          - generic [ref=e1568]: Expense Variance $
+                        - columnheader "Expense Variance %" [ref=e1569]:
+                          - generic [ref=e1570]: Expense Variance %
+                      - row "Admin & General Payroll $475,126 $10,211 2.2%":
+                        - rowheader "Admin & General Payroll" [ref=e1571]
+                        - gridcell "$475,126" [ref=e1572]
+                        - gridcell "$10,211" [ref=e1573]
+                        - gridcell "2.2%" [ref=e1574]
+                      - row "Depreciation $196,107 -$5,100 -2.5%":
+                        - rowheader "Depreciation" [ref=e1575]
+                        - gridcell "$196,107" [ref=e1576]
+                        - gridcell "-$5,100" [ref=e1577]
+                        - gridcell "-2.5%" [ref=e1578]
+                      - row "F&B Cost of Sales $466,412 $17,418 3.9%":
+                        - rowheader "F&B Cost of Sales" [ref=e1579]
+                        - gridcell "$466,412" [ref=e1580]
+                        - gridcell "$17,418" [ref=e1581]
+                        - gridcell "3.9%" [ref=e1582]
+                      - row "F&B Payroll $476,157 $11,729 2.5%":
+                        - rowheader "F&B Payroll" [ref=e1583]
+                        - gridcell "$476,157" [ref=e1584]
+                        - gridcell "$11,729" [ref=e1585]
+                        - gridcell "2.5%" [ref=e1586]
+                      - row "Housekeeping Expense $318,285 $1,285 0.4%":
+                        - rowheader "Housekeeping Expense" [ref=e1587]
+                        - gridcell "$318,285" [ref=e1588]
+                        - gridcell "$1,285" [ref=e1589]
+                        - gridcell "0.4%" [ref=e1590]
+                      - row "HR & Training $244,421 -$3,035 -1.2%":
+                        - rowheader "HR & Training" [ref=e1591]
+                        - gridcell "$244,421" [ref=e1592]
+                        - gridcell "-$3,035" [ref=e1593]
+                        - gridcell "-1.2%" [ref=e1594]
+                      - row "Insurance $134,018 -$4,090 -3.0%":
+                        - rowheader "Insurance" [ref=e1595]
+                        - gridcell "$134,018" [ref=e1596]
+                        - gridcell "-$4,090" [ref=e1597]
+                        - gridcell "-3.0%" [ref=e1598]
+                      - row "Interest Expense $185,210 -$17,277 -8.5%":
+                        - rowheader "Interest Expense" [ref=e1599]
+                        - gridcell "$185,210" [ref=e1600]
+                        - gridcell "-$17,277" [ref=e1601]
+                        - gridcell "-8.5%" [ref=e1602]
+                      - row "IT & Technology $144,056 -$3,031 -2.1%":
+                        - rowheader "IT & Technology" [ref=e1603]
+                        - gridcell "$144,056" [ref=e1604]
+                        - gridcell "-$3,031" [ref=e1605]
+                        - gridcell "-2.1%" [ref=e1606]
+                      - row "Maintenance & Repairs $204,717 $1,245 0.6%":
+                        - rowheader "Maintenance & Repairs" [ref=e1607]
+                        - gridcell "$204,717" [ref=e1608]
+                        - gridcell "$1,245" [ref=e1609]
+                        - gridcell "0.6%" [ref=e1610]
+                      - row "Management Fees $219,002 $11,556 5.6%":
+                        - rowheader "Management Fees" [ref=e1611]
+                        - gridcell "$219,002" [ref=e1612]
+                        - gridcell "$11,556" [ref=e1613]
+                        - gridcell "5.6%" [ref=e1614]
+                      - row "Property Tax $42,691 -$662 -1.5%":
+                        - rowheader "Property Tax" [ref=e1615]
+                        - gridcell "$42,691" [ref=e1616]
+                        - gridcell "-$662" [ref=e1617]
+                        - gridcell "-1.5%" [ref=e1618]
+                      - row "Rooms Payroll $1,005,451 -$33,435 -3.2%":
+                        - rowheader "Rooms Payroll" [ref=e1619]
+                        - gridcell "$1,005,451" [ref=e1620]
+                        - gridcell "-$33,435" [ref=e1621]
+                        - gridcell "-3.2%" [ref=e1622]
+                      - row "Sales & Marketing $357,827 $23,253 6.9%":
+                        - rowheader "Sales & Marketing" [ref=e1623]
+                        - gridcell "$357,827" [ref=e1624]
+                        - gridcell "$23,253" [ref=e1625]
+                        - gridcell "6.9%" [ref=e1626]
+                      - row "Utilities - Energy $396,490 $15,009 3.9%":
+                        - rowheader "Utilities - Energy" [ref=e1627]
+                        - gridcell "$396,490" [ref=e1628]
+                        - gridcell "$15,009" [ref=e1629]
+                        - gridcell "3.9%" [ref=e1630]
+                      - row "Utilities - Water $79,588 -$2,000 -2.5%":
+                        - rowheader "Utilities - Water" [ref=e1631]
+                        - gridcell "$79,588" [ref=e1632]
+                        - gridcell "-$2,000" [ref=e1633]
+                        - gridcell "-2.5%" [ref=e1634]
+                      - row "Total $4,945,559 $23,076 0.5%":
+                        - rowheader "Total" [ref=e1635]
+                        - gridcell "$4,945,559" [ref=e1636]
+                        - gridcell "$23,076" [ref=e1637]
+                        - gridcell "0.5%" [ref=e1638]
+        - generic [ref=e417]:
+          - generic [ref=e418]:
+            - button "Zoom Out" [ref=e419] [cursor=pointer]: "-"
+            - button "Zoom In" [ref=e423] [cursor=pointer]: +
+          - button "Zoom level. Click to open the Zoom dialog box" [ref=e424] [cursor=pointer]: 125%
+          - button "Fit to page" [ref=e426] [cursor=pointer]:
+            - generic [ref=e427]: 
+      - generic [ref=e13]:
+        - link "Microsoft Power BI (Opens in new tab)" [ref=e14] [cursor=pointer]:
+          - /url: https://go.microsoft.com/fwlink/?LinkID=722383&clcid=0x409
+          - text: Microsoft Power BI
+        - generic [ref=e429]:
+          - button "Previous Page" [ref=e430] [cursor=pointer]:
+            - generic [ref=e431]: 
+          - generic [ref=e433] [cursor=pointer]:
+            - generic [ref=e434]: "3"
+            - generic [ref=e435]: of
+            - generic [ref=e436]: "4"
+          - button "Next Page" [active] [ref=e437] [cursor=pointer]:
+            - generic [ref=e438]: 
+        - generic [ref=e15]:
+          - generic [ref=e441]:
+            - link "Share via Facebook" [ref=e442] [cursor=pointer]:
+              - /url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9%26pageName%3Dfinance
+            - link "Share via Twitter" [ref=e444] [cursor=pointer]:
+              - /url: https://twitter.com/intent/tweet?text=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9%26pageName%3Dfinance
+            - link "Share via LinkedIn" [ref=e446] [cursor=pointer]:
+              - /url: https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9%26pageName%3Dfinance
+            - button "Share" [ref=e448] [cursor=pointer]:
+              - generic [ref=e449]: 
+          - button "Open in full-screen mode" [ref=e19] [cursor=pointer]:
+            - generic [ref=e20]: 
+  - img
+  - alert [ref=e452]: "June: Rooms Revenue $2,953,762"
+  - generic [ref=e864]: Page 3 of 4 Next Page Button Pressed Enter or Space
+  - text: 

@@ -180,7 +180,7 @@ table _Measures
 	measure 'Cancellation Rate' =
 			VAR Cancelled = CALCULATE(COUNTROWS(Fact_Reservations), Fact_Reservations[Status] = "Cancelled")
 			VAR Total = [Total Reservations]
-			RETURN IF(Total > 0, DIVIDE(Cancelled, Total), BLANK())
+			RETURN IF(Total > 0, DIVIDE(Cancelled, Total), 0)
 		formatString: 0.0%
 		displayFolder: Bookings
 		lineageTag: 805e7b97-935b-4597-96d5-6cdeafe4549e

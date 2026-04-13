@@ -51,7 +51,7 @@
             }
           ]
         },
-        "Details": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -66,6 +66,25 @@
               },
               "queryRef": "Dim_Date.MonthName",
               "nativeQueryRef": "MonthName",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Date"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              },
+              "queryRef": "Dim_Date.Year",
+              "nativeQueryRef": "Year",
               "active": true
             }
           ]
