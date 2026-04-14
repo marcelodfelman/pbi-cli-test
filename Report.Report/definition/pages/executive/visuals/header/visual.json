@@ -11,14 +11,12 @@
   },
   "visual": {
     "visualType": "textbox",
-    "drillFilterOtherVisuals": true,
     "objects": {
       "general": [
         {
           "properties": {
             "paragraphs": [
               {
-                "horizontalTextAlignment": "left",
                 "textRuns": [
                   {
                     "value": "The Grand Azure  ",
@@ -36,19 +34,14 @@
                       "color": "#4DD8E6"
                     }
                   }
-                ]
+                ],
+                "horizontalTextAlignment": "left"
               }
             ]
           }
         }
-      ],
-      "background": [
-        {
-          "properties": {
-            "show": { "expr": { "Literal": { "Value": "false" } } }
-          }
-        }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

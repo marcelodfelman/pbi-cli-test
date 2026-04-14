@@ -33,6 +33,19 @@
           }
         }
       }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
     ]
   },
   "resourcePackages": [
@@ -53,7 +66,7 @@
       "items": [
         {
           "name": "deeply-theme",
-          "path": "deeply-theme.json",
+          "path": "deeply-theme",
           "type": "CustomTheme"
         }
       ]

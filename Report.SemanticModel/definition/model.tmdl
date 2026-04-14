@@ -10,6 +10,8 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
+annotation PBI_QueryOrder = ["Dim_Date","Dim_Property","Dim_Channel","Dim_Department","Dim_Account","Dim_Segment","Dim_Outlet","Dim_Guest","Fact_Reservations","Fact_Revenue","Fact_Expenses","Fact_Budget","_Measures","Fact_Occupancy"]
+
 ref table Dim_Date
 ref table Dim_Property
 ref table Dim_Channel
@@ -19,10 +21,11 @@ ref table Dim_Segment
 ref table Dim_Outlet
 ref table Dim_Guest
 ref table Fact_Reservations
-ref table Fact_Occupancy
 ref table Fact_Revenue
 ref table Fact_Expenses
 ref table Fact_Budget
 ref table _Measures
+ref table Fact_Occupancy
 
 ref cultureInfo en-US
+
