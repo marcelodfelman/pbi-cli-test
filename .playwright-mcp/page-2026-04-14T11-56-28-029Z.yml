@@ -1,0 +1,285 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e8]:
+    - generic:
+      - generic [ref=e26]:
+        - generic "Executive Command Center" [ref=e487]:
+          - application [ref=e33]:
+            - list [ref=e35]:
+              - listitem [ref=e36]:
+                - button "Show keyboard shortcuts" [ref=e37] [cursor=pointer]
+              - listitem [ref=e38]:
+                - link "Show screen reader tips (opens in new tab)" [ref=e39] [cursor=pointer]:
+                  - /url: https://go.microsoft.com/fwlink/?linkid=852575
+                  - text: Show screen reader tips
+                - img [ref=e41]
+              - listitem [ref=e43]:
+                - button "Skip to main content" [ref=e44] [cursor=pointer]
+            - region "Power BI Report" [ref=e52]:
+              - heading "Power BI Report" [level=2]
+              - generic:
+                - group [ref=e489]:
+                  - generic "Visuals are loading..."
+                  - document [ref=e494]:
+                    - paragraph [ref=e496]: The Grand Azure — Executive Command Center
+                - group [ref=e498]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e503]:
+                    - generic [ref=e506]:
+                      - text: 
+                      - heading "Year" [level=3] [ref=e507]
+                    - combobox "Year" [ref=e510]:
+                      - generic [ref=e511]: All
+                      - generic [ref=e512]: 
+                - group [ref=e514]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e519]:
+                    - generic [ref=e522]:
+                      - text: 
+                      - heading "MonthName" [level=3] [ref=e523]
+                    - combobox "MonthName" [ref=e526]:
+                      - generic [ref=e527]: All
+                      - generic [ref=e528]: 
+                - group [ref=e530]:
+                  - generic "Visuals are loading..."
+                  - img "Total Revenue $13M." [ref=e535]:
+                    - generic [ref=e537]: $13M
+                    - generic [ref=e539]: Total Revenue
+                - group [ref=e541]:
+                  - generic "Visuals are loading..."
+                  - img "Net Revenue $11M." [ref=e546]:
+                    - generic [ref=e548]: $11M
+                    - generic [ref=e550]: Net Revenue
+                - group [ref=e552]:
+                  - generic "Visuals are loading..."
+                  - img "GOP $10M." [ref=e557]:
+                    - generic [ref=e559]: $10M
+                    - generic [ref=e561]: GOP
+                - group [ref=e563]:
+                  - generic "Visuals are loading..."
+                  - img "Occupancy % 80.8%." [ref=e568]:
+                    - generic [ref=e570]: 80.8%
+                    - generic [ref=e572]: Occupancy %
+                - group [ref=e574]:
+                  - generic "Visuals are loading..."
+                  - img "ADR $236.28." [ref=e579]:
+                    - generic [ref=e581]: $236.28
+                    - generic [ref=e583]: ADR
+                - group [ref=e585]:
+                  - generic "Visuals are loading..."
+                  - img "RevPAR $190.94." [ref=e590]:
+                    - generic [ref=e592]: $190.94
+                    - generic [ref=e594]: RevPAR
+                - group "Total Expenses by MonthName" [ref=e596]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e598]:
+                    - generic "Total Expenses by MonthName" [ref=e600]:
+                      - heading "Total Expenses by MonthName" [level=3] [ref=e603]
+                    - img [ref=e606]:
+                      - generic [ref=e608]:
+                        - list [ref=e609]:
+                          - listitem "$0.0M" [ref=e611]
+                          - listitem "$0.2M" [ref=e613]
+                          - listitem "$0.4M" [ref=e615]
+                        - generic "MonthName" [ref=e616]
+                        - generic "Total Expenses" [ref=e617]
+                      - img [ref=e618]:
+                        - generic [ref=e619]:
+                          - listbox "MonthName" [ref=e620]:
+                            - option "October" [ref=e622]
+                            - option "January" [ref=e624]
+                            - option "August" [ref=e626]
+                            - option "March" [ref=e628]
+                            - option "November" [ref=e630]
+                            - option "May" [ref=e632]
+                            - option "June" [ref=e634]
+                            - option "September" [ref=e636]
+                            - option "December" [ref=e638]
+                            - option "February" [ref=e640]
+                            - option "April" [ref=e642]
+                            - option "July" [ref=e644]
+                          - group "Plot area" [ref=e646]:
+                            - listbox "Total Expenses" [ref=e647]:
+                              - option "490075.25" [ref=e648]
+                              - option "455154.83" [ref=e649]
+                              - option "437042.52" [ref=e650]
+                              - option "417873.42" [ref=e651]
+                              - option "412639.48" [ref=e652]
+                              - option "404029.87" [ref=e653]
+                              - option "403365.79" [ref=e654]
+                              - option "401780.21" [ref=e655]
+                              - option "398806.58" [ref=e656]
+                              - option "377379.86" [ref=e657]
+                              - option "373884.7" [ref=e658]
+                              - option "373526.9" [ref=e659]
+                          - img:
+                            - listbox "Forecast area"
+                            - listbox "Plot area"
+                          - img
+                        - listbox "Series labels"
+                - group "Total Revenue by MonthName" [ref=e661]:
+                  - generic "Visuals are loading..."
+                  - generic [ref=e663]:
+                    - generic "Total Revenue by MonthName" [ref=e665]:
+                      - heading "Total Revenue by MonthName" [level=3] [ref=e668]
+                    - generic [ref=e670]:
+                      - img [ref=e671]:
+                        - generic [ref=e673]:
+                          - list [ref=e674]:
+                            - listitem "$0M" [ref=e676]
+                            - listitem "$5M" [ref=e678]
+                            - listitem "$10M" [ref=e680]
+                          - generic "MonthName" [ref=e681]
+                          - generic "Total Revenue" [ref=e682]
+                        - img [ref=e683]:
+                          - generic [ref=e684]:
+                            - listbox "MonthName" [ref=e685]:
+                              - option "January" [ref=e687]
+                              - option "February" [ref=e689]
+                              - option "March" [ref=e691]
+                              - option "April" [ref=e693]
+                              - option "May" [ref=e695]
+                              - option "June" [ref=e697]
+                              - option "July" [ref=e699]
+                              - option "August" [ref=e701]
+                              - option "September" [ref=e703]
+                              - option "October" [ref=e705]
+                              - option "November" [ref=e707]
+                              - option "December" [ref=e709]
+                              - option "Total" [ref=e711]
+                            - img [ref=e712]:
+                              - listbox "Plot area" [ref=e713]:
+                                - option "MonthName January. Total Revenue $911,097." [ref=e714]
+                                - option "MonthName February. Total Revenue $839,076." [ref=e715]
+                                - option "MonthName March. Total Revenue $980,534." [ref=e716]
+                                - option "MonthName April. Total Revenue $1,087,117." [ref=e717]
+                                - option "MonthName May. Total Revenue $1,107,633." [ref=e718]
+                                - option "MonthName June. Total Revenue $1,335,833." [ref=e719]
+                                - option "MonthName July. Total Revenue $1,357,124." [ref=e720]
+                                - option "MonthName August. Total Revenue $1,305,360." [ref=e721]
+                                - option "MonthName September. Total Revenue $1,121,297." [ref=e722]
+                                - option "MonthName October. Total Revenue $1,087,041." [ref=e723]
+                                - option "MonthName November. Total Revenue $975,935." [ref=e724]
+                                - option "MonthName December. Total Revenue $900,666." [ref=e725]
+                                - option "MonthName Total. Total Revenue $13,008,713." [ref=e726]
+                            - img
+                          - listbox "Series labels"
+                      - listbox "Legend" [ref=e729]:
+                        - option "Increase" [ref=e730]:
+                          - img [ref=e731]:
+                            - generic "Increase" [ref=e732]
+                          - generic "Increase" [ref=e733]
+                        - option "Decrease" [ref=e734]:
+                          - img [ref=e735]:
+                            - generic "Decrease" [ref=e736]
+                          - generic "Decrease" [ref=e737]
+                        - option "Total" [ref=e738]:
+                          - img [ref=e739]:
+                            - generic "Total" [ref=e740]
+                          - generic "Total" [ref=e741]
+                - group [ref=e743]:
+                  - generic "Visuals are loading..."
+                  - document [ref=e749]:
+                    - button "Scroll up" [ref=e750] [cursor=pointer]
+                    - button "Scroll down" [ref=e751] [cursor=pointer]
+                    - button "Scroll left" [ref=e752] [cursor=pointer]
+                    - button "Scroll right" [ref=e753] [cursor=pointer]
+                    - grid [ref=e754]:
+                      - row "DepartmentName Total Revenue Total Expenses GOP Margin %":
+                        - columnheader "DepartmentName" [ref=e755]
+                        - columnheader "Total Revenue" [ref=e756]:
+                          - generic [ref=e757]: Total Revenue
+                        - columnheader "Total Expenses" [ref=e758]:
+                          - generic [ref=e759]: Total Expenses
+                        - columnheader "GOP Margin %" [ref=e760]:
+                          - generic [ref=e761]: GOP Margin %
+                      - row "Admin & General $1,014,894":
+                        - rowheader "Admin & General" [ref=e762]
+                        - gridcell [ref=e763]
+                        - gridcell "$1,014,894" [ref=e764]
+                        - gridcell [ref=e765]
+                      - row "Finance $381,317":
+                        - rowheader "Finance" [ref=e766]
+                        - gridcell [ref=e767]
+                        - gridcell "$381,317" [ref=e768]
+                        - gridcell [ref=e769]
+                      - row "Food & Beverage $2,456,465 $942,569 61.6%":
+                        - rowheader "Food & Beverage" [ref=e770]
+                        - gridcell "$2,456,465" [ref=e771]
+                        - gridcell "$942,569" [ref=e772]
+                        - gridcell "61.6%" [ref=e773]
+                      - row "Housekeeping $318,285":
+                        - rowheader "Housekeeping" [ref=e774]
+                        - gridcell [ref=e775]
+                        - gridcell "$318,285" [ref=e776]
+                        - gridcell [ref=e777]
+                      - row "Human Resources $244,421":
+                        - rowheader "Human Resources" [ref=e778]
+                        - gridcell [ref=e779]
+                        - gridcell "$244,421" [ref=e780]
+                        - gridcell [ref=e781]
+                      - row "Maintenance $680,795":
+                        - rowheader "Maintenance" [ref=e782]
+                        - gridcell [ref=e783]
+                        - gridcell "$680,795" [ref=e784]
+                        - gridcell [ref=e785]
+                      - row "Other Revenue $596,199 100.0%":
+                        - rowheader "Other Revenue" [ref=e786]
+                        - gridcell "$596,199" [ref=e787]
+                        - gridcell [ref=e788]
+                        - gridcell "100.0%" [ref=e789]
+                      - row "Rooms $9,060,473 $1,005,451 88.9%":
+                        - rowheader "Rooms" [ref=e790]
+                        - gridcell "$9,060,473" [ref=e791]
+                        - gridcell "$1,005,451" [ref=e792]
+                        - gridcell "88.9%" [ref=e793]
+                      - row "Sales & Marketing $357,827":
+                        - rowheader "Sales & Marketing" [ref=e794]
+                        - gridcell [ref=e795]
+                        - gridcell "$357,827" [ref=e796]
+                        - gridcell [ref=e797]
+                      - row "Spa & Wellness $895,576 100.0%":
+                        - rowheader "Spa & Wellness" [ref=e798]
+                        - gridcell "$895,576" [ref=e799]
+                        - gridcell [ref=e800]
+                        - gridcell "100.0%" [ref=e801]
+                      - row "Total $13,008,713 $4,945,559 77.3%":
+                        - rowheader "Total" [ref=e802]
+                        - gridcell "$13,008,713" [ref=e803]
+                        - gridcell "$4,945,559" [ref=e804]
+                        - gridcell "77.3%" [ref=e805]
+        - generic [ref=e451]:
+          - generic [ref=e452]:
+            - button "Zoom Out" [ref=e453] [cursor=pointer]: "-"
+            - button "Zoom In" [ref=e457] [cursor=pointer]: +
+          - button "Zoom level. Click to open the Zoom dialog box" [ref=e458] [cursor=pointer]: 125%
+          - button "Fit to page" [ref=e460] [cursor=pointer]:
+            - generic [ref=e461]: 
+      - generic [ref=e13]:
+        - link "Microsoft Power BI (Opens in new tab)" [ref=e14] [cursor=pointer]:
+          - /url: https://go.microsoft.com/fwlink/?LinkID=722383&clcid=0x409
+          - text: Microsoft Power BI
+        - generic [ref=e463]:
+          - button "Previous Page" [disabled] [ref=e464]:
+            - generic [ref=e465]: 
+          - generic [ref=e467] [cursor=pointer]:
+            - generic [ref=e468]: "1"
+            - generic [ref=e469]: of
+            - generic [ref=e470]: "4"
+          - button "Next Page" [ref=e471] [cursor=pointer]:
+            - generic [ref=e472]: 
+        - generic [ref=e15]:
+          - generic [ref=e475]:
+            - link "Share via Facebook" [ref=e476] [cursor=pointer]:
+              - /url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9
+            - link "Share via Twitter" [ref=e478] [cursor=pointer]:
+              - /url: https://twitter.com/intent/tweet?text=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9
+            - link "Share via LinkedIn" [ref=e480] [cursor=pointer]:
+              - /url: https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.powerbi.com%2Fview%3Fr%3DeyJrIjoiZjk1YWI5ODUtODJhYi00MjAxLWJlZWItNjkxNDc2M2Y1ZWE5IiwidCI6ImU5Y2I5YjhiLTk5ZDEtNGFjMi05ZTc0LWM5Y2FjZjcwMzU0ZSJ9
+            - button "Share" [ref=e482] [cursor=pointer]:
+              - generic [ref=e483]: 
+          - button "Open in full-screen mode" [ref=e19] [cursor=pointer]:
+            - generic [ref=e20]: 
+  - img
+  - alert [ref=e486]: Report Zoomed To 125%
+  - generic [ref=e808]: Page 1 of 4 Previous Page Button Pressed Enter or Space
+  - text:  

@@ -18,11 +18,12 @@
           "properties": {
             "paragraphs": [
               {
+                "horizontalTextAlignment": "left",
                 "textRuns": [
                   {
                     "value": "The Grand Azure  ",
                     "textStyle": {
-                      "fontSize": "22pt",
+                      "fontSize": "20pt",
                       "fontFamily": "Segoe UI Semibold",
                       "color": "#0A1628"
                     }
@@ -30,7 +31,7 @@
                   {
                     "value": "— Profitability & P&L",
                     "textStyle": {
-                      "fontSize": "16pt",
+                      "fontSize": "14pt",
                       "fontFamily": "Segoe UI",
                       "color": "#1A4A8A"
                     }
