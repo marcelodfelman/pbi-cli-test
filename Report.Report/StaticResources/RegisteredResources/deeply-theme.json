@@ -84,7 +84,7 @@
                 "color": "#17253D"
               }
             },
-            "fontFamily": "Segoe UI Semibold",
+            "fontFamily": "Segoe UI",
             "fontSize": 12,
             "alignment": "left"
           }
@@ -177,7 +177,7 @@
                 "color": "#FFFFFF"
               }
             },
-            "fontFamily": "Segoe UI Bold",
+            "fontFamily": "Segoe UI",
             "fontSize": 26
           }
         ],
