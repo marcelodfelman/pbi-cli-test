@@ -170,18 +170,18 @@
             "radius": 10
           }
         ],
-        "labels": [
+        "calloutValue": [
           {
             "color": {
               "solid": {
                 "color": "#FFFFFF"
               }
             },
-            "fontFamily": "Segoe UI Bold",
+            "fontFamily": "Segoe UI Semibold",
             "fontSize": 26
           }
         ],
-        "categoryLabels": [
+        "labels": [
           {
             "color": {
               "solid": {

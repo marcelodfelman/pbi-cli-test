@@ -31,7 +31,7 @@ pbi connect    # auto-detects running PBI Desktop instance
   - `relationships.tmdl` — **canonical relationship definitions** (all 17 relationships live here)
   - `tables/` — one `.tmdl` per table: 8 dimensions, 5 facts, 1 measures table
 - **[Report.Report/definition/pages/](Report.Report/definition/pages/)** — PBIR report, one folder per page with a `visuals/<name>/visual.json` per visual
-- **[Report.Report/StaticResources/RegisteredResources/deeply-theme.json](Report.Report/StaticResources/RegisteredResources/deeply-theme.json)** — custom theme (Deeply palette + Segoe UI); registered in `report.json`
+- **[Report.Report/StaticResources/RegisteredResources/](Report.Report/StaticResources/RegisteredResources/)** — custom theme (dark-mode Deeply palette + Segoe UI). Two copies of the same content live here: `deeply-theme` (no extension — the file Power BI Service actually loads) and `deeply-theme.json` (editable convenience copy). Keep both in sync.
 - **[generate_model.py](generate_model.py)** — regenerates all 13 table TMDL files from scratch (seed=42 for deterministic data). Run when the schema needs to change; do not hand-edit generated tables unless small patches.
 
 ## Star schema model
@@ -54,10 +54,13 @@ Key fact-specific gotchas:
 ## Critical PBIR rules learned the hard way
 
 - **`themeCollection.customTheme` requires `reportVersionAtImport`** — same three fields (`visual`, `report`, `page`) as `baseTheme`. Without it, publish fails with `"Required properties are missing from object"`.
+- **Custom theme file must have NO extension.** Power BI Service resolves a `RegisteredResources` `CustomTheme` as `StaticResources/RegisteredResources/{path}` and does **not** append `.json`. So `path: "deeply-theme.json"` with only a `.json` file on disk fails with `"The following file was not found: 'StaticResources/RegisteredResources/deeply-theme'"`. Keep the actual file as `deeply-theme` (no extension) and set `path: "deeply-theme"`.
+- **Keep custom themes minimal** — `textClasses`, deep `visualStyles` overrides (e.g. `lineChart.lineStyles`, granular `pivotTable` overrides) silently fail validation and PBI falls back to the base theme with **no error**. Symptom: header text color change applies (from `visual.json`) but page background stays white (from theme). Start with `dataColors` + `background` + `foreground` + one or two `visualStyles` entries (`page.*.background`, `card.*.background`) and grow from there.
 - **Don't put `layoutOptimization`** at the report level — not in the 3.2.0 schema.
 - **Don't include `Commands`** inside `visual.query` — not in the 2.7.0 visual schema.
 - **Slicer column bindings** use `"Column"` field type (not `"Measure"`) — a `Dim_Date[Year]` bound as Measure shows wrong values.
 - **Scatter chart split points** use roles `Category` + `Series`, not `Details`, to produce one point per group.
+- **Default a slicer to a value** with a `filterConfig.filters[]` entry of `type: "Categorical"` + `filter.Where[].Condition.In` with `Values: [[ { Literal: { Value: "2026L" } } ]]` (note the `L` suffix marks it as int64).
 
 ## Data refresh is required after model changes
 
