@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_Date"
+                      "Entity": "Fact_Cash"
                     }
                   },
-                  "Property": "MonthName"
+                  "Property": "FlowCategory"
                 }
               },
-              "queryRef": "Dim_Date.MonthName",
-              "nativeQueryRef": "MonthName",
+              "queryRef": "Fact_Cash.FlowCategory",
+              "nativeQueryRef": "FlowCategory",
               "active": true
             }
           ]
@@ -42,11 +42,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Net Profit"
+                  "Property": "Net Cash Flow"
                 }
               },
-              "queryRef": "_Measures.Net Profit",
-              "nativeQueryRef": "Net Profit"
+              "queryRef": "_Measures.Net Cash Flow",
+              "nativeQueryRef": "Net Cash Flow"
             }
           ]
         }

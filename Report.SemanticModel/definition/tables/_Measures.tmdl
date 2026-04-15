@@ -391,6 +391,78 @@ table _Measures
 		displayFolder: Channels
 		lineageTag: d2000001-2222-4000-8000-000000000001
 
+	measure 'Cash Balance' = CALCULATE(LASTNONBLANKVALUE(Fact_Cash[DateID], SUM(Fact_Cash[Balance])), Fact_Cash[FlowType] = "Inflow")
+		formatString: $#,##0
+		displayFolder: Cash
+		lineageTag: 71000001-2222-4000-8000-000000000001
+
+	measure 'Operating Cash Flow' = CALCULATE(SUM(Fact_Cash[Amount]), Fact_Cash[FlowCategory] = "Operating")
+		formatString: $#,##0
+		displayFolder: Cash
+		lineageTag: 71000001-2222-4000-8000-000000000002
+
+	measure 'Investing Cash Flow' = CALCULATE(SUM(Fact_Cash[Amount]), Fact_Cash[FlowCategory] = "Investing")
+		formatString: $#,##0
+		displayFolder: Cash
+		lineageTag: 71000001-2222-4000-8000-000000000003
+
+	measure 'Financing Cash Flow' = CALCULATE(SUM(Fact_Cash[Amount]), Fact_Cash[FlowCategory] = "Financing")
+		formatString: $#,##0
+		displayFolder: Cash
+		lineageTag: 71000001-2222-4000-8000-000000000004
+
+	measure 'Net Cash Flow' = SUM(Fact_Cash[Amount])
+		formatString: $#,##0
+		displayFolder: Cash
+		lineageTag: 71000001-2222-4000-8000-000000000005
+
+	measure 'AR Balance' = SUM(Fact_Cash[AROpen])
+		formatString: $#,##0
+		displayFolder: Cash
+		lineageTag: 71000001-2222-4000-8000-000000000006
+
+	measure 'AP Balance' = SUM(Fact_Cash[APOpen])
+		formatString: $#,##0
+		displayFolder: Cash
+		lineageTag: 71000001-2222-4000-8000-000000000007
+
+	measure 'AR 0-30 days' = SUM(Fact_Cash[ARBucket0_30])
+		formatString: $#,##0
+		displayFolder: Cash
+		lineageTag: 71000001-2222-4000-8000-000000000008
+
+	measure 'AR 31-60 days' = SUM(Fact_Cash[ARBucket31_60])
+		formatString: $#,##0
+		displayFolder: Cash
+		lineageTag: 71000001-2222-4000-8000-000000000009
+
+	measure 'AR 61-90 days' = SUM(Fact_Cash[ARBucket61_90])
+		formatString: $#,##0
+		displayFolder: Cash
+		lineageTag: 71000001-2222-4000-8000-000000000010
+
+	measure 'AR 90+ days' = SUM(Fact_Cash[ARBucketOver90])
+		formatString: $#,##0
+		displayFolder: Cash
+		lineageTag: 71000001-2222-4000-8000-000000000011
+
+	measure DSO = DIVIDE([AR Balance], DIVIDE([Total Revenue], 365))
+		formatString: #,##0
+		displayFolder: Cash
+		lineageTag: 71000001-2222-4000-8000-000000000012
+
+	measure 'Collection Rate' = DIVIDE([AR 0-30 days], [AR Balance])
+		formatString: 0.0%
+		displayFolder: Cash
+		lineageTag: 71000001-2222-4000-8000-000000000013
+
+	measure 'Cost of Sales %' =
+			VAR COGS = CALCULATE(SUM(Fact_Expenses[Amount]), Dim_Department[USALICategory] = "Departmental")
+			RETURN DIVIDE(COGS, [Total Revenue])
+		formatString: 0.0%
+		displayFolder: Profitability
+		lineageTag: c2000001-2222-4000-8000-000000000003
+
 	measure 'OTA Mix %' = DIVIDE(CALCULATE([Reservation Net Revenue], Dim_Channel[IsDirect] = FALSE()), [Reservation Net Revenue])
 		formatString: 0.0%
 		displayFolder: Channels

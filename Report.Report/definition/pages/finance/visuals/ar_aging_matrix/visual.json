@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "ar_aging_matrix",
+  "position": { "x": 20, "y": 490, "z": 21, "height": 200, "width": 620, "tabOrder": 21 },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": { "Column": { "Expression": { "SourceRef": { "Entity": "Dim_Date" } }, "Property": "MonthName" } },
+              "queryRef": "Dim_Date.MonthName",
+              "nativeQueryRef": "MonthName",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "_Measures" } }, "Property": "AR 0-30 days" } }, "queryRef": "_Measures.AR 0-30 days", "nativeQueryRef": "AR 0-30 days" },
+            { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "_Measures" } }, "Property": "AR 31-60 days" } }, "queryRef": "_Measures.AR 31-60 days", "nativeQueryRef": "AR 31-60 days" },
+            { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "_Measures" } }, "Property": "AR 61-90 days" } }, "queryRef": "_Measures.AR 61-90 days", "nativeQueryRef": "AR 61-90 days" },
+            { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "_Measures" } }, "Property": "AR 90+ days" } }, "queryRef": "_Measures.AR 90+ days", "nativeQueryRef": "AR 90+ days" }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

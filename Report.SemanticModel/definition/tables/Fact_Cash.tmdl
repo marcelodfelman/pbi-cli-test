@@ -1,0 +1,159 @@
+table Fact_Cash
+	lineageTag: 71000001-1111-4000-8000-000000000001
+
+	column CashID
+		dataType: int64
+		formatString: 0
+		lineageTag: 71000001-1111-4000-8000-000000000002
+		summarizeBy: none
+		sourceColumn: CashID
+
+	column DateID
+		dataType: int64
+		formatString: 0
+		lineageTag: 71000001-1111-4000-8000-000000000003
+		summarizeBy: none
+		sourceColumn: DateID
+
+	column PropertyID
+		dataType: int64
+		formatString: 0
+		lineageTag: 71000001-1111-4000-8000-000000000004
+		summarizeBy: none
+		sourceColumn: PropertyID
+
+	column FlowCategory
+		dataType: string
+		lineageTag: 71000001-1111-4000-8000-000000000005
+		summarizeBy: none
+		sourceColumn: FlowCategory
+
+	column FlowType
+		dataType: string
+		lineageTag: 71000001-1111-4000-8000-000000000006
+		summarizeBy: none
+		sourceColumn: FlowType
+
+	column Amount
+		dataType: double
+		formatString: $#,##0
+		lineageTag: 71000001-1111-4000-8000-000000000007
+		summarizeBy: sum
+		sourceColumn: Amount
+
+	column Balance
+		dataType: double
+		formatString: $#,##0
+		lineageTag: 71000001-1111-4000-8000-000000000008
+		summarizeBy: sum
+		sourceColumn: Balance
+
+	column AROpen
+		dataType: double
+		formatString: $#,##0
+		lineageTag: 71000001-1111-4000-8000-000000000009
+		summarizeBy: sum
+		sourceColumn: AROpen
+
+	column APOpen
+		dataType: double
+		formatString: $#,##0
+		lineageTag: 71000001-1111-4000-8000-000000000010
+		summarizeBy: sum
+		sourceColumn: APOpen
+
+	column ARBucket0_30
+		dataType: double
+		formatString: $#,##0
+		lineageTag: 71000001-1111-4000-8000-000000000011
+		summarizeBy: sum
+		sourceColumn: ARBucket0_30
+
+	column ARBucket31_60
+		dataType: double
+		formatString: $#,##0
+		lineageTag: 71000001-1111-4000-8000-000000000012
+		summarizeBy: sum
+		sourceColumn: ARBucket31_60
+
+	column ARBucket61_90
+		dataType: double
+		formatString: $#,##0
+		lineageTag: 71000001-1111-4000-8000-000000000013
+		summarizeBy: sum
+		sourceColumn: ARBucket61_90
+
+	column ARBucketOver90
+		dataType: double
+		formatString: $#,##0
+		lineageTag: 71000001-1111-4000-8000-000000000014
+		summarizeBy: sum
+		sourceColumn: ARBucketOver90
+
+	partition Fact_Cash = m
+		mode: import
+		source =
+			let
+			    Source = #table(
+			        type table [CashID = Int64.Type, DateID = Int64.Type, PropertyID = Int64.Type, FlowCategory = text, FlowType = text, Amount = number, Balance = number, AROpen = number, APOpen = number, ARBucket0_30 = number, ARBucket31_60 = number, ARBucket61_90 = number, ARBucketOver90 = number],
+			        {
+			            {1, 20250101, 1, "Operating", "Inflow", 1050000, 2200000, 420000, 185000, 310000, 68000, 30000, 12000},
+			            {2, 20250201, 1, "Operating", "Inflow", 980000, 2350000, 405000, 180000, 295000, 65000, 28000, 17000},
+			            {3, 20250301, 1, "Operating", "Inflow", 1120000, 2480000, 445000, 195000, 325000, 72000, 32000, 16000},
+			            {4, 20250401, 1, "Operating", "Inflow", 1180000, 2620000, 460000, 200000, 335000, 75000, 33000, 17000},
+			            {5, 20250501, 1, "Operating", "Inflow", 1250000, 2780000, 475000, 210000, 345000, 78000, 35000, 17000},
+			            {6, 20250601, 1, "Operating", "Inflow", 1420000, 2950000, 510000, 225000, 370000, 84000, 38000, 18000},
+			            {7, 20250701, 1, "Operating", "Inflow", 1560000, 3150000, 540000, 240000, 390000, 90000, 42000, 18000},
+			            {8, 20250801, 1, "Operating", "Inflow", 1600000, 3320000, 555000, 245000, 400000, 92000, 43000, 20000},
+			            {9, 20250901, 1, "Operating", "Inflow", 1350000, 3380000, 495000, 218000, 360000, 82000, 37000, 16000},
+			            {10, 20251001, 1, "Operating", "Inflow", 1250000, 3420000, 475000, 208000, 345000, 78000, 35000, 17000},
+			            {11, 20251101, 1, "Operating", "Inflow", 1100000, 3380000, 440000, 195000, 320000, 72000, 32000, 16000},
+			            {12, 20251201, 1, "Operating", "Inflow", 1020000, 3340000, 425000, 188000, 308000, 68000, 31000, 18000},
+			            {13, 20260101, 1, "Operating", "Inflow", 1120000, 3380000, 445000, 196000, 325000, 72000, 32000, 16000},
+			            {14, 20260201, 1, "Operating", "Inflow", 1050000, 3420000, 428000, 190000, 312000, 69000, 30000, 17000},
+			            {15, 20260301, 1, "Operating", "Inflow", 1200000, 3510000, 470000, 208000, 343000, 76000, 34000, 17000},
+			            {16, 20260401, 1, "Operating", "Inflow", 1280000, 3620000, 490000, 215000, 358000, 80000, 36000, 16000},
+			            {17, 20260501, 1, "Operating", "Inflow", 1370000, 3770000, 510000, 225000, 372000, 84000, 38000, 16000},
+			            {18, 20260601, 1, "Operating", "Inflow", 1530000, 3980000, 545000, 240000, 398000, 90000, 42000, 15000},
+			            {19, 20260701, 1, "Operating", "Inflow", 1780000, 4210000, 595000, 262000, 434000, 98000, 46000, 17000},
+			            {20, 20260801, 1, "Operating", "Inflow", 1720000, 4390000, 585000, 258000, 427000, 96000, 44000, 18000},
+			            {21, 20260901, 1, "Operating", "Inflow", 1480000, 4470000, 528000, 232000, 385000, 87000, 39000, 17000},
+			            {22, 20261001, 1, "Operating", "Inflow", 1360000, 4510000, 506000, 222000, 369000, 83000, 37000, 17000},
+			            {23, 20261101, 1, "Operating", "Inflow", 1200000, 4460000, 470000, 208000, 343000, 76000, 34000, 17000},
+			            {24, 20261201, 1, "Operating", "Inflow", 1120000, 4420000, 448000, 197000, 327000, 73000, 32000, 16000},
+			            {25, 20250131, 1, "Operating", "Outflow", -720000, 0, 0, 0, 0, 0, 0, 0},
+			            {26, 20250228, 1, "Operating", "Outflow", -680000, 0, 0, 0, 0, 0, 0, 0},
+			            {27, 20250331, 1, "Operating", "Outflow", -750000, 0, 0, 0, 0, 0, 0, 0},
+			            {28, 20250430, 1, "Operating", "Outflow", -780000, 0, 0, 0, 0, 0, 0, 0},
+			            {29, 20250531, 1, "Operating", "Outflow", -810000, 0, 0, 0, 0, 0, 0, 0},
+			            {30, 20250630, 1, "Operating", "Outflow", -880000, 0, 0, 0, 0, 0, 0, 0},
+			            {31, 20250731, 1, "Operating", "Outflow", -960000, 0, 0, 0, 0, 0, 0, 0},
+			            {32, 20250831, 1, "Operating", "Outflow", -980000, 0, 0, 0, 0, 0, 0, 0},
+			            {33, 20250930, 1, "Operating", "Outflow", -850000, 0, 0, 0, 0, 0, 0, 0},
+			            {34, 20251031, 1, "Operating", "Outflow", -790000, 0, 0, 0, 0, 0, 0, 0},
+			            {35, 20251130, 1, "Operating", "Outflow", -720000, 0, 0, 0, 0, 0, 0, 0},
+			            {36, 20251231, 1, "Operating", "Outflow", -690000, 0, 0, 0, 0, 0, 0, 0},
+			            {37, 20260131, 1, "Operating", "Outflow", -750000, 0, 0, 0, 0, 0, 0, 0},
+			            {38, 20260228, 1, "Operating", "Outflow", -710000, 0, 0, 0, 0, 0, 0, 0},
+			            {39, 20260331, 1, "Operating", "Outflow", -800000, 0, 0, 0, 0, 0, 0, 0},
+			            {40, 20260430, 1, "Operating", "Outflow", -840000, 0, 0, 0, 0, 0, 0, 0},
+			            {41, 20260531, 1, "Operating", "Outflow", -890000, 0, 0, 0, 0, 0, 0, 0},
+			            {42, 20260630, 1, "Operating", "Outflow", -950000, 0, 0, 0, 0, 0, 0, 0},
+			            {43, 20260731, 1, "Operating", "Outflow", -1080000, 0, 0, 0, 0, 0, 0, 0},
+			            {44, 20260831, 1, "Operating", "Outflow", -1050000, 0, 0, 0, 0, 0, 0, 0},
+			            {45, 20260930, 1, "Operating", "Outflow", -920000, 0, 0, 0, 0, 0, 0, 0},
+			            {46, 20261031, 1, "Operating", "Outflow", -860000, 0, 0, 0, 0, 0, 0, 0},
+			            {47, 20261130, 1, "Operating", "Outflow", -780000, 0, 0, 0, 0, 0, 0, 0},
+			            {48, 20261231, 1, "Operating", "Outflow", -720000, 0, 0, 0, 0, 0, 0, 0},
+			            {49, 20250615, 1, "Investing", "Outflow", -350000, 0, 0, 0, 0, 0, 0, 0},
+			            {50, 20251015, 1, "Investing", "Outflow", -180000, 0, 0, 0, 0, 0, 0, 0},
+			            {51, 20260615, 1, "Investing", "Outflow", -280000, 0, 0, 0, 0, 0, 0, 0},
+			            {52, 20260915, 1, "Investing", "Outflow", -150000, 0, 0, 0, 0, 0, 0, 0},
+			            {53, 20250315, 1, "Financing", "Outflow", -120000, 0, 0, 0, 0, 0, 0, 0},
+			            {54, 20250915, 1, "Financing", "Outflow", -120000, 0, 0, 0, 0, 0, 0, 0},
+			            {55, 20260315, 1, "Financing", "Outflow", -140000, 0, 0, 0, 0, 0, 0, 0},
+			            {56, 20260915, 1, "Financing", "Outflow", -140000, 0, 0, 0, 0, 0, 0, 0}
+			        }
+			    )
+			in
+			    Source

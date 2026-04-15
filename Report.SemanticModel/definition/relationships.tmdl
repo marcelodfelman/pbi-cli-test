@@ -114,3 +114,11 @@ relationship emp_dept
 	fromColumn: Dim_Employee.DepartmentID
 	toColumn: Dim_Department.DepartmentID
 
+relationship cash_date
+	fromColumn: Fact_Cash.DateID
+	toColumn: Dim_Date.DateID
+
+relationship cash_property
+	fromColumn: Fact_Cash.PropertyID
+	toColumn: Dim_Property.PropertyID
+
