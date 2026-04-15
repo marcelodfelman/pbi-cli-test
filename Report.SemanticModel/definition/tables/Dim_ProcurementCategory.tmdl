@@ -1,0 +1,38 @@
+table Dim_ProcurementCategory
+	lineageTag: c1000001-1111-4000-8000-000000000001
+
+	column CategoryID
+		dataType: int64
+		formatString: 0
+		lineageTag: c1000001-1111-4000-8000-000000000002
+		summarizeBy: none
+		sourceColumn: CategoryID
+
+	column CategoryName
+		dataType: string
+		lineageTag: c1000001-1111-4000-8000-000000000003
+		summarizeBy: none
+		sourceColumn: CategoryName
+
+	partition Dim_ProcurementCategory = m
+		mode: import
+		source =
+			let
+			    Source = #table(
+			        type table [CategoryID = Int64.Type, CategoryName = text],
+			        {
+			            {1, "Food & Beverage"},
+			            {2, "Housekeeping"},
+			            {3, "Utilities"},
+			            {4, "Maintenance"},
+			            {5, "Guest Supplies"},
+			            {6, "IT Services"},
+			            {7, "Safety & Security"},
+			            {8, "Admin & General"},
+			            {9, "Marketing"},
+			            {10, "Spa & Wellness"},
+			            {11, "Sustainability"}
+			        }
+			    )
+			in
+			    Source

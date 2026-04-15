@@ -1,0 +1,115 @@
+table Fact_Energy
+	lineageTag: e1000001-1111-4000-8000-000000000001
+
+	column EnergyID
+		dataType: int64
+		formatString: 0
+		lineageTag: e1000001-1111-4000-8000-000000000002
+		summarizeBy: none
+		sourceColumn: EnergyID
+
+	column DateID
+		dataType: int64
+		formatString: 0
+		lineageTag: e1000001-1111-4000-8000-000000000003
+		summarizeBy: none
+		sourceColumn: DateID
+
+	column PropertyID
+		dataType: int64
+		formatString: 0
+		lineageTag: e1000001-1111-4000-8000-000000000004
+		summarizeBy: none
+		sourceColumn: PropertyID
+
+	column ElectricityKWh
+		dataType: double
+		formatString: #,##0
+		lineageTag: e1000001-1111-4000-8000-000000000005
+		summarizeBy: sum
+		sourceColumn: ElectricityKWh
+
+	column WaterLiters
+		dataType: double
+		formatString: #,##0
+		lineageTag: e1000001-1111-4000-8000-000000000006
+		summarizeBy: sum
+		sourceColumn: WaterLiters
+
+	column GasM3
+		dataType: double
+		formatString: #,##0
+		lineageTag: e1000001-1111-4000-8000-000000000007
+		summarizeBy: sum
+		sourceColumn: GasM3
+
+	column ElectricityCost
+		dataType: double
+		formatString: $#,##0
+		lineageTag: e1000001-1111-4000-8000-000000000008
+		summarizeBy: sum
+		sourceColumn: ElectricityCost
+
+	column WaterCost
+		dataType: double
+		formatString: $#,##0
+		lineageTag: e1000001-1111-4000-8000-000000000009
+		summarizeBy: sum
+		sourceColumn: WaterCost
+
+	column GasCost
+		dataType: double
+		formatString: $#,##0
+		lineageTag: e1000001-1111-4000-8000-000000000010
+		summarizeBy: sum
+		sourceColumn: GasCost
+
+	column CarbonKgCO2e
+		dataType: double
+		formatString: #,##0
+		lineageTag: e1000001-1111-4000-8000-000000000011
+		summarizeBy: sum
+		sourceColumn: CarbonKgCO2e
+
+	column IsAnomaly
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e1000001-1111-4000-8000-000000000012
+		summarizeBy: none
+		sourceColumn: IsAnomaly
+
+	partition Fact_Energy = m
+		mode: import
+		source =
+			let
+			    Source = #table(
+			        type table [EnergyID = Int64.Type, DateID = Int64.Type, PropertyID = Int64.Type, ElectricityKWh = number, WaterLiters = number, GasM3 = number, ElectricityCost = number, WaterCost = number, GasCost = number, CarbonKgCO2e = number, IsAnomaly = logical],
+			        {
+			            {1, 20250101, 1, 62500, 420000, 8200, 15625, 2100, 4100, 29750, false},
+			            {2, 20250201, 1, 55400, 380000, 7500, 13850, 1900, 3750, 26400, false},
+			            {3, 20250301, 1, 58200, 410000, 7300, 14550, 2050, 3650, 27700, false},
+			            {4, 20250401, 1, 61000, 445000, 6900, 15250, 2225, 3450, 29050, false},
+			            {5, 20250501, 1, 68500, 492000, 6200, 17125, 2460, 3100, 32600, false},
+			            {6, 20250601, 1, 78200, 541000, 5400, 19550, 2705, 2700, 37200, false},
+			            {7, 20250701, 1, 85600, 589000, 4800, 21400, 2945, 2400, 40700, true},
+			            {8, 20250801, 1, 87200, 598000, 4600, 21800, 2990, 2300, 41500, true},
+			            {9, 20250901, 1, 74500, 520000, 5100, 18625, 2600, 2550, 35450, false},
+			            {10, 20251001, 1, 68800, 478000, 5800, 17200, 2390, 2900, 32750, false},
+			            {11, 20251101, 1, 61200, 421000, 7100, 15300, 2105, 3550, 29100, false},
+			            {12, 20251201, 1, 64100, 438000, 8000, 16025, 2190, 4000, 30500, false},
+			            {13, 20260101, 1, 60200, 412000, 8000, 15050, 2060, 4000, 28650, false},
+			            {14, 20260201, 1, 53800, 372000, 7300, 13450, 1860, 3650, 25600, false},
+			            {15, 20260301, 1, 56400, 400000, 7100, 14100, 2000, 3550, 26850, false},
+			            {16, 20260401, 1, 59200, 434000, 6700, 14800, 2170, 3350, 28200, false},
+			            {17, 20260501, 1, 66500, 481000, 6000, 16625, 2405, 3000, 31650, false},
+			            {18, 20260601, 1, 76000, 529000, 5200, 19000, 2645, 2600, 36200, false},
+			            {19, 20260701, 1, 83200, 576000, 4600, 20800, 2880, 2300, 39600, false},
+			            {20, 20260801, 1, 84800, 585000, 4400, 21200, 2925, 2200, 40400, false},
+			            {21, 20260901, 1, 72500, 508000, 4900, 18125, 2540, 2450, 34550, false},
+			            {22, 20261001, 1, 66900, 467000, 5600, 16725, 2335, 2800, 31850, false},
+			            {23, 20261101, 1, 59500, 411000, 6900, 14875, 2055, 3450, 28300, false},
+			            {24, 20261201, 1, 62300, 428000, 7800, 15575, 2140, 3900, 29650, false}
+			        }
+			    )
+			in
+			    Source

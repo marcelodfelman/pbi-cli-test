@@ -18,7 +18,9 @@
       "mcp__plugin_playwright_playwright__browser_take_screenshot",
       "mcp__plugin_playwright_playwright__browser_snapshot",
       "mcp__plugin_playwright_playwright__browser_resize",
-      "mcp__plugin_playwright_playwright__browser_click"
+      "mcp__plugin_playwright_playwright__browser_click",
+      "Bash(python -c \"import PyPDF2\")",
+      "Bash(pdftotext -layout Deeply_Full_Specification.pdf spec.txt)"
     ]
   }
 }

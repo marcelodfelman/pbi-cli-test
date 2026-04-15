@@ -1,0 +1,1543 @@
+deeply | Hospitality Executive Dashboard -- Full Specification   hellodeeply.com | Confidential v2.0
+
+   deeply
+
+ Hospitality Executive Dashboard
+
+          Full Business & Technical Specification
+
+     Power BI Dashboard Kit -- Enterprise Grade
+
+Hotels · Boutique · Luxury · Glamping · Zimmer · Multi-Property Chains
+
+               Version 2.0 | hellodeeply.com | info@hellodeeply.com
+
+   10                              170+            12             6
+
+Dashboard Screens                  DAX Measures  Source Systems  User Roles
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification  hellodeeply.com | Confidential v2.0
+
+1. Executive Overview
+
+The DEEPLY Hospitality Executive Dashboard is a fully integrated Power BI intelligence layer for the hospitality
+sector. It unifies data from every operational system into a single management cockpit that connects commercial
+performance, profitability, operations, people, and sustainability into one coherent view.
+
+1.1 The Guiding Principle
+
+  Data  Insight  Financial Impact  Recommended Action
+
+  The dashboard is not another BI report. It is a management control layer that enables fast,
+  data-driven, cross-departmental decision-making -- available in Hebrew and English.
+
+1.2 Vision Statement
+
+"Build for DEEPLY an advanced hospitality dashboard product at Enterprise level that looks and functions as a
+strategic management system -- not a collection of reports." Every screen answers one management question.
+Every KPI explains the why. Every anomaly leads to an action.
+
+1.3 Scope -- Property Types Supported
+
+Property Type          Active Screens                           Key Differentiators
+                                                                ADR premium, direct booking %, guest
+Boutique Hotel (10­80  1,2,3,4,5,6,8,10                         NPS
+rooms)
+                                                                Full operational + F&B + HR scheduling
+Mid-Scale Hotel        All 10 screens
+(80­250 rooms)                                                  MICE, multi-currency, TRevPAR focus
+
+Luxury / Resort (250+  All 10 + Spa overlay                     Unit occupancy, platform mix, lead time
+rooms)
+                                                                Experience revenue, ESG, seasonality
+Zimmer / B&B (2­20     1,2,3,4,5                                Cross-property RLS, regional rollup,
+units)                                                          benchmarking
+
+Glamping / Eco Resort 1,2,3,4,5,9
+
+Multi-Property Chain All 10 + Portfolio view
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification                 hellodeeply.com | Confidential v2.0
+
+2. User Personas & Access Matrix
+
+2.1 Persona Definitions
+
+Role             Core Question              Key Metrics                        Primary Screens
+
+CEO / Owner      Am I hitting EBITDA        Revenue, EBITDA, Occupancy,        Executive Command
+                 targets? Where is money    GOP Margin                         Center, P&L
+                 being lost?
+
+CFO / Finance    Cash position, forecast    Cash, AR/AP, Budget Variance, Net  Finance & Cash, P&L
+Director         accuracy, AR aging,        Profit
+                 CapEx vs plan?
+
+COO / General    Daily flash -- occupancy,  RevPAR, Occupancy, NPS, SLA        Executive, Revenue,
+Manager          RevPAR, complaints,        compliance                         Operations
+                 staff issues?
+
+Revenue Manager  Rate calendar, pickup,     ADR, Pace, Cancellation %, Net     Commercial & Revenue,
+                                                                               Channels
+                 channel mix, pace vs LY? ADR
+
+CHRO / HR        Turnover risk, scheduling  Turnover, Absenteeism, Labor Cost  Workforce & HR
+Director         gaps, payroll vs budget?   %
+
+Procurement      Spend variance, supplier   OTIF, Spend Variance, Stockout     Procurement & Inventory
+Manager          performance, inventory     Rate
+                 days?
+
+Energy /         kWh per occupied room,     Energy Cost, kWh/Room, Waste % Energy & Sustainability
+Sustainability   carbon, ESG targets?
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification  hellodeeply.com | Confidential v2.0
+
+3. Design Principles & Brand System
+
+3.1 Deeply Brand DNA
+
+The Deeply logo communicates: depth, trust, technology, precision, enterprise premium. Every design decision
+must reinforce these values.
+
+3.2 Color System
+
+Role        Color                  Hex                          Usage
+                                   #0A1628                      Headers, key text, navigation
+Primary     Deep Navy              #1A4A8A                      Section headers, active states
+                                   #4DB2EC                      Highlights, links, KPI positive
+Secondary   Royal Blue             #F8FAFC                      Page backgrounds
+                                   #EBF5FB                      Card fills, table alternates
+Accent      Sky Blue               #1E8449                      On-target, positive variance
+                                   #B7770D                      Near-threshold, watch
+Background  Off White              #C0392B                      Off-target, alert, anomaly
+                                   #2C3E50                      Body text, secondary labels
+Surface     Pale Blue
+
+Success     Green
+
+Warning     Amber
+
+Danger      Red
+
+Neutral     Dark Gray
+
+3.3 UX Principles
+
+   · Each screen answers exactly ONE management question
+   · Every KPI must show: current value + vs budget + vs LY + trend direction
+   · Every anomaly must lead to a defined action or owner
+   · Full visual consistency across all 10 screens -- same header, footer, slicer position
+   · Mobile-first layout: KPI cards stack vertically on Power BI Mobile
+   · RTL Hebrew + LTR English toggle available on all screens
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification  hellodeeply.com | Confidential v2.0
+
+4. KPI Framework -- Six Measurement Layers
+
+Layer 1 -- Core Business Metrics
+
+Financial Performance        Revenue                            Profitability
+
+Total Revenue                Total Expenses                     Gross Profit
+Net Revenue                  Expense Ratio %                    Operating Profit
+Revenue Growth %             Department Expenses                GOP / EBITDA
+Cash Balance                 Payroll %                          Net Profit Margin %
+Working Capital              Utility Cost %                     Budget Variance
+
+Layer 2 -- Classic Hospitality KPIs
+
+Occupancy              Rate           Revenue                   Booking
+
+Occupancy %            ADR            Rooms Revenue             Booking Pace
+OOO Rooms              Net ADR        F&B Revenue               Pickup (7/14/30d)
+Available Rooms        RevPAR         Ancillary Revenue         Cancellation %
+                       TRevPAR        Upsell Revenue            No-show %
+                       GOPPAR                                   Booking Window
+                                                                ALOS
+
+Layer 3 -- Guest Retention & Customer Economics
+
+   · Repeat Guest Rate | Retention Rate | Churn Rate (Guest / Corporate / Loyalty)
+   · LTV (Gross and Net) -- accounting for frequency, ADR, ancillary spend, discounts, CAC
+   · CAC (Cost of Acquisition) by channel | LTV/CAC Ratio
+   · NPS / Guest Satisfaction Score | Review Score (Booking.com / TripAdvisor / Google)
+
+Layer 4 -- Operational Efficiency
+
+   · Check-in wait time | Check-out efficiency | Room ready on time %
+   · Housekeeping productivity | Room turnaround time
+   · Maintenance SLA compliance % | Out-of-order rooms | Resolution time
+   · Complaint rate per 100 rooms | First-response time
+
+Layer 5 -- Workforce & HR
+
+   · Headcount | FTE vs Budget | Turnover % | Absenteeism %
+   · Labor Cost % of Revenue | Payroll variance | Overtime %
+   · Revenue per Employee | Occupied Rooms per Labor Hour
+   · Open Roles | Time to Hire | Training Completion %
+
+Layer 6 -- Energy, Utilities & Sustainability
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification    hellodeeply.com | Confidential v2.0
+
+ · kWh per Occupied Room | Water Liters per Occupied Room
+ · Energy Cost | Utility Cost % | Peak Demand
+ · Carbon Footprint (tCO2e) | Waste per Guest | Savings Realized
+ · Laundry Cost per Occupied Room | Renewable Energy %
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification  hellodeeply.com | Confidential v2.0
+
+5. Dashboard Screens -- Full Specification
+
+Screen 1 -- Executive Command Center
+
+Audience           CEO, Owner, Board, GM
+
+Core Question      What is the state of the business right now? Are we on plan? What is hurting profit?
+
+KPIs               Total Revenue | Net Revenue | GOP/EBITDA | Occupancy | ADR | RevPAR | Cash
+                   Position | Payroll % | Guest NPS | Repeat Guest Rate | TRevPAR | Profit Margin %
+
+Visualizations     6× KPI Score Cards (conditional color) | Revenue/Expenses/Profit Combo Trend (12
+                   months) | Waterfall: Revenue Bridge vs LY | Heatmap: Property/Dept performance matrix
+                   | Top 3 Alerts Panel | AI Smart Narrative
+
+Power BI Features  Bookmark: Board Pack Mode | PDF Export one-click | Drill-through to any detail screen |
+                   Smart Narrative auto-summary | Decomposition Tree on any KPI
+
+Screen 2 -- Commercial & Revenue
+
+Audience           Revenue Manager, GM, COO
+
+Core Question      What is our rate and occupancy mix? Where is revenue coming from and what is the true
+                   net contribution?
+
+KPIs               Occupancy % | ADR | Net ADR | RevPAR | TRevPAR | GOPPAR | Booking Pace |
+                   Pickup (7/14/30d) | Cancellation % | No-show % | ALOS | Booking Window | Upsell
+                   Revenue | Direct Mix % | OTA Mix %
+
+Visualizations     Rate Calendar Heatmap (ADR by date) | Pace Curve (current vs LY) | Occupancy vs
+                   ADR Scatter (price elasticity) | Gross-to-Net Revenue Bridge (Waterfall) | Revenue Mix
+                   by Segment (Donut) | Cancellation Trend (Line)
+
+Power BI Features  Rate Calendar click  date detail | Pickup snapshot comparison (today vs yesterday) |
+                   STR Benchmark overlay | AI 90-day Revenue Forecast with confidence bands
+
+Screen 3 -- Sales, Marketing & Channels
+
+Audience           CMO, Revenue Manager
+
+Core Question      Which channels are truly profitable? What is our real CAC and LTV? Where should we
+                   invest more?
+
+KPIs               Website Conversion Rate | Direct Booking % | CAC by channel | ROAS | Net Revenue
+                   by Channel | LTV (Gross & Net) | LTV/CAC Ratio | Repeat Booking Rate | Loyalty Active
+                   Rate | OTA Commission Cost
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification  hellodeeply.com | Confidential v2.0
+
+Visualizations     Sankey: Booking Source  Channel  Revenue | Funnel: Web Visit  Search  Book
+Power BI Features   Arrive  Return | CAC vs LTV Scatter by channel | ROAS by Campaign | Repeat
+                   Guest Cohort | Channel Profitability Waterfall
+
+                   True Net Revenue per Channel (after CAC + commission) | Campaign ROI via GA4 UTM
+                   integration | Booking Window Heatmap | OTA parity monitor alert
+
+Screen 4 -- Operations & Guest Experience
+
+Audience           COO, GM, Guest Relations
+
+Core Question      How well are we executing operationally? What are guests experiencing and where are
+                   we failing?
+
+KPIs               Check-in Wait Time | Rooms Ready on Time % | Housekeeping Productivity |
+                   Maintenance SLA % | OOO Rooms | Complaint Rate per 100 rooms | Resolution Time |
+                   Review Score (all platforms) | NPS | Department Satisfaction
+
+Visualizations     SLA Compliance Board | Pareto Chart: Top complaint categories | Room Status
+                   Heatmap (hourly) | Guest Issue Trend (line) | Department Performance Matrix | Word
+                   Cloud: review sentiment
+
+Power BI Features  AI Sentiment Classification of reviews | Spike Alert on score drop | Benchmark vs Comp
+                   Set (TrustYou/Revinate) | Drill-through to individual review or work order
+
+Screen 5 -- Finance & Cash
+
+Audience           CFO, Finance Team
+
+Core Question      What is our cash position? Are we collecting on time? Where are we over/under budget?
+
+KPIs               Cash Balance | Operating Cash Flow | AR Balance + DSO | AP Balance + DPO |
+                   Collection Rate | Refunds Outstanding | Budget Variance ( and %) | CapEx vs Plan |
+                   Forecast Accuracy
+
+Visualizations     Cash Waterfall (Operating/Investing/Financing) | AR Aging Matrix (0-30/31-60/61-90/90+
+                   days) | Collections Trend | 90-day Cash Forecast with AI confidence band | Expense
+                   Variance Analysis by GL code
+
+Power BI Features  Live bank feed integration (API) | Covenant Monitor with threshold alerts | FX Exposure
+                   sensitivity slider | Scenario: RevPAR -10%  cash runway impact
+
+Screen 6 -- Profitability & P&L
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification  hellodeeply.com | Confidential v2.0
+
+Audience           CFO, Owner, GM
+Core Question
+KPIs               What is our true EBITDA? Which departments are profitable? Where is margin being
+Visualizations     eroded?
+Power BI Features
+                   Gross Profit | Operating Profit | GOP | EBITDA | Net Profit | Profit Margin % | Department
+                   Margin | Payroll % | Utility Cost % | Cost of Sales %
+
+                   Full USALI P&L Matrix (rows × 12 months, color-coded vs budget) | Revenue-to-EBITDA
+                   Waterfall | Margin Trend (24 months) | Property Ranking by Profit | Budget vs Actual
+                   Variance by GL
+
+                   USALI-mapped Chart of Accounts | Department P&L drill-through | AI variance
+                   commentary on top 3 variances | Rolling 3-month forecast update
+
+Screen 7 -- Procurement & Inventory
+
+Audience           Purchasing Manager, CFO
+
+Core Question      Are we overspending on procurement? Which suppliers are underperforming? Where is
+                   waste occurring?
+
+KPIs               Total Spend | Spend Variance | Purchase Price Variance | Inventory Days | Waste % |
+                   Stockout Rate | Supplier OTIF | Emergency Purchases % | Maverick Spend % | Contract
+                   Compliance %
+
+Visualizations     Treemap: Spend by Category | Vendor Scorecard (Delivery × Quality × Price composite)
+                   | Inventory Heatmap by SKU | Waste Trend | SKU Price Trend vs contract | Spend Cube
+                   drill Category  Vendor  Invoice
+
+Power BI Features  Contract Expiry Calendar alerts | Price Benchmark vs commodity index | Preferred
+                   Vendor compliance flag | Drill-through: click vendor  full scorecard + invoice history
+
+Screen 8 -- Workforce & HR
+
+Audience           CHRO, HR Team, GM
+
+Core Question      Are our people costs sustainable? Where is turnover happening? Are we properly
+                   staffed?
+
+KPIs               Headcount | Labor Cost | Payroll % Revenue | Revenue per Employee | Occupied
+                   Rooms per Labor Hour | Turnover % | Absenteeism % | Overtime % | Open Roles | Time
+                   to Hire | Training Completion %
+
+Visualizations     Headcount Trend by Department | Attrition Heatmap (dept × month) | Productivity vs
+                   Labor Cost Scatter | Scheduling Coverage Heatmap (shift × day) | Hiring Funnel | Payroll
+                   Waterfall (Budget  Overtime  Actuals)
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification  hellodeeply.com | Confidential v2.0
+
+Power BI Features  Flight Risk Model: AI flags at-risk employees | Scheduling Gap Alerts | Training
+                   Compliance deadline tracker | eNPS pulse survey integration
+
+Screen 9 -- Energy, Utilities & Sustainability
+
+Audience           Sustainability Officer, GM, Maintenance
+
+Core Question      How efficient is our energy use? Where are anomalies? What is our ESG performance?
+
+KPIs               Energy Cost | kWh per Occupied Room | Water per Occupied Room | Utility Cost % |
+                   Peak Demand | Waste per Guest | Laundry Cost per Occ Room | Carbon Footprint
+                   (tCO2e) | Renewable Energy % | Green Score
+
+Visualizations     Utility Trend (24 months) + benchmark | Baseline vs Actual Usage | Consumption
+                   Heatmap (hour × day) | Property Comparison | Anomaly Panel | Carbon Breakdown
+                   (Scope 1/2/3) | Energy Source Mix Donut
+
+Power BI Features  IoT/BMS integration: hourly meter data per zone | AI anomaly detection (>20% baseline
+                   spike) | ESG Board Report PDF export | Solar generation monitor
+
+Screen 10 -- Portfolio, Benchmark & Forecast
+
+Audience           Owner, CEO, Regional Managers
+
+Core Question      How do our properties compare? Which are leading, which are lagging? What does the
+                   forecast show?
+
+KPIs               Property Rank | Revenue Index | RevPAR Index | TRevPAR | GOPPAR | Budget
+                   Attainment % | Forecast Accuracy | Risk Score | Health Score | Net Margin by Property
+
+Visualizations     Portfolio Ranking Table (sortable by any KPI) | Map Visual: properties by RevPAR
+                   performance | Small Multiples: all KPIs per property | 90-day Forecast Cone | Benchmark
+                   Scatter (vs STR comp set) | Comparative Heatmap
+
+Power BI Features  Cross-property RLS: regional manager sees only their cluster | STR/OTA Insight API
+                   benchmark | Scenario: what-if RevPAR +5% across portfolio  EBITDA impact |
+                   Forecast export to Excel for Board Pack
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification               hellodeeply.com | Confidential v2.0
+
+6. Data Model -- Full Schema
+
+The model follows a Star Schema pattern. All Fact tables connect exclusively to Dimension tables. No direct
+Fact-to-Fact relationships. Role-playing dimensions are implemented via inactive relationships activated with
+USERELATIONSHIP() in DAX.
+
+  Key Conventions:
+   PK = Primary Key (surrogate integer, never exposed to end users)
+   FK = Foreign Key referencing a Dimension table
+   NK = Natural / Business Key (from source system)
+   All date columns store as DATE or DATETIME, never VARCHAR
+   All monetary columns: DECIMAL(18,4) in base currency
+   NULL = allowed only where value genuinely may not exist
+
+6.1 Fact Tables    Data Type       Nullable  Key                Description
+
+Fact_Reservations  INT             NOT NULL  PK                 Surrogate primary key
+
+  Column Name      NVARCHAR(50     NOT NULL  NK                 PMS reservation number
+  ReservationID    )
+  ReservationNK
+                   INT             NOT NULL  FK                 Which property
+  PropertyID                                 Dim_Proper
+                                             ty
+  RoomID
+  GuestID          INT             NULL      FK                 Assigned room (null until check-in)
+                                             Dim_Room
+  ChannelID
+                   INT             NOT NULL  FK                 Anonymized guest reference
+  SegmentID                                  Dim_Guest
+
+  ArrivalDateID    INT             NOT NULL  FK                 Booking channel (OTA/Direct/GDS)
+  DepartureDateID                            Dim_Chann
+  BookingDateID                              el
+  RoomNights
+  Adults           INT             NOT NULL  FK                 Market segment (Leisure/Corp/Group)
+                                             Dim_Segme
+                   INT             NOT NULL  nt
+                   INT             NOT NULL
+                   INT             NOT NULL  FK                 Arrival date key
+                   SMALLINT        NOT NULL  Dim_Date
+                   TINYINT         NOT NULL
+                                             FK                 Departure date key (inactive rel.)
+                                             Dim_Date
+
+                                             FK                 Date reservation was made (inactive)
+                                             Dim_Date
+
+                                             --                 Total nights booked
+
+                                             --                 Number of adult guests
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification               hellodeeply.com | Confidential v2.0
+
+Column Name         Data Type      Nullable  Key                Description
+Children                                     --                 Number of children
+RateCode            TINYINT        NOT NULL  --                 Rate plan applied
+GrossRevenue                                                    (BAR/Corporate/etc.)
+NetRevenue          NVARCHAR(20    NOT NULL  --                 Revenue before
+Commission          )                                           commissions/discounts
+DiscountAmount                               --
+UpsellRevenue       DECIMAL(18,4   NOT NULL  --                 Revenue after channel commission
+Status              )                        --
+CancellationDateID                                              OTA/agent commission paid
+LeadTimeDays        DECIMAL(18,4   NOT NULL  --
+LoyaltyTier         )                                           Promotional discounts applied
+CurrencyCode                                 --
+ETLLoadDate         DECIMAL(18,4   NULL      FK                 Upsell add-ons
+                    )                        Dim_Date           (breakfast/parking/etc.)
+                                             --                 Confirmed/In-House/Checked-Out/Ca
+                    DECIMAL(18,4   NULL      --                 ncelled/No-Show
+                    )                        --
+                                             --                 Date cancelled (null if not cancelled)
+                    DECIMAL(18,4   NULL
+                    )                                           Days between booking and arrival
+
+                    NVARCHAR(20    NOT NULL                     Guest loyalty tier at time of booking
+                    )
+                                                                ISO 4217 currency of transaction
+                    INT            NULL                         Row insertion timestamp from ETL
+
+                    SMALLINT       NULL
+
+                    NVARCHAR(20    NULL
+                    )
+
+                    CHAR(3)        NOT NULL
+
+                    DATETIME       NOT NULL
+
+Fact_Revenue        Data Type      Nullable  Key                Description
+                    INT            NOT NULL
+  Column Name       INT            NOT NULL  PK                 Surrogate primary key
+  RevenueID         INT            NOT NULL
+  DateID            INT            NOT NULL  FK                 Revenue date key
+                    INT            NOT NULL  Dim_Date
+  PropertyID
+                                             FK                 Property
+  OutletID                                   Dim_Proper
+                                             ty
+  DepartmentID
+                                             FK                 Revenue outlet
+                                             Dim_Outlet         (Rooms/F&B/Spa/Parking)
+
+                                             FK                 Operational department
+                                             Dim_Depart
+                                             ment
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification                      hellodeeply.com | Confidential v2.0
+
+Column Name        Data Type       Nullable  Key                Description
+GrossRevenue                                 --                 Gross revenue before deductions
+NetRevenue         DECIMAL(18,4    NOT NULL  --                 Net after commissions and discounts
+TaxAmount          )                         --                 VAT/tax collected
+Covers                                       --                 F&B covers (null for non-F&B)
+Transactions       DECIMAL(18,4    NOT NULL  --                 Number of POS transactions
+CurrencyCode       )                         --                 Transaction currency
+SourceSystem                                 --                 PMS / POS / Booking Engine
+                   DECIMAL(18,4    NULL
+                   )
+
+                   INT             NULL
+
+                   INT             NULL
+
+                   CHAR(3)         NOT NULL
+
+                   NVARCHAR(30     NOT NULL
+                   )
+
+Fact_Expenses      Data Type       Nullable  Key                Description
+                   INT             NOT NULL
+  Column Name      INT             NOT NULL  PK                 Surrogate primary key
+  ExpenseID
+  DateID                                     FK                 Expense posting date
+  PropertyID                                 Dim_Date
+
+  DepartmentID     INT             NOT NULL  FK                 Property incurring expense
+                                             Dim_Proper
+  AccountID                                  ty
+
+  VendorID         INT             NOT NULL  FK                 Responsible department
+  Amount                                     Dim_Depart
+  BudgetAmount                               ment
+  ExpenseCategory
+  InvoiceNumber    INT             NOT NULL  FK                 GL account (USALI-mapped)
+  ApprovalStatus                             Dim_Accou
+                                             nt
+
+                   INT             NULL      FK                 Supplier (for procurement expenses)
+                                             Dim_Suppli
+                                             er
+
+                   DECIMAL(18,4    NOT NULL  --                 Expense amount in base currency
+                   )
+
+                   DECIMAL(18,4    NULL      --                 Approved budget for this period/GL
+                   )
+
+                   NVARCHAR(50     NOT NULL  --                 Payroll/COGS/Energy/Maintenance/M
+                   )                                            arketing
+
+                   NVARCHAR(50     NULL      --                 Supplier invoice reference
+                   )
+
+                   NVARCHAR(20     NOT NULL  --                 Approved/Pending/Rejected
+                   )
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification                      hellodeeply.com | Confidential v2.0
+
+Column Name      Data Type         Nullable  Key                Description
+IsCapex          BIT                                            1 = Capital expenditure, 0 = OpEx
+                                   NOT NULL --
+
+Fact_Payroll     Data Type         Nullable  Key                Description
+                 INT               NOT NULL
+  Column Name    INT               NOT NULL  PK                 Surrogate primary key
+  PayrollID
+  DateID                                     FK                 Pay period end date
+                                             Dim_Date
+  PropertyID
+                 INT               NOT NULL  FK                 Property
+  EmployeeID                                 Dim_Proper
+                                             ty
+  DepartmentID
+                 INT               NOT NULL  FK                 Employee reference
+  BaseSalary                                 Dim_Emplo
+  OvertimePay                                yee
+  Bonus
+  Benefits       INT               NOT NULL  FK                 Department at time of payment
+  TotalCost                                  Dim_Depart
+  RegularHours                               ment
+  OvertimeHours
+  AbsentDays     DECIMAL(18,4      NOT NULL  --                 Regular base pay
+  IsActive       )
+
+                 DECIMAL(18,4      NULL      --                 Overtime additional pay
+                 )
+
+                 DECIMAL(18,4      NULL      --                 Bonus payments (restricted access)
+                 )
+
+                 DECIMAL(18,4      NULL      --                 Employer benefit contributions
+                 )
+
+                 DECIMAL(18,4      NOT NULL  --                 Total employer cost
+                 )                                              (salary+OT+benefits)
+
+                 DECIMAL(8,2) NOT NULL       --                 Regular hours worked in period
+
+                 DECIMAL(8,2) NULL           --                 Overtime hours worked
+
+                 TINYINT           NULL      --                 Unplanned absence days in period
+
+                 BIT               NOT NULL  --                 1 = currently employed
+
+Fact_GL          Data Type         Nullable  Key                Description
+                 INT               NOT NULL                     Surrogate primary key
+  Column Name    INT               NOT NULL  PK                 GL posting date
+  GLID
+                                             FK 
+  DateID                                     Dim_Date
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification                hellodeeply.com | Confidential v2.0
+
+Column Name        Data Type       Nullable  Key                Description
+PropertyID         INT             NOT NULL
+                                             FK                 Property entity
+AccountID                                    Dim_Proper
+                                             ty
+DepartmentID
+DebitAmount        INT             NOT NULL  FK                 Chart of accounts line
+CreditAmount                                 Dim_Accou
+NetAmount                                    nt
+JournalReference
+Description        INT             NOT NULL  FK                 Cost center
+PeriodYear                                   Dim_Depart
+PeriodMonth                                  ment
+
+                   DECIMAL(18,4    NULL      --                 Debit amount
+                   )
+
+                   DECIMAL(18,4    NULL      --                 Credit amount
+                   )
+
+                   DECIMAL(18,4    NOT NULL  --                 Net (Debit - Credit)
+                   )
+
+                   NVARCHAR(50     NULL      --                 Journal entry reference number
+                   )
+
+                   NVARCHAR(20     NULL      --                 Transaction description
+                   0)
+
+                   SMALLINT        NOT NULL  --                 Fiscal year
+
+                   TINYINT         NOT NULL  --                 Fiscal month (1-12)
+
+Fact_Energy        Data Type       Nullable  Key                Description
+                   INT             NOT NULL
+  Column Name      INT             NOT NULL  PK                 Surrogate primary key
+  EnergyID         TINYINT         NOT NULL
+  DateID           INT             NOT NULL  FK                 Reading date
+  HourOfDay                                  Dim_Date
+  PropertyID
+                                             --                 Hour 0-23 (for IoT hourly data)
+  MeterID
+  Electricity_kWh                            FK                 Property
+  Water_Liters                               Dim_Proper
+  Gas_m3                                     ty
+
+                   INT             NOT NULL  FK                 Specific meter/zone
+                                             Dim_Meter
+
+                   DECIMAL(10,4    NULL      --                 Electricity consumed in kWh
+                   )
+
+                   DECIMAL(12,2    NULL      --                 Water consumed in liters
+                   )
+
+                   DECIMAL(10,4    NULL      --                 Natural gas in cubic meters
+                   )
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification                      hellodeeply.com | Confidential v2.0
+
+Column Name              Data Type     Nullable  Key            Description
+                                                                Cost of electricity for period
+ElectricityCost          DECIMAL(18,4  NULL      --             Cost of water for period
+                         )                                      Cost of gas for period
+                                                                1 = AI-flagged consumption anomaly
+WaterCost                DECIMAL(18,4  NULL      --             Expected consumption for period
+                         )
+
+GasCost                  DECIMAL(18,4  NULL      --
+                         )
+
+IsAnomaly                BIT           NOT NULL --
+
+BaselineElectricity_kWh  DECIMAL(10,4  NULL      --
+                         )
+
+Fact_GuestFeedback
+
+Column Name              Data Type     Nullable  Key            Description
+                                       NOT NULL
+FeedbackID               INT           NOT NULL  PK             Surrogate primary key
+
+DateID                   INT                     FK             Review/survey date
+                                                 Dim_Date
+
+PropertyID               INT           NOT NULL  FK             Property reviewed
+                                                 Dim_Proper
+                                                 ty
+
+GuestID                  INT           NULL      FK             Reviewer (null if anonymous)
+                                                 Dim_Guest
+Platform
+OverallScore             NVARCHAR(30   NOT NULL  --             Booking.com/TripAdvisor/Google/Inter
+CleanlinessScore         )                                      nal
+ServiceScore
+FacilitiesScore          DECIMAL(4,2) NOT NULL   --             Score (e.g. 8.4 out of 10)
+SentimentLabel
+                         DECIMAL(4,2) NULL       --             Cleanliness sub-score
+TopicTags
+                         DECIMAL(4,2) NULL       --             Staff/service sub-score
+ReviewText
+ManagerResponded         DECIMAL(4,2) NULL       --             Facilities sub-score
+ResponseHours
+IsNPS                    NVARCHAR(20   NULL      --             AI: Positive/Neutral/Negative
+                         )
+
+                         NVARCHAR(20   NULL      --             AI: comma-separated topics
+                         0)                                     (WiFi,Breakfast...)
+
+                         NVARCHAR(M    NULL      --             Original review text (sanitized)
+                         AX)
+
+                         BIT           NOT NULL  --             1 = management replied
+
+                         INT           NULL      --             Hours taken to respond
+
+                         BIT           NOT NULL  --             1 = internal NPS survey row
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification                      hellodeeply.com | Confidential v2.0
+
+Column Name        Data Type       Nullable  Key                Description
+NPSScore           TINYINT                                      0-10 NPS score (null if not NPS
+                                   NULL      --                 survey)
+
+Fact_Budget        Data Type       Nullable  Key                Description
+                   INT             NOT NULL
+  Column Name      INT             NOT NULL  PK                 Surrogate primary key
+  BudgetID
+  DateID                                     FK                 Budget month (first day of month)
+                                             Dim_Date
+  PropertyID
+                   INT             NOT NULL  FK                 Property
+  AccountID                                  Dim_Proper
+                                             ty
+  DepartmentID
+                   INT             NOT NULL  FK                 GL account line
+  BudgetRevenue                              Dim_Accou
+  BudgetExpense                              nt
+  BudgetOccupancy
+  BudgetADR        INT             NOT NULL  FK                 Department
+  BudgetHeadcount                            Dim_Depart
+  FiscalYear                                 ment
+  BudgetVersion
+                   DECIMAL(18,4    NULL      --                 Revenue target for period
+                   )
+
+                   DECIMAL(18,4    NULL      --                 Expense budget for period
+                   )
+
+                   DECIMAL(5,4) NULL         --                 Occupancy target (0.000-1.000)
+
+                   DECIMAL(18,4    NULL      --                 ADR target
+                   )
+
+                   DECIMAL(8,2) NULL         --                 FTE budget
+
+                   SMALLINT        NOT NULL  --                 Budget fiscal year
+
+                   NVARCHAR(20     NOT NULL  --                 Original/Reforecast1/Reforecast2
+                   )
+
+Fact_Procurement   Data Type       Nullable  Key                Description
+                   INT             NOT NULL                     Surrogate primary key
+  Column Name                      NOT NULL  PK                 Purchase order date
+  ProcurementID                    NULL                         Actual delivery date (inactive rel.)
+                                             FK 
+OrderDateID        INT                       Dim_Date
+
+DeliveryDateID     INT                       FK 
+                                             Dim_Date
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification               hellodeeply.com | Confidential v2.0
+
+Column Name       Data Type        Nullable  Key                Description
+PropertyID        INT              NOT NULL
+                                             FK                 Ordering property
+SupplierID                                   Dim_Proper
+                                             ty
+CategoryID
+                  INT              NOT NULL  FK                 Supplier
+POID                                         Dim_Suppli
+OrderedQuantity                              er
+ReceivedQuantity
+UnitCost          INT              NOT NULL  FK                 Spend category
+ContractUnitCost                             Dim_Procur
+TotalCost                                    ementCateg
+PriceVariance                                ory
+IsOnTime
+IsEmergency       NVARCHAR(50      NOT NULL  NK                 Purchase order number
+IsMaverick        )
+
+                  DECIMAL(12,4     NOT NULL  --                 Quantity ordered
+                  )
+
+                  DECIMAL(12,4     NULL      --                 Quantity actually received
+                  )
+
+                  DECIMAL(18,4     NOT NULL  --                 Cost per unit at order time
+                  )
+
+                  DECIMAL(18,4     NULL      --                 Agreed contract price per unit
+                  )
+
+                  DECIMAL(18,4     NOT NULL  --                 Total order value
+                  )
+
+                  DECIMAL(18,4     NULL      --                 Actual vs contract price difference
+                  )
+
+                  BIT              NULL      --                 1 = delivered on/before promised date
+
+                  BIT              NOT NULL  --                 1 = emergency/unplanned purchase
+
+                  BIT              NOT NULL  --                 1 = non-preferred supplier purchase
+
+6.2 Dimension Tables
+
+Dim_Date          Data Type        Nullable  Key                Description
+                                   NOT NULL  PK                 Surrogate key (YYYYMMDD format)
+  Column Name                      NOT NULL  NK                 Calendar date
+                                   NOT NULL  --                 Calendar year
+DateID            INT              NOT NULL  --                 Quarter 1-4
+                                   NOT NULL  --                 Month 1-12
+Date              DATE
+
+Year              SMALLINT
+
+Quarter           TINYINT
+
+Month             TINYINT
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification                      hellodeeply.com | Confidential v2.0
+
+Column Name       Data Type        Nullable  Key                Description
+MonthName                                    --                 January / February / ...
+                  NVARCHAR(20      NOT NULL  --                  /  / ...
+MonthNameHE       )                          --                 ISO week number
+WeekOfYear                                                      1=Sunday ... 7=Saturday (Israeli
+DayOfWeek         NVARCHAR(20      NOT NULL                     convention)
+                  )                                             Monday / Tuesday / ...
+DayName                                                         1 = Friday or Saturday
+IsWeekend         TINYINT          NOT NULL                     1 = Israeli national holiday
+IsHoliday                                                       Holiday name if IsHoliday=1
+HolidayName       TINYINT          NOT NULL --                  High/Shoulder/Low (property-defined)
+                                                                Fiscal year (may differ from calendar)
+Season            NVARCHAR(15      NOT NULL  --                 Fiscal quarter
+FiscalYear        )                                             Fiscal month within fiscal year
+FiscalQuarter                                                   1 = last calendar day of month
+FiscalMonth       BIT              NOT NULL --
+IsLastDayOfMonth                                                Description
+                  BIT              NOT NULL --                  Surrogate key
+                                                                Internal property code
+                  NVARCHAR(50      NULL      --                 Full property name
+                  )                                             Hotel/Boutique/Glamping/Zimmer/Res
+                                                                ort
+                  NVARCHAR(20      NOT NULL  --                 1-5 star classification
+                  )                                             City
+                                                                Region / district
+                  SMALLINT         NOT NULL --                  ISO 2-letter country code
+
+                  TINYINT          NOT NULL --
+
+                  TINYINT          NOT NULL --
+
+                  BIT              NOT NULL --
+
+Dim_Property      Data Type        Nullable  Key
+                                             PK
+  Column Name     INT              NOT NULL  NK
+  PropertyID                                 --
+  PropertyNK      NVARCHAR(20      NOT NULL  --
+  PropertyName    )                          --
+  PropertyType                               --
+  StarRating      NVARCHAR(10      NOT NULL  --
+  City            0)                         --
+  Region
+  Country         NVARCHAR(30      NOT NULL
+                  )
+
+                  TINYINT          NULL
+
+                  NVARCHAR(50      NOT NULL
+                  )
+
+                  NVARCHAR(50      NULL
+                  )
+
+                  CHAR(2)          NOT NULL
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification               hellodeeply.com | Confidential v2.0
+
+Column Name        Data Type       Nullable  Key                Description
+Latitude
+Longitude          DECIMAL(10,6    NULL      --                 GPS latitude for map visual
+TotalRooms         )
+OpenDate
+RegionalManagerID  DECIMAL(10,6    NULL      --                 GPS longitude for map visual
+                   )
+GMEmail
+IsActive           SMALLINT        NOT NULL  --                 Total room inventory
+CurrencyCode
+                   DATE            NOT NULL  --                 Property opening date
+
+                   INT             NULL      FK                 Regional manager (for RLS)
+                                             Dim_Emplo
+                                             yee
+
+                   NVARCHAR(10     NULL      --                 GM UPN for RLS filter
+                   0)
+
+                   BIT             NOT NULL  --                 1 = currently operating
+
+                   CHAR(3)         NOT NULL  --                 Primary operating currency
+
+Dim_Channel        Data Type       Nullable  Key                Description
+                                             PK
+  Column Name      INT             NOT NULL  --                 Surrogate key
+  ChannelID
+  ChannelName      NVARCHAR(50     NOT NULL  --                 Booking.com / Expedia / Direct Web /
+                   )                                            GDS / Walk-in
+  ChannelType
+                   NVARCHAR(20     NOT NULL                     OTA / Direct / GDS / Corporate /
+  CommissionRate   )                                            Phone
+  IsDirect
+  ParentChannel    DECIMAL(5,4) NULL         --                 Standard commission rate (e.g. 0.15 =
+                                                                15%)
+                   BIT             NOT NULL --
+                                                                1 = direct booking (no commission)
+                   NVARCHAR(50     NULL      --
+                   )                                            Parent group (Expedia Group /
+                                                                Booking Holdings)
+
+Dim_Guest          Data Type       Nullable  Key                Description
+
+  Column Name      INT             NOT NULL PK                  Anonymized surrogate key -- no PII
+  GuestID                                                       stored
+                   NVARCHAR(64     NOT NULL  NK
+  GuestHashKey     )                                            SHA-256 hash of source PMS guest
+  NationalityCode                                               ID
+                   CHAR(2)         NULL      --
+                                                                ISO 2-letter nationality code
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification                 hellodeeply.com | Confidential v2.0
+
+Column Name           Data Type     Nullable  Key               Description
+SourceMarket                                  --
+AgeGroup              NVARCHAR(50   NULL      --                Country/region of booking origin
+Segment               )                       --
+LoyaltyTier                                   --                Under25/25-34/35-44/45-54/55-64/65
+VisitCount            NVARCHAR(20   NULL                        +
+FirstStayDateID       )
+LastStayDateID                                                  Leisure/Corporate/Group/Government
+TotalLifetimeRevenue  NVARCHAR(30   NOT NULL
+                      )                                         Bronze/Silver/Gold/Platinum
+
+                      NVARCHAR(20   NULL                        Total stays across all properties
+                      )                                         (updated nightly)
+
+                      SMALLINT      NOT NULL --                 Date of first ever stay
+
+                      INT           NULL      FK                Date of most recent stay (inactive rel.)
+                                              Dim_Date
+                      INT           NULL                        Gross lifetime revenue across all
+                                              FK                stays
+                      DECIMAL(18,4  NULL      Dim_Date
+                      )
+                                              --
+
+Dim_Employee          Data Type     Nullable  Key               Description
+
+  Column Name         INT           NOT NULL  PK                Surrogate key
+  EmployeeID
+  EmployeeNK          NVARCHAR(20   NOT NULL  NK                HR system employee number
+                      )
+  PropertyID
+                      INT           NOT NULL  FK                Home property
+  DepartmentID                                Dim_Proper
+                                              ty
+  Position
+  ContractType        INT           NOT NULL  FK                Department
+  SalaryBand                                  Dim_Depart
+  HireDate                                    ment
+  TerminationDate
+  ManagerID           NVARCHAR(50   NOT NULL  --                Job title
+                      )
+
+                      NVARCHAR(20   NOT NULL  --                Full-time/Part-time/Seasonal/Agency
+                      )
+
+                      NVARCHAR(10   NULL      --                A/B/C/D band (no actual salary here)
+                      )
+
+                      DATE          NOT NULL  --                Employment start date
+
+                      DATE          NULL      --                Employment end date (null if active)
+
+                      INT           NULL      FK                Direct manager (self-join)
+                                              Dim_Emplo
+                                              yee
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification                      hellodeeply.com | Confidential v2.0
+
+Column Name         Data Type      Nullable  Key                Description
+IsActive                                                        1 = currently employed
+EmailUPN            BIT            NOT NULL --                  Azure AD UPN for RLS -- HR role
+                                                                only
+                    NVARCHAR(10    NULL      --
+                    0)
+
+Dim_Supplier        Data Type      Nullable  Key                Description
+                                             PK                 Surrogate key
+  Column Name       INT            NOT NULL  NK
+  SupplierID                                                    ERP vendor code
+  SupplierNK        NVARCHAR(30    NOT NULL  --
+                    )                                           Supplier trading name
+  SupplierName                               --
+                    NVARCHAR(10    NOT NULL  --                 Food/Linen/Maintenance/Technology/
+  Category          0)                       --                 Energy
+  IsPreferred                                --                 1 = on approved vendor list
+  ContractExpiry    NVARCHAR(50    NOT NULL  --                 Current contract expiry date
+  PaymentTermsDays  )                        --                 Standard payment terms in days
+  OTIF_Target                                --                 Agreed on-time-in-full target rate
+  Country           BIT            NOT NULL                     Supplier country
+  IsActive                                                      1 = active supplier
+                    DATE           NULL
+
+                    TINYINT        NULL
+
+                    DECIMAL(5,4) NULL
+
+                    CHAR(2)        NULL
+
+                    BIT            NOT NULL
+
+Dim_Department      Data Type      Nullable  Key                Description
+
+  Column Name       INT            NOT NULL  PK                 Surrogate key
+  DepartmentID
+  DepartmentName    NVARCHAR(50    NOT NULL  --                 Rooms/F&B/Housekeeping/Maintenan
+  DepartmentNameHE  )                                           ce/HR/Finance
+  USALICategory
+  IsRevenueDept     NVARCHAR(50    NULL      --                 Hebrew name
+                    )
+  ParentDeptID
+                    NVARCHAR(50    NULL      --                 USALI mapping:
+                    )                                           Revenue/Departmental/Undistributed
+
+                    BIT            NOT NULL  --                 1 = department generates direct
+                                                                revenue
+
+                    INT            NULL      FK                 Parent department (self-join for
+                                             Dim_Depart         hierarchy)
+                                             ment
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification  hellodeeply.com | Confidential v2.0
+
+Dim_Account        Data Type       Nullable  Key                Description
+                                             PK                 Surrogate key
+  Column Name      INT             NOT NULL  NK
+  AccountID                                  --                 General ledger account code
+  GLCode           NVARCHAR(20     NOT NULL  --
+  AccountName      )                         --                 Account description
+  AccountType                                --
+  USALILine        NVARCHAR(10     NOT NULL  --                 Revenue/Expense/Asset/Liability/Equi
+  USALILevel       0)                        --                 ty
+  ExpenseCategory                            --
+  IsPayroll        NVARCHAR(20     NOT NULL                     USALI P&L line mapping
+  IsCapex          )
+                                                                Departmental/Undistributed/Fixed
+                   NVARCHAR(50     NULL                         Charges
+                   )                                            Payroll/COGS/Energy/Marketing/Admi
+                                                                n
+                   NVARCHAR(30     NULL                         1 = payroll-related account
+                   )                                            1 = capital expenditure account
+
+                   NVARCHAR(50     NULL
+                   )
+
+                   BIT             NOT NULL
+
+                   BIT             NOT NULL
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification  hellodeeply.com | Confidential v2.0
+
+7. DAX Measures Library (Selected Core Measures)
+
+All measures stored in a dedicated [Measures] table -- never inside Fact tables. Full library contains 170+
+measures; key measures shown by domain.
+
+7.1 Revenue Measures
+
+Measure           DAX Formula                                   Notes
+
+Total Revenue     SUM(Fact_Revenue[GrossRevenue])               All outlets, all properties
+
+Net Revenue       SUM(Fact_Revenue[NetRevenue])                 After commissions &
+                                                                discounts
+
+RevPAR            DIVIDE([Rooms Revenue],[Available             Core hotel KPI
+ADR               Room Nights])
+TRevPAR
+Occupancy %       DIVIDE([Rooms Revenue],[Occupied              Avg rate per sold room
+Net ADR           Room Nights])
+RevPAR LY
+RevPAR vs Budget  DIVIDE([Total Revenue],[Available             Total rev / available rooms
+Forecast Revenue  Room Nights])
+
+                  DIVIDE([Occupied RNs],[Available              0.00-1.00 format
+                  Room Nights])
+
+                  DIVIDE([Net Revenue],[Occupied Room           True net after channel cost
+                  Nights])
+
+                  CALCULATE([RevPAR],SAMEPERIODLASTYEA Same period prior year
+                  R(Dim_Date[Date]))
+
+                  DIVIDE([RevPAR]-[Budget                       % variance vs plan
+                  RevPAR],[Budget RevPAR])
+
+                  [MTD Revenue]+([RevPAR]*[Avail                Month-end projection
+                  Rooms]*([Days in Month]-[Elapsed
+                  Days]))
+
+7.2 Profitability Measures
+
+Measure           DAX Formula                                   Notes
+
+GOP               [Total Revenue]-[Total Dept                   Gross Operating Profit
+GOP Margin %      Expenses]                                     Target benchmark 35-45%
+
+                  DIVIDE([GOP],[Total Revenue])
+
+EBITDA            [GOP]-[Undistributed Expenses]-[Mgmt          Pre-depreciation profit
+EBITDA Margin %   Fees]                                         Primary ownership metric
+
+                  DIVIDE([EBITDA],[Total Revenue])
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification  hellodeeply.com | Confidential v2.0
+
+Measure              DAX Formula                                Notes
+GOPPAR
+Payroll %            DIVIDE([GOP],[Available Room               GOP per available room
+Energy Cost %        Nights])
+Budget Variance 
+Budget Variance %    DIVIDE([Payroll Cost],[Total               Labor cost ratio
+                     Revenue])
+Rolling 12M Revenue
+                     DIVIDE([Energy Cost],[Total                Utility burden ratio
+                     Revenue])                                  Absolute variance
+                                                                % above/below plan
+                     [Total Revenue]-[Budget Revenue]
+
+                     DIVIDE([Budget Variance ],[Budget
+                     Revenue])
+
+                     CALCULATE([Total                           TTM revenue
+                     Revenue],DATESINPERIOD(Dim_Date[Date
+                     ],LASTDATE(Dim_Date[Date]),-12,MONTH
+                     ))
+
+7.3 Guest & Retention Measures
+
+Measure              DAX Formula                                Notes
+
+Repeat Guest Rate    DIVIDE(CALCULATE(COUNTROWS(Fact_Rese       % guests who returned
+                     rvations),Dim_Guest[VisitCount]>1),C
+                     OUNTROWS(Fact_Reservations))
+
+NPS Score            CALCULATE(DIVIDE(SUM(Fact_GuestFeedb       Range -100 to +100
+                     ack[NPSScore_Promoters])-SUM([Detrac
+                     tors]),SUM([Respondents]))*100)
+
+Review Score         AVERAGE(Fact_GuestFeedback[OverallSc All platforms average
+                     ore])
+
+CAC                  DIVIDE([OTA Commission]+[Ad                Cost per booking
+
+                     Spend],COUNTROWS(Fact_Reservations))
+
+LTV Gross            DIVIDE(SUM(Dim_Guest[TotalLifetimeRe       Avg gross LTV per guest
+                     venue]),DISTINCTCOUNT(Dim_Guest[Gues
+LTV Net              tID]))                                     LTV after acquisition cost
+LTV/CAC Ratio                                                   Target > 3x
+                     [LTV Gross]-AVERAGE([CAC per guest])
+
+                     DIVIDE([LTV Net],[CAC])
+
+Cancellation Rate    DIVIDE(CALCULATE(COUNTROWS(Fact_Rese       Cancellation frequency
+                     rvations),Fact_Reservations[Status]=
+                     "Cancelled"),COUNTROWS(Fact_Reservat
+                     ions))
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification  hellodeeply.com | Confidential v2.0
+
+Measure                DAX Formula                              Notes
+Churn Rate (Loyalty)
+                       DIVIDE(CALCULATE(COUNTROWS,Dim_Guest     Loyalty program churn
+                       [LoyaltyTier]<>BLANK(),Dim_Guest[Vis
+                       itCount]=1,previousYear),CALCULATE(l
+                       oyaltyBase))
+
+7.4 HR & Workforce Measures
+
+Measure                DAX Formula                              Notes
+Total FTE              SUM(Fact_HR[FTE])
+                                                                Full-time equivalent
+                                                                headcount
+
+Turnover Rate          DIVIDE(SUM(Fact_HR[Terminations]),AV     Annualized 12-month
+Revenue per Employee   ERAGE(Fact_HR[Headcount]))               Productivity indicator
+
+                       DIVIDE([Total Revenue],[Total FTE])
+
+Absenteeism Rate       DIVIDE(SUM(Fact_Payroll[AbsentDays]) Unplanned absence %
+                       ,SUM(Fact_Payroll[ScheduledDays]))
+
+Overtime %             DIVIDE(SUM(Fact_Payroll[OvertimeHour OT as % of regular
+                       s]),SUM(Fact_Payroll[RegularHours]))
+
+Occupied Rooms per LH  DIVIDE([Occupied Room Nights],[Total Productivity per labor hour
+                       Labor Hours])
+
+eNPS                   CALCULATE([NPS                           Employee NPS score
+                       Score],Fact_GuestFeedback[IsNPS]=1)
+
+7.5 Energy & Sustainability Measures
+
+Measure                DAX Formula                              Notes
+
+kWh per Occ Room       DIVIDE(SUM(Fact_Energy[Electricity_k Benchmark: 30-60 kWh
+Water per Occ Room     Wh]),[Occupied Room Nights])
+Carbon tCO2e
+Energy vs Benchmark %  DIVIDE(SUM(Fact_Energy[Water_Liters] Benchmark: 150-250L
+Utility Cost %         ),[Occupied Room Nights])
+
+                       (SUM([Electricity_kWh])*0.0006)+(SUM Scope 1+2 estimate
+                       ([Gas_m3])*0.00204)
+
+                       DIVIDE([kWh per Occ Room]-[Industry      Negative = more efficient
+                       kWh Benchmark],[Industry kWh
+                       Benchmark])
+
+                       DIVIDE([Energy Cost],[Total              Energy burden on revenue
+                       Revenue])
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification  hellodeeply.com | Confidential v2.0
+
+8. Advanced Power BI Features
+
+8.1 Bookmarks -- Saved Views
+
+Bookmark      Audience                                          What it shows
+
+CEO View      CEO, Owner                                        Executive Summary with Board Pack mode
+                                                                -- no operational detail
+CFO View      CFO, Finance
+                                                                Finance & Cash + P&L side-by-side, budget
+COO View      COO, GM                                           variance highlighted
+
+GM Daily      General Manager                                   Revenue + Operations screens, SLA
+                                                                compliance prominent
+Board Pack    Board Members
+                                                                Daily flash: Occupancy today, arrivals,
+Revenue Mode  Revenue Manager                                   complaints, staff alerts
+
+                                                                Simplified view -- only 6 top KPIs + trend,
+                                                                PDF-ready
+
+                                                                Rate calendar + pace + pickup -- no
+                                                                financial detail
+
+8.2 Scheduled Subscriptions
+
+   · Daily Flash (06:30): Occupancy, RevPAR, alerts  GM + Department Heads via email + mobile push
+   · Weekly GM Pack (Monday 08:00): All screens summary  GM, Revenue Manager, CFO
+   · Monthly Executive Pack (1st of month): Board-pack bookmark  Owner, CFO, Board as PDF
+   · STR Benchmark Report (Tuesday 09:00): Competitive set comparison  Revenue Manager, GM
+
+8.3 Data-Driven Alerts (Threshold-Based)
+
+   · RevPAR < 85% of monthly budget  Alert to GM + Revenue Manager
+   · Occupancy < 60% for 3 consecutive days  Alert to GM + Revenue Manager
+   · Review score < 8.0 on any platform  Alert to Guest Relations + GM
+   · Energy consumption >20% above baseline for any zone  Maintenance + GM
+   · Payroll % > 38% of revenue  Alert to CFO + HR Director
+   · Cash balance < defined covenant threshold  CFO + Owner
+   · OOO rooms > 5% of inventory  Maintenance + Revenue Manager
+
+8.4 What-If / Scenario Analysis Parameters
+
+   · Price Slider: ADR ±20%  impact on RevPAR, Revenue, EBITDA
+   · Occupancy Slider: Occ% ±10pp  impact on Revenue, Labor productivity
+   · Commission Rate Slider: OTA % varies  net revenue impact per channel
+   · Energy Cost Slider: utility rate ±15%  impact on EBITDA margin
+   · Payroll Growth Slider: salary increase %  Payroll % of Revenue impact
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification   hellodeeply.com | Confidential v2.0
+
+8.5 Action Layer -- Insight to Action
+
+Every anomaly or alert is linked to an Action Table containing:
+
+Field             Type               Example                     Source
+                                                                 Revenue alert trigger
+Task Description  Free text          Adjust OTA rate for next    Alert-based assignment
+                                     weekend                     Rule-configured
+                                                                 Model estimate
+Owner             Employee lookup    Revenue Manager             Manual update
+                                                                 Auto-linked
+Due Date          Date picker        3 days from trigger
+
+Expected Impact   Calculated         +45K RevPAR recovery
+
+Status            Dropdown           Open / In Progress / Done
+
+Linked KPI        Measure reference  RevPAR variance
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification                    hellodeeply.com | Confidential v2.0
+
+9. Technical Architecture & Data Pipeline
+
+9.1 Medallion Architecture -- Three Layers
+
+Layer              Name                            Contents                       Technology
+
+Bronze             Raw Ingestion                   Source data as-is -- no        Azure Data Lake / OneLake
+                                                   transformation. Full history
+                                                   preserved.
+
+Silver             Standardized                    Cleaned, typed, deduplicated.  Dataflow Gen2 / Spark
+                                                   GDPR masking applied here.
+
+Gold               Business Marts                  Star Schema Fact + Dim         Azure SQL / Fabric Lakehouse
+                                                   tables ready for Power BI
+                                                   consumption.
+
+9.2 Data Source Integrations
+
+System                   Examples                      Connection                 Refresh
+                                                                                  Real-time/15min
+PMS                      Opera, Maestro, Protel,       REST API / SQL             Hourly
+                         RoomRaccoon, Cloudbeds                                   Daily
+                                                                                  Daily 05:00
+POS (F&B)                Micros, Infrasys, JETZT,      SQL / REST API             Daily
+                         TouchBistro                                              Daily
+                                                                                  Hourly
+Channel Manager          SiteMinder, RateGain, Lodgify REST API                   Hourly
+                                                                                  Weekly
+ERP / Accounting         Priority, SAP B1, Sun         SQL / REST API             Daily
+                         Systems, Oracle                                          Daily
+                                                                                  Real-time
+CRM / Loyalty            Salesforce, HubSpot, custom REST API
+
+HR / Payroll             HilaBase, BambooHR, Bob,      REST API / CSV
+                         Comeet
+
+BMS / IoT Energy         Schneider, Honeywell,         MQTT / REST API
+                         custom meters
+
+Review Platforms         TrustYou, Revinate,           REST API
+                         Booking.com API
+
+STR Benchmarks           STR Global, OTA Insight       SFTP / API
+
+Marketing                Google Analytics 4, Meta Ads  REST API
+                         API
+
+Zimmer / Glamping        Lodgify, Smoobu, Guesty,      REST API
+                         Hostaway
+
+Booking Engine           Siteminderbook, Profitroom,   REST API
+                         SynXis
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification  hellodeeply.com | Confidential v2.0
+
+9.3 Refresh SLA                    Refresh Cadence              Notes
+                                   Every 30 minutes             DirectQuery on PMS for live occupancy
+  Screen / Domain                  Every 15 minutes             PMS rate + pickup data
+  Executive Command Center         Daily at 05:00 + intraday    ERP batch + live bank feed
+  Commercial & Revenue             Daily at 06:00               HR system nightly sync
+  Finance & Cash                   Hourly                       IoT meter data via BMS API
+  Workforce & HR                   Hourly                       Review platform webhooks + batch
+  Energy & Sustainability          Daily at 04:00               ERP purchase order sync
+  Guest Feedback                   Weekly (Tuesday)             STR/OTA Insight file delivery
+  Procurement & Inventory
+  STR Benchmarks
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification                hellodeeply.com | Confidential v2.0
+
+10. Security, Access & Data Governance
+
+10.1 Row-Level Security (RLS) Roles
+
+Role              Data Scope                  DAX Filter (Dim_Property) Salary Data
+
+Corporate / Owner All properties, all data    All rows visible            Full access
+
+Regional Manager  Properties in their region  RegionManagerID =           Salary band only
+                                              CURRENTUSER()
+
+General Manager Single property only          GMEmail =                   Own property only
+                                              USERPRINCIPALNAME()
+
+Department Head Own department rows           Dept RLS + Property filter  No salary data
+
+Revenue Manager   Revenue/Inventory data      Screens 1-4 only            No
+                  only
+
+Finance Only      Financial GL + Budget       All properties (read)       No payroll detail
+
+HR Restricted     HR data + Payroll           Own property                Full payroll -- own dept
+
+Analyst / Viewer  Specific screens only       Per deployment config       No
+
+10.2 Sensitive Data Classification
+
+   · Salary & Bonus: HR Restricted role only -- masked for all other roles
+   · Personal Guest Data: GDPR-compliant anonymization in Silver layer -- no PII in Power BI
+   · Contract Values: Finance Only + Corporate roles
+   · Management Financial Data: Corporate + GM (own property) only
+   · Employee Performance: HR Director + line manager (own reports) only
+
+10.3 Governance Framework
+
+   · Naming Convention: [Domain - Measure Name] e.g. [REV - RevPAR MTD]
+   · Single Source of Truth: Certified Datasets badge on all production datasets
+   · Metric Definitions: Published KPI Dictionary reconciled with Finance monthly
+   · Change Log: All measure changes tracked in Azure DevOps with approval workflow
+   · Dataset Certification: Data Owner sign-off required before promotion to PROD
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification                            hellodeeply.com | Confidential v2.0
+
+11. Implementation Roadmap
+
+11.1 Phase 1 -- MVP (Weeks 1­8)
+
+  Screens: Executive Command Center, Commercial & Revenue, Finance & Cash, Profitability & P&L, Basic
+  Marketing
+  Features: Bookmarks (5), Email Subscriptions (3), Core Alerts (5), Mobile Layout
+  Data: PMS, ERP, Channel Manager, Manual Budget Upload
+
+11.2 Phase 2 -- Full Operations (Weeks 9­16)
+
+  Screens: Operations & Guest Experience, Procurement & Inventory, Workforce & HR, Energy &
+  Sustainability
+  Features: Drillthrough pages, Tooltip pages, What-if sliders, AI Smart Narratives
+  Data: HR System, IoT/BMS, Review Platforms, Procurement System
+
+11.3 Future State -- AI & Intelligence Layer (Month 6+)
+
+  AI Features: Anomaly Detection, 90-day Revenue Forecast, Key Influencers, Decomposition Tree
+  Prescriptive: Action Engine with recommended actions + expected impact
+  Advanced: Scenario Simulation, External Benchmarking (STR), Multi-currency FX hedging tracker
+
+11.4 Project Phases -- Detailed Timeline
+
+#  Phase                           Key Activities                                         Duration
+
+   0 Discovery                     Stakeholder interviews, data source audit, PMS/ERP     1­2 weeks
+                                   credentials, KPI prioritization workshop, RLS
+                                   mapping
+
+   1 Data Layer                    Source connections, ETL/Dataflow setup, Star           2­3 weeks
+                                   Schema build, Dim_Date load, RLS configuration,
+                                   Gateway setup
+
+   2 Measure Library               All 170+ DAX measures, validation vs PMS reports,      1­2 weeks
+                                   budget variance testing, time intelligence QA
+
+   3 Dashboard Build               All 10 screens in DEV workspace, custom visuals,       3­4 weeks
+                                   bookmarks, tooltips, drill-through, mobile layout
+
+   4 UAT & Training                User acceptance testing, training sessions per role    1­2 weeks
+                                   (6 sessions), subscription setup, alert configuration
+
+   5 Go-Live                       PROD deployment, monitoring, 30-day hypercare,         1 week + ongoing
+                                   usage analytics review
+
+deeply | info@hellodeeply.comPage
+deeply | Hospitality Executive Dashboard -- Full Specification                           hellodeeply.com | Confidential v2.0
+
+12. Summary & Recommendations
+
+12.1 Core Conclusion
+
+The DEEPLY Hospitality Executive Dashboard succeeds when it combines all six measurement layers into a
+single coherent management system: classic hotel KPIs, universal business metrics, profitability analytics,
+customer retention economics, operational efficiency, and people + energy intelligence.
+
+12.2 The DEEPLY Differentiation Principle
+
+ Data  Insight  Financial Impact 
+ Recommended Action
+
+  The flywheel that separates DEEPLY from any other BI dashboard in hospitality
+
+12.3 Immediate Next Steps
+
+   · Confirm property type scope and activate relevant screen configuration
+   · Audit data source availability: PMS API credentials, ERP access, review platform API keys
+   · Map GL accounts to USALI Chart of Accounts (Finance sign-off required)
+   · Configure RLS user table with Azure AD emails and role assignments
+   · Load initial Dim_Budget table from current year finance plan
+   · Schedule Discovery workshop with GM, CFO, and Revenue Manager
+
+                                   deeply Hospitality Executive Dashboard
+
+                                             hellodeeply.com | info@hellodeeply.com
+                                                            Version 2.0 -- Confidential
+
+deeply | info@hellodeeply.comPage
+

@@ -1,0 +1,68 @@
+table Dim_Supplier
+	lineageTag: b1000001-1111-4000-8000-000000000001
+
+	column SupplierID
+		dataType: int64
+		formatString: 0
+		lineageTag: b1000001-1111-4000-8000-000000000002
+		summarizeBy: none
+		sourceColumn: SupplierID
+
+	column SupplierName
+		dataType: string
+		lineageTag: b1000001-1111-4000-8000-000000000003
+		summarizeBy: none
+		sourceColumn: SupplierName
+
+	column Category
+		dataType: string
+		lineageTag: b1000001-1111-4000-8000-000000000004
+		summarizeBy: none
+		sourceColumn: Category
+
+	column Country
+		dataType: string
+		lineageTag: b1000001-1111-4000-8000-000000000005
+		summarizeBy: none
+		sourceColumn: Country
+
+	column OTIFScore
+		dataType: double
+		formatString: 0.0%
+		lineageTag: b1000001-1111-4000-8000-000000000006
+		summarizeBy: none
+		sourceColumn: OTIFScore
+
+	column IsPreferred
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b1000001-1111-4000-8000-000000000007
+		summarizeBy: none
+		sourceColumn: IsPreferred
+
+	partition Dim_Supplier = m
+		mode: import
+		source =
+			let
+			    Source = #table(
+			        type table [SupplierID = Int64.Type, SupplierName = text, Category = text, Country = text, OTIFScore = number, IsPreferred = logical],
+			        {
+			            {1, "Fresh Foods Ltd", "Food & Beverage", "Israel", 0.95, true},
+			            {2, "Premium Wines Co", "Food & Beverage", "France", 0.92, true},
+			            {3, "Linen Masters", "Housekeeping", "Portugal", 0.88, true},
+			            {4, "Clean Pro Supplies", "Housekeeping", "Israel", 0.91, true},
+			            {5, "Tel Aviv Electric", "Utilities", "Israel", 1.0, true},
+			            {6, "Gulf Gas Co", "Utilities", "Israel", 0.98, true},
+			            {7, "HVAC Solutions", "Maintenance", "Israel", 0.84, true},
+			            {8, "Amenity World", "Guest Supplies", "Turkey", 0.87, false},
+			            {9, "TechGuard IT", "IT Services", "Israel", 0.93, true},
+			            {10, "Safety First", "Safety & Security", "Israel", 0.96, true},
+			            {11, "Office Depot IL", "Admin & General", "Israel", 0.89, false},
+			            {12, "Marketing Agency Plus", "Marketing", "Israel", 0.90, true},
+			            {13, "Spa Essentials", "Spa & Wellness", "Italy", 0.86, false},
+			            {14, "Eco Packaging", "Sustainability", "Germany", 0.82, false},
+			            {15, "Local Bakery", "Food & Beverage", "Israel", 0.94, true}
+			        }
+			    )
+			in
+			    Source

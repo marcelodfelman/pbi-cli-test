@@ -1,0 +1,79 @@
+table Dim_Employee
+	lineageTag: a1000001-1111-4000-8000-000000000001
+
+	column EmployeeID
+		dataType: int64
+		formatString: 0
+		lineageTag: a1000001-1111-4000-8000-000000000002
+		summarizeBy: none
+		sourceColumn: EmployeeID
+
+	column EmployeeName
+		dataType: string
+		lineageTag: a1000001-1111-4000-8000-000000000003
+		summarizeBy: none
+		sourceColumn: EmployeeName
+
+	column DepartmentID
+		dataType: int64
+		formatString: 0
+		lineageTag: a1000001-1111-4000-8000-000000000004
+		summarizeBy: none
+		sourceColumn: DepartmentID
+
+	column Role
+		dataType: string
+		lineageTag: a1000001-1111-4000-8000-000000000005
+		summarizeBy: none
+		sourceColumn: Role
+
+	column HireDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a1000001-1111-4000-8000-000000000006
+		summarizeBy: none
+		sourceColumn: HireDate
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a1000001-1111-4000-8000-000000000007
+		summarizeBy: none
+		sourceColumn: IsActive
+
+	partition Dim_Employee = m
+		mode: import
+		source =
+			let
+			    Source = #table(
+			        type table [EmployeeID = Int64.Type, EmployeeName = text, DepartmentID = Int64.Type, Role = text, HireDate = date, IsActive = logical],
+			        {
+			            {1, "Sarah Cohen", 1, "Front Desk Manager", #date(2020,3,15), true},
+			            {2, "Daniel Levy", 1, "Front Desk Agent", #date(2021,6,1), true},
+			            {3, "Rachel Gold", 1, "Front Desk Agent", #date(2023,1,10), true},
+			            {4, "Avi Mizrahi", 2, "Executive Chef", #date(2019,5,20), true},
+			            {5, "Maya Azulay", 2, "Sous Chef", #date(2022,2,14), true},
+			            {6, "Tal Ben-David", 2, "F&B Manager", #date(2020,9,1), true},
+			            {7, "Noa Friedman", 2, "Waiter", #date(2023,7,1), true},
+			            {8, "Yossi Katz", 2, "Bartender", #date(2022,10,5), true},
+			            {9, "Michal Peretz", 3, "Housekeeping Supervisor", #date(2018,11,12), true},
+			            {10, "Liat Shapira", 3, "Room Attendant", #date(2022,3,20), true},
+			            {11, "Shira Rosen", 3, "Room Attendant", #date(2023,5,15), true},
+			            {12, "Eitan Bar", 3, "Laundry Attendant", #date(2021,8,1), true},
+			            {13, "Ron Halevi", 6, "Maintenance Manager", #date(2017,4,3), true},
+			            {14, "Ofir Shahar", 6, "Engineer", #date(2022,6,18), true},
+			            {15, "Omer Zohar", 6, "Technician", #date(2023,9,1), true},
+			            {16, "Lior Dayan", 5, "HR Manager", #date(2019,2,7), true},
+			            {17, "Hadar Yaakov", 5, "HR Specialist", #date(2022,11,1), true},
+			            {18, "Ariel Baron", 4, "Finance Controller", #date(2018,7,10), true},
+			            {19, "Dana Nissim", 4, "Accountant", #date(2021,4,5), true},
+			            {20, "Gilad Ezra", 8, "Sales Director", #date(2020,1,20), true},
+			            {21, "Inbar Tal", 8, "Marketing Manager", #date(2022,5,10), true},
+			            {22, "Yael Sapir", 9, "Spa Manager", #date(2021,3,1), true},
+			            {23, "Adi Malka", 9, "Therapist", #date(2023,2,15), true},
+			            {24, "Roni Weiss", 7, "Admin Assistant", #date(2022,8,22), true},
+			            {25, "Nadav Segev", 6, "Night Auditor", #date(2023,4,1), true}
+			        }
+			    )
+			in
+			    Source

@@ -252,6 +252,150 @@ table _Measures
 		displayFolder: Guest
 		lineageTag: ab3eeec4-a67a-4a88-96b8-c05f8f133a0e
 
+	measure Headcount = CALCULATE(SUM(Fact_Payroll[Headcount]), FILTER(Fact_Payroll, Fact_Payroll[DateID] = MAX(Fact_Payroll[DateID])))
+		formatString: #,##0
+		displayFolder: Workforce
+		lineageTag: d1000001-2222-4000-8000-000000000001
+
+	measure 'Total Labor Cost' = SUM(Fact_Payroll[TotalCost])
+		formatString: $#,##0
+		displayFolder: Workforce
+		lineageTag: d1000001-2222-4000-8000-000000000002
+
+	measure 'Labor Cost % Revenue' = DIVIDE([Total Labor Cost], [Total Revenue])
+		formatString: 0.0%
+		displayFolder: Workforce
+		lineageTag: d1000001-2222-4000-8000-000000000003
+
+	measure 'Overtime Hours' = SUM(Fact_Payroll[OvertimeHours])
+		formatString: #,##0
+		displayFolder: Workforce
+		lineageTag: d1000001-2222-4000-8000-000000000004
+
+	measure 'Overtime %' = DIVIDE(SUM(Fact_Payroll[OvertimePay]), SUM(Fact_Payroll[TotalCost]))
+		formatString: 0.0%
+		displayFolder: Workforce
+		lineageTag: d1000001-2222-4000-8000-000000000005
+
+	measure Turnover = SUM(Fact_Payroll[Turnover])
+		formatString: #,##0
+		displayFolder: Workforce
+		lineageTag: d1000001-2222-4000-8000-000000000006
+
+	measure 'Turnover Rate' = DIVIDE(SUM(Fact_Payroll[Turnover]), [Headcount])
+		formatString: 0.0%
+		displayFolder: Workforce
+		lineageTag: d1000001-2222-4000-8000-000000000007
+
+	measure 'Revenue per Employee' = DIVIDE([Total Revenue], [Headcount])
+		formatString: $#,##0
+		displayFolder: Workforce
+		lineageTag: d1000001-2222-4000-8000-000000000008
+
+	measure 'Total Energy kWh' = SUM(Fact_Energy[ElectricityKWh])
+		formatString: #,##0
+		displayFolder: Energy
+		lineageTag: e1000001-2222-4000-8000-000000000001
+
+	measure 'Total Energy Cost' = SUM(Fact_Energy[ElectricityCost]) + SUM(Fact_Energy[WaterCost]) + SUM(Fact_Energy[GasCost])
+		formatString: $#,##0
+		displayFolder: Energy
+		lineageTag: e1000001-2222-4000-8000-000000000002
+
+	measure 'kWh per Occupied Room' = DIVIDE([Total Energy kWh], [Occupied Room Nights])
+		formatString: 0.0
+		displayFolder: Energy
+		lineageTag: e1000001-2222-4000-8000-000000000003
+
+	measure 'Water per Occupied Room' = DIVIDE(SUM(Fact_Energy[WaterLiters]), [Occupied Room Nights])
+		formatString: #,##0
+		displayFolder: Energy
+		lineageTag: e1000001-2222-4000-8000-000000000004
+
+	measure 'Total Carbon kgCO2e' = SUM(Fact_Energy[CarbonKgCO2e])
+		formatString: #,##0
+		displayFolder: Energy
+		lineageTag: e1000001-2222-4000-8000-000000000005
+
+	measure 'Utility Cost %' = DIVIDE([Total Energy Cost], [Total Revenue])
+		formatString: 0.0%
+		displayFolder: Energy
+		lineageTag: e1000001-2222-4000-8000-000000000006
+
+	measure 'Anomaly Count' = CALCULATE(COUNTROWS(Fact_Energy), Fact_Energy[IsAnomaly] = TRUE())
+		formatString: #,##0
+		displayFolder: Energy
+		lineageTag: e1000001-2222-4000-8000-000000000007
+
+	measure 'Avg Review Score' = AVERAGE(Fact_GuestFeedback[OverallScore])
+		formatString: 0.0
+		displayFolder: Guest
+		lineageTag: f1000001-2222-4000-8000-000000000001
+
+	measure 'NPS Score' =
+			VAR Promoters = CALCULATE(COUNTROWS(Fact_GuestFeedback), Fact_GuestFeedback[NPSScore] >= 9)
+			VAR Detractors = CALCULATE(COUNTROWS(Fact_GuestFeedback), Fact_GuestFeedback[NPSScore] <= 6)
+			VAR Total = COUNTROWS(Fact_GuestFeedback)
+			RETURN DIVIDE(Promoters - Detractors, Total) * 100
+		formatString: #,##0
+		displayFolder: Guest
+		lineageTag: f1000001-2222-4000-8000-000000000002
+
+	measure 'Response Rate' = DIVIDE(CALCULATE(COUNTROWS(Fact_GuestFeedback), Fact_GuestFeedback[ManagerResponded] = TRUE()), COUNTROWS(Fact_GuestFeedback))
+		formatString: 0.0%
+		displayFolder: Guest
+		lineageTag: f1000001-2222-4000-8000-000000000003
+
+	measure 'Complaint Count' = CALCULATE(COUNTROWS(Fact_GuestFeedback), Fact_GuestFeedback[SentimentLabel] = "Negative")
+		formatString: #,##0
+		displayFolder: Guest
+		lineageTag: f1000001-2222-4000-8000-000000000004
+
+	measure 'Avg Cleanliness' = AVERAGE(Fact_GuestFeedback[CleanlinessScore])
+		formatString: 0.0
+		displayFolder: Guest
+		lineageTag: f1000001-2222-4000-8000-000000000005
+
+	measure 'Avg Service Score' = AVERAGE(Fact_GuestFeedback[ServiceScore])
+		formatString: 0.0
+		displayFolder: Guest
+		lineageTag: f1000001-2222-4000-8000-000000000006
+
+	measure 'Total Spend' = SUM(Fact_Procurement[TotalCost])
+		formatString: $#,##0
+		displayFolder: Procurement
+		lineageTag: 91000001-2222-4000-8000-000000000001
+
+	measure 'Price Variance' = SUM(Fact_Procurement[PriceVariance])
+		formatString: $#,##0
+		displayFolder: Procurement
+		lineageTag: 91000001-2222-4000-8000-000000000002
+
+	measure 'OTIF %' = DIVIDE(CALCULATE(COUNTROWS(Fact_Procurement), Fact_Procurement[IsOnTime] = TRUE()), COUNTROWS(Fact_Procurement))
+		formatString: 0.0%
+		displayFolder: Procurement
+		lineageTag: 91000001-2222-4000-8000-000000000003
+
+	measure 'Emergency Purchase %' = DIVIDE(CALCULATE(COUNTROWS(Fact_Procurement), Fact_Procurement[IsEmergency] = TRUE()), COUNTROWS(Fact_Procurement))
+		formatString: 0.0%
+		displayFolder: Procurement
+		lineageTag: 91000001-2222-4000-8000-000000000004
+
+	measure 'Maverick Spend %' = DIVIDE(CALCULATE(SUM(Fact_Procurement[TotalCost]), Fact_Procurement[IsMaverick] = TRUE()), [Total Spend])
+		formatString: 0.0%
+		displayFolder: Procurement
+		lineageTag: 91000001-2222-4000-8000-000000000005
+
+	measure 'CAC by Channel' = DIVIDE(CALCULATE([Total Spend], Dim_ProcurementCategory[CategoryName] = "Marketing"), DISTINCTCOUNT(Fact_Reservations[ReservationID]))
+		formatString: $#,##0
+		displayFolder: Channels
+		lineageTag: d2000001-2222-4000-8000-000000000001
+
+	measure 'OTA Mix %' = DIVIDE(CALCULATE([Reservation Net Revenue], Dim_Channel[IsDirect] = FALSE()), [Reservation Net Revenue])
+		formatString: 0.0%
+		displayFolder: Channels
+		lineageTag: d2000001-2222-4000-8000-000000000003
+
 	measure 'Reservation Net Revenue' = SUM(Fact_Reservations[NetRevenue])
 		formatString: $#,##0
 		displayFolder: Channels

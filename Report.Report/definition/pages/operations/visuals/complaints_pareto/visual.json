@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "complaints_pareto",
+  "position": {
+    "x": 20,
+    "y": 460,
+    "z": 9,
+    "height": 240,
+    "width": 620,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_GuestFeedback"
+                    }
+                  },
+                  "Property": "ComplaintCategory"
+                }
+              },
+              "queryRef": "Fact_GuestFeedback.ComplaintCategory",
+              "nativeQueryRef": "ComplaintCategory",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Complaint Count"
+                }
+              },
+              "queryRef": "_Measures.Complaint Count",
+              "nativeQueryRef": "Complaint Count"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

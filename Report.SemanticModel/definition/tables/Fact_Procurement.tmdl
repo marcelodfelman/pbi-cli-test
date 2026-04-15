@@ -1,0 +1,146 @@
+table Fact_Procurement
+	lineageTag: 91000001-1111-4000-8000-000000000001
+
+	column ProcurementID
+		dataType: int64
+		formatString: 0
+		lineageTag: 91000001-1111-4000-8000-000000000002
+		summarizeBy: none
+		sourceColumn: ProcurementID
+
+	column OrderDateID
+		dataType: int64
+		formatString: 0
+		lineageTag: 91000001-1111-4000-8000-000000000003
+		summarizeBy: none
+		sourceColumn: OrderDateID
+
+	column PropertyID
+		dataType: int64
+		formatString: 0
+		lineageTag: 91000001-1111-4000-8000-000000000004
+		summarizeBy: none
+		sourceColumn: PropertyID
+
+	column SupplierID
+		dataType: int64
+		formatString: 0
+		lineageTag: 91000001-1111-4000-8000-000000000005
+		summarizeBy: none
+		sourceColumn: SupplierID
+
+	column CategoryID
+		dataType: int64
+		formatString: 0
+		lineageTag: 91000001-1111-4000-8000-000000000006
+		summarizeBy: none
+		sourceColumn: CategoryID
+
+	column TotalCost
+		dataType: double
+		formatString: $#,##0
+		lineageTag: 91000001-1111-4000-8000-000000000007
+		summarizeBy: sum
+		sourceColumn: TotalCost
+
+	column ContractCost
+		dataType: double
+		formatString: $#,##0
+		lineageTag: 91000001-1111-4000-8000-000000000008
+		summarizeBy: sum
+		sourceColumn: ContractCost
+
+	column PriceVariance
+		dataType: double
+		formatString: $#,##0
+		lineageTag: 91000001-1111-4000-8000-000000000009
+		summarizeBy: sum
+		sourceColumn: PriceVariance
+
+	column IsOnTime
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 91000001-1111-4000-8000-000000000010
+		summarizeBy: none
+		sourceColumn: IsOnTime
+
+	column IsEmergency
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 91000001-1111-4000-8000-000000000011
+		summarizeBy: none
+		sourceColumn: IsEmergency
+
+	column IsMaverick
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 91000001-1111-4000-8000-000000000012
+		summarizeBy: none
+		sourceColumn: IsMaverick
+
+	partition Fact_Procurement = m
+		mode: import
+		source =
+			let
+			    Source = #table(
+			        type table [ProcurementID = Int64.Type, OrderDateID = Int64.Type, PropertyID = Int64.Type, SupplierID = Int64.Type, CategoryID = Int64.Type, TotalCost = number, ContractCost = number, PriceVariance = number, IsOnTime = logical, IsEmergency = logical, IsMaverick = logical],
+			        {
+			            {1, 20260108, 1, 1, 1, 18500, 18000, 500, true, false, false},
+			            {2, 20260110, 1, 2, 1, 12400, 12000, 400, true, false, false},
+			            {3, 20260112, 1, 3, 2, 8900, 9000, -100, true, false, false},
+			            {4, 20260115, 1, 4, 2, 6700, 6500, 200, false, false, false},
+			            {5, 20260118, 1, 7, 4, 15200, 14000, 1200, true, true, false},
+			            {6, 20260122, 1, 8, 5, 9400, 9000, 400, true, false, true},
+			            {7, 20260128, 1, 12, 9, 22000, 22000, 0, true, false, false},
+			            {8, 20260205, 1, 1, 1, 17800, 18000, -200, true, false, false},
+			            {9, 20260208, 1, 2, 1, 11900, 12000, -100, true, false, false},
+			            {10, 20260212, 1, 3, 2, 9100, 9000, 100, true, false, false},
+			            {11, 20260215, 1, 5, 3, 28000, 28000, 0, true, false, false},
+			            {12, 20260220, 1, 6, 3, 18500, 18500, 0, true, false, false},
+			            {13, 20260225, 1, 13, 10, 6200, 6000, 200, false, false, true},
+			            {14, 20260305, 1, 1, 1, 20500, 19500, 1000, true, false, false},
+			            {15, 20260310, 1, 4, 2, 7200, 7000, 200, true, false, false},
+			            {16, 20260312, 1, 9, 6, 14500, 14500, 0, true, false, false},
+			            {17, 20260318, 1, 10, 7, 8600, 8600, 0, true, false, false},
+			            {18, 20260325, 1, 7, 4, 16800, 15000, 1800, false, true, false},
+			            {19, 20260405, 1, 11, 8, 3400, 3500, -100, true, false, true},
+			            {20, 20260410, 1, 1, 1, 21200, 20000, 1200, true, false, false},
+			            {21, 20260415, 1, 2, 1, 13800, 13500, 300, true, false, false},
+			            {22, 20260420, 1, 3, 2, 10200, 10000, 200, true, false, false},
+			            {23, 20260428, 1, 14, 11, 5600, 5800, -200, false, false, false},
+			            {24, 20260505, 1, 15, 1, 8900, 8500, 400, true, false, false},
+			            {25, 20260510, 1, 5, 3, 30500, 30000, 500, true, false, false},
+			            {26, 20260515, 1, 6, 3, 20100, 20000, 100, true, false, false},
+			            {27, 20260520, 1, 1, 1, 23500, 22000, 1500, true, false, false},
+			            {28, 20260528, 1, 12, 9, 19500, 19500, 0, true, false, false},
+			            {29, 20260608, 1, 1, 1, 25200, 23000, 2200, true, false, false},
+			            {30, 20260612, 1, 2, 1, 15500, 14500, 1000, true, false, false},
+			            {31, 20260618, 1, 4, 2, 9800, 9500, 300, true, false, false},
+			            {32, 20260625, 1, 7, 4, 22400, 20000, 2400, false, true, false},
+			            {33, 20260705, 1, 1, 1, 27000, 24000, 3000, true, false, false},
+			            {34, 20260710, 1, 3, 2, 11500, 11000, 500, true, false, false},
+			            {35, 20260715, 1, 8, 5, 12800, 12000, 800, true, false, true},
+			            {36, 20260720, 1, 13, 10, 7200, 7000, 200, true, false, false},
+			            {37, 20260728, 1, 5, 3, 33500, 32000, 1500, true, false, false},
+			            {38, 20260805, 1, 1, 1, 26500, 24000, 2500, true, false, false},
+			            {39, 20260812, 1, 10, 7, 9200, 9000, 200, true, false, false},
+			            {40, 20260820, 1, 9, 6, 16500, 16000, 500, true, false, false},
+			            {41, 20260828, 1, 2, 1, 14500, 13500, 1000, true, false, false},
+			            {42, 20260905, 1, 1, 1, 21500, 21000, 500, true, false, false},
+			            {43, 20260912, 1, 6, 3, 18800, 18500, 300, true, false, false},
+			            {44, 20260918, 1, 11, 8, 4200, 4000, 200, false, false, true},
+			            {45, 20260925, 1, 3, 2, 10800, 10500, 300, true, false, false},
+			            {46, 20261008, 1, 1, 1, 19800, 19500, 300, true, false, false},
+			            {47, 20261015, 1, 4, 2, 8400, 8200, 200, true, false, false},
+			            {48, 20261022, 1, 12, 9, 18200, 18000, 200, true, false, false},
+			            {49, 20261105, 1, 1, 1, 17500, 18000, -500, true, false, false},
+			            {50, 20261112, 1, 2, 1, 11800, 12000, -200, true, false, false},
+			            {51, 20261120, 1, 5, 3, 27500, 28000, -500, true, false, false},
+			            {52, 20261205, 1, 1, 1, 20500, 20000, 500, true, false, false},
+			            {53, 20261215, 1, 7, 4, 14800, 14000, 800, true, false, false},
+			            {54, 20261220, 1, 15, 1, 9500, 9000, 500, true, false, false},
+			            {55, 20261228, 1, 6, 3, 19200, 19000, 200, true, false, false}
+			        }
+			    )
+			in
+			    Source

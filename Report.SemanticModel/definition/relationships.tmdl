@@ -66,3 +66,51 @@ relationship occ_property
 	fromColumn: Fact_Occupancy.PropertyID
 	toColumn: Dim_Property.PropertyID
 
+relationship pay_date
+	fromColumn: Fact_Payroll.DateID
+	toColumn: Dim_Date.DateID
+
+relationship pay_property
+	fromColumn: Fact_Payroll.PropertyID
+	toColumn: Dim_Property.PropertyID
+
+relationship pay_dept
+	fromColumn: Fact_Payroll.DepartmentID
+	toColumn: Dim_Department.DepartmentID
+
+relationship energy_date
+	fromColumn: Fact_Energy.DateID
+	toColumn: Dim_Date.DateID
+
+relationship energy_property
+	fromColumn: Fact_Energy.PropertyID
+	toColumn: Dim_Property.PropertyID
+
+relationship feedback_date
+	fromColumn: Fact_GuestFeedback.DateID
+	toColumn: Dim_Date.DateID
+
+relationship feedback_property
+	fromColumn: Fact_GuestFeedback.PropertyID
+	toColumn: Dim_Property.PropertyID
+
+relationship proc_date
+	fromColumn: Fact_Procurement.OrderDateID
+	toColumn: Dim_Date.DateID
+
+relationship proc_property
+	fromColumn: Fact_Procurement.PropertyID
+	toColumn: Dim_Property.PropertyID
+
+relationship proc_supplier
+	fromColumn: Fact_Procurement.SupplierID
+	toColumn: Dim_Supplier.SupplierID
+
+relationship proc_category
+	fromColumn: Fact_Procurement.CategoryID
+	toColumn: Dim_ProcurementCategory.CategoryID
+
+relationship emp_dept
+	fromColumn: Dim_Employee.DepartmentID
+	toColumn: Dim_Department.DepartmentID
+

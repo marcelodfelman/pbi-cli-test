@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "header",
+  "position": { "x": 240, "y": 8, "z": 0, "height": 56, "width": 1020, "tabOrder": 0 },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "horizontalTextAlignment": "left",
+                "textRuns": [
+                  { "value": "The Grand Azure  ", "textStyle": { "fontSize": "20pt", "fontFamily": "Segoe UI Semibold", "color": "#FFFFFF" } },
+                  { "value": "— Procurement & Inventory", "textStyle": { "fontSize": "14pt", "fontFamily": "Segoe UI", "color": "#4DD8E6" } }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -3,8 +3,14 @@
   "pageOrder": [
     "executive",
     "commercial",
+    "sales_channels",
+    "operations",
     "finance",
-    "profitability"
+    "profitability",
+    "procurement",
+    "workforce",
+    "sustainability",
+    "portfolio"
   ],
-  "activePageName": "commercial"
+  "activePageName": "executive"
 }
