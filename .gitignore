@@ -1,2 +1,10 @@
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
+
+# Playwright MCP artifacts
+.playwright-mcp/
+
+# Ad-hoc screenshots / working copies / PDF extractions
+*.png
+*.pbix
+spec.txt

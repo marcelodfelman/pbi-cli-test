@@ -386,11 +386,6 @@ table _Measures
 		displayFolder: Procurement
 		lineageTag: 91000001-2222-4000-8000-000000000005
 
-	measure 'CAC by Channel' = DIVIDE(CALCULATE([Total Spend], Dim_ProcurementCategory[CategoryName] = "Marketing"), DISTINCTCOUNT(Fact_Reservations[ReservationID]))
-		formatString: $#,##0
-		displayFolder: Channels
-		lineageTag: d2000001-2222-4000-8000-000000000001
-
 	measure 'Cash Balance' = CALCULATE(LASTNONBLANKVALUE(Fact_Cash[DateID], SUM(Fact_Cash[Balance])), Fact_Cash[FlowType] = "Inflow")
 		formatString: $#,##0
 		displayFolder: Cash

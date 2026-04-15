@@ -1,0 +1,57 @@
+name: Deploy to Fabric workspace
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Report.Report/**'
+      - 'Report.SemanticModel/**'
+      - 'Report.pbip'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install fabric-cicd
+        run: pip install fabric-cicd
+
+      - name: Deploy PBIP to Fabric
+        env:
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          FABRIC_WORKSPACE_ID: ${{ secrets.FABRIC_WORKSPACE_ID }}
+        run: |
+          python - <<'PY'
+          import os
+          from azure.identity import ClientSecretCredential
+          from fabric_cicd import FabricWorkspace, publish_all_items, unpublish_all_orphan_items
+
+          credential = ClientSecretCredential(
+              tenant_id=os.environ["AZURE_TENANT_ID"],
+              client_id=os.environ["AZURE_CLIENT_ID"],
+              client_secret=os.environ["AZURE_CLIENT_SECRET"],
+          )
+
+          workspace = FabricWorkspace(
+              workspace_id=os.environ["FABRIC_WORKSPACE_ID"],
+              repository_directory=".",
+              item_type_in_scope=["SemanticModel", "Report"],
+              token_credential=credential,
+          )
+
+          publish_all_items(workspace)
+          unpublish_all_orphan_items(workspace)
+          PY
